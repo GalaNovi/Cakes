@@ -1,353 +1,377 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Торты на заказ «Cakes»</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <header class="page-header">
-    <div class="page-header__logo">Cakes</div>
-    <button class="page-header__menu-button" type="button"><span class="visually-hidden">Открыть или закрыть меню</span></button>
-    <nav class="main-nav">
-      <ul class="main-nav__list">
-        <li class="main-nav__item"><a class="main-nav__link" href="#">Наши торты</a></li>
-        <li class="main-nav__item"><a class="main-nav__link" href="#">Индивидуальный заказ</a></li>
-        <li class="main-nav__item"><a class="main-nav__link" href="#">Отзывы</a></li>
-        <li class="main-nav__item"><a class="main-nav__link" href="#">О нас</a></li>
-        <li class="main-nav__item"><a class="main-nav__link" href="#">Как заказать</a></li>
-        <li class="main-nav__item"><a class="main-nav__link" href="#">Контакты</a></li>
-      </ul>
-    </nav>
-    <p class="page-header__phone-number">+7 906 899 92 96</p>
-  </header>
-  <main class="page-main">
-    <h1 class="page-main__heading">Торты на заказ<br><span class="page-main__heading-feature">Ручная работа</span></h1>
-    <section class="key-features">
-      <h2 class="visually-hidden">Наши главные преимущества</h2>
-      <ul class="key-features__list">
-        <li class="key-features__item">Натуральные ингредиенты</li>
-        <li class="key-features__item">Доставка бесплатно при заказе  от 2000 рублей*</li>
-      </ul>
-      <a class="key-features__button button" href="#">Выбрать торт</a>
-    </section>
-    <section class="cakes">
-      <h2 class="cakes__heading">Наши торты</h2>
-      <ul class="cakes__list">
-        <li class="cakes__item">
-          <a href="#">
-            <h3 class="cakes__item-heading">Классические</h3>
-            <p class="cakes__item-types">24 вида</p>
-            <img src="http://placehold.it/280x120" alt="Классические торты">
-          </a>
-        </li>
-        <li class="cakes__item">
-          <a href="#">
-            <h3 class="cakes__item-heading">Муссовые</h3>
-            <p class="cakes__item-types">12 видов</p>
-            <img src="http://placehold.it/280x120" alt="Муссовые торты">
-          </a>
-        </li>
-        <li class="cakes__item">
-          <a href="#">
-            <h3 class="cakes__item-heading">Свадебные</h3>
-            <p class="cakes__item-types">20 видов</p>
-            <img src="http://placehold.it/280x120" alt="Свадебные торты">
-          </a>
-        </li>
-        <li class="cakes__item">
-          <a href="#">
-            <h3 class="cakes__item-heading">Мужчинам</h3>
-            <p class="cakes__item-types">12 видов</p>
-            <img src="http://placehold.it/280x120" alt="Торты для мужчин">
-          </a>
-        </li>
-        <li class="cakes__item">
-          <a href="#">
-            <h3 class="cakes__item-heading">Женщин</h3>
-            <p class="cakes__item-types">16 видов</p>
-            <img src="http://placehold.it/280x120" alt="Торты для женщин">
-          </a>
-        </li>
-        <li class="cakes__item">
-          <a href="#">
-            <h3 class="cakes__item-heading">Детские</h3>
-            <p class="cakes__item-types">18 видов</p>
-            <img class="cakes__item-image" src="http://placehold.it/280x120" alt="Детские торты">
-          </a>
-        </li>
-      </ul>
-    </section>
-    <section class="individual-order">
-      <h2 class="individual-order__heading">Индивидуальный заказ<br>
-        <span class="individual-order__heading-addon">Соберите торт в 3 шага</span>
-      </h2>
-      <form class="individual-order__form form" action="https://echo.htmlacademy.ru" method="post">
-        <ol class="form__list">
-          <li class="form__item">
-            <h3 class="form__item-heading">Выберите начинку</h3>
-            <ul class="form__stuffing-list stuffing-list">
-              <li class="stuffing-item stuffing-item--current">
-                <h4 class="stuffing-item__heading">Шоколадный ганаш</h4>
-                <p class="stuffing-item__description">
-                  Ароматный шоколадный бисквит, густой шоколадный крем – самый шоколадный из всех возможных десертов!
-                </p>
-                <img class="stuffing-item__image" src="http://placehold.it/240x110" alt="Изображение шоколадного бисквита с шоколадным кремом">
-                <p class="stuffing-item__price">1000 руб/кг</p>
-                <label class="visually-hidden" for="shocolate-cream">Выбрать шоколадный ганаш</label>
-                <input class="stuffing-item__radio visually-hidden" id="shocolate-cream" type="radio" name="staffing" value="shocolate-cream">
-                <button class="stuffing-item__button button" type="button">Выбрать</button>
-              </li>
-            </ul>
-            <div class="form__item-count">1/12</div>
-          </li>
-          <li class="form__item">
-            <h3 class="form__item-heading">Размер</h3>
-            <ul class="form__size-list size-list">
-              <li class="size-item">
-                <label class="size-item__label" for="1kg">1 кг</label>
-                <input class="size-item__radio visually-hidden" id="1kg" type="radio" name="size" value="1kg">
-                <p class="size-item__description">
-                  17-18 см<br>
-                  (1 кг – 6 персон)
-                </p>
-                <button class="size-item__button button" type="button">Выбрать</button>
-              </li>
-              <li class="size-item">
-                <label class="size-item__label" for="2kg">2 кг</label>
-                <input class="size-item__radio visually-hidden" id="2kg" type="radio" name="size" value="2kg">
-                <p class="size-item__description">
-                  23-24 см<br>
-                  (10 кг – 12 персон)
-                </p>
-                <button class="size-item__button button" type="button">Выбрать</button>
-              </li>
-              <li class="size-item">
-                <label class="size-item__label" for="5kg">5 кг</label>
-                <input class="size-item__radio visually-hidden" id="5kg" type="radio" name="size" value="5kg">
-                <p class="size-item__description">
-                  Два яруса 25 и 20 см<br>
-                  (15 кг – 20 персон)
-                </p>
-                <button class="size-item__button button" type="button">Выбрать</button>
-              </li>
-              <li class="size-item">
-                <label class="size-item__label" for="8kg">8 кг</label>
-                <input class="size-item__radio visually-hidden" id="8kg" type="radio" name="size" value="8kg">
-                <p class="size-item__description">
-                  Три яруса 30,25 и 18 см<br>
-                  (25 кг – 30 персон)
-                </p>
-                <button class="size-item__button button" type="button">Выбрать</button>
-              </li>
-            </ul>
-          </li>
-          <li class="form__item">
-            <h3 class="form__item-heading">Оформление</h3>
-            <ul class="form__design-list design-list">
-              <li class="design-item design-item--current">
-                <h4 class="design-item__heading">Ягодное ассорти</h4>
-                <img class="design-item__image" src="http://placehold.it/170x95" alt="Изображение оформления «Ягодное ассорти»">
-                <p class="design-item__price">700 руб/кг</p>
-                <label class="visually-hidden" for="berry-allsorts">Ягодное ассорти</label>
-                <input class="design-item__radio visually-hidden" id="berry-allsorts" type="radio" name="design" value="berry-allsorts">
-                <button class="design-item__button button" type="button">Выбрать</button>
-              </li>
-              <li class="design-item design-item--current">
-                <h4 class="design-item__heading">Маршмэллоу</h4>
-                <img class="design-item__image" src="http://placehold.it/170x95" alt="Изображение оформления «Маршмэллоу»">
-                <p class="design-item__price">700 руб/кг</p>
-                <label class="visually-hidden" for="marshmallow">Маршмэллоу</label>
-                <input class="design-item__radio visually-hidden" id="marshmallow" type="radio" name="design" value="marshmallow">
-                <button class="design-item__button button" type="button">Выбрать</button>
-              </li>
-            </ul>
-            <div class="form__item-count">1/35</div>
-          </li>
-        </ol>
-        <section class="form__total-choise total-choise">
-          <h3 class="total-choise__heading">Ваш выбор</h3>
-          <ul class="total-choise__list">
-            <li class="total-choise__item">
-              <p class="total-choise__item-heading">Начинка</p>
-              <p class="total-choise__item-text">Шоколадный ганаш</p>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Торты на заказ «Cakes»</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <header class="page-header">
+      <div class="container">
+        <div class="page-header__logo">Cakes</div>
+        <button class="page-header__menu-button" type="button"><span class="visually-hidden">Открыть или закрыть меню</span></button>
+        <nav class="main-nav">
+          <ul class="main-nav__list">
+            <li class="main-nav__item"><a class="main-nav__link" href="#">Наши торты</a></li>
+            <li class="main-nav__item"><a class="main-nav__link" href="#">Индивидуальный заказ</a></li>
+            <li class="main-nav__item"><a class="main-nav__link" href="#">Отзывы</a></li>
+            <li class="main-nav__item"><a class="main-nav__link" href="#">О нас</a></li>
+            <li class="main-nav__item"><a class="main-nav__link" href="#">Как заказать</a></li>
+            <li class="main-nav__item"><a class="main-nav__link" href="#">Контакты</a></li>
+          </ul>
+        </nav>
+        <p class="page-header__phone-number">+7 906 899 92 96</p>
+      </div>
+    </header>
+    <main class="page-main">
+      <div class="container">
+        <h1 class="page-main__heading">Торты на заказ<br><span class="page-main__heading-feature">Ручная работа</span></h1>
+      </div>
+      <section class="key-features">
+        <div class="container">
+          <h2 class="visually-hidden">Наши главные преимущества</h2>
+          <ul class="key-features__list">
+            <li class="key-features__item">Натуральные ингредиенты</li>
+            <li class="key-features__item">Доставка бесплатно при заказе  от 2000 рублей*</li>
+          </ul>
+          <a class="key-features__button button" href="#">Выбрать торт</a>
+        </div>
+      </section>
+      <section class="cakes">
+        <div class="container">
+          <h2 class="cakes__heading">Наши торты</h2>
+          <ul class="cakes__list">
+            <li class="cakes__item">
+              <a href="#">
+                <h3 class="cakes__item-heading">Классические</h3>
+                <p class="cakes__item-types">24 вида</p>
+                <img src="http://placehold.it/280x120" alt="Классические торты">
+              </a>
             </li>
-            <li class="total-choise__item">
-              <p class="total-choise__item-heading">Размер</p>
-              <p class="total-choise__item-text">1 кг</p>
+            <li class="cakes__item">
+              <a href="#">
+                <h3 class="cakes__item-heading">Муссовые</h3>
+                <p class="cakes__item-types">12 видов</p>
+                <img src="http://placehold.it/280x120" alt="Муссовые торты">
+              </a>
             </li>
-            <li class="total-choise__item">
-              <p class="total-choise__item-heading">Оформление</p>
-              <p class="total-choise__item-text">Маршмэллоу</p>
+            <li class="cakes__item">
+              <a href="#">
+                <h3 class="cakes__item-heading">Свадебные</h3>
+                <p class="cakes__item-types">20 видов</p>
+                <img src="http://placehold.it/280x120" alt="Свадебные торты">
+              </a>
+            </li>
+            <li class="cakes__item">
+              <a href="#">
+                <h3 class="cakes__item-heading">Мужчинам</h3>
+                <p class="cakes__item-types">12 видов</p>
+                <img src="http://placehold.it/280x120" alt="Торты для мужчин">
+              </a>
+            </li>
+            <li class="cakes__item">
+              <a href="#">
+                <h3 class="cakes__item-heading">Женщин</h3>
+                <p class="cakes__item-types">16 видов</p>
+                <img src="http://placehold.it/280x120" alt="Торты для женщин">
+              </a>
+            </li>
+            <li class="cakes__item">
+              <a href="#">
+                <h3 class="cakes__item-heading">Детские</h3>
+                <p class="cakes__item-types">18 видов</p>
+                <img class="cakes__item-image" src="http://placehold.it/280x120" alt="Детские торты">
+              </a>
             </li>
           </ul>
-          <button class="form__button button" type="submit">Заказать торт</button>
-        </section>
-      </form>
-    </section>
-    <section class="reviews">
-      <h2 class="reviews__heading">Отзывы</h2>
-      <ul class="reviews__list">
-        <li class="reviews__item">
-          <p class="reviews__item-name">Мария</p>
-          <p class="reviews__item-info">юрист, 33 года</p>
-          <img src="http://placehold.it/60x60" alt="Фотография владельца отзыва">
-          <p class="reviews__item-description">
-            Заказывала торт брауни на юбилей мужа. Гости были в восторге!
-            Отдельное спасибо за своевременную доставку!
-            Теперь будем заказывать торты только у вас для наших семейных праздников:)
-            <a class="reviews__item-show-full" href="#">Развернуть</a>
+        </div>
+      </section>
+      <section class="individual-order">
+        <div class="container">
+          <h2 class="individual-order__heading">Индивидуальный заказ<br>
+            <span class="individual-order__heading-addon">Соберите торт в 3 шага</span>
+          </h2>
+          <form class="individual-order__form form" action="https://echo.htmlacademy.ru" method="post">
+            <ol class="form__list">
+              <li class="form__item">
+                <h3 class="form__item-heading">Выберите начинку</h3>
+                <ul class="form__stuffing-list stuffing-list">
+                  <li class="stuffing-item stuffing-item--current">
+                    <h4 class="stuffing-item__heading">Шоколадный ганаш</h4>
+                    <p class="stuffing-item__description">
+                      Ароматный шоколадный бисквит, густой шоколадный крем – самый шоколадный из всех возможных десертов!
+                    </p>
+                    <img class="stuffing-item__image" src="http://placehold.it/240x110" alt="Изображение шоколадного бисквита с шоколадным кремом">
+                    <p class="stuffing-item__price">1000 руб/кг</p>
+                    <label class="visually-hidden" for="shocolate-cream">Выбрать шоколадный ганаш</label>
+                    <input class="stuffing-item__radio visually-hidden" id="shocolate-cream" type="radio" name="staffing" value="shocolate-cream">
+                    <button class="stuffing-item__button button" type="button">Выбрать</button>
+                  </li>
+                </ul>
+                <div class="form__item-count">1/12</div>
+              </li>
+              <li class="form__item">
+                <h3 class="form__item-heading">Размер</h3>
+                <ul class="form__size-list size-list">
+                  <li class="size-item">
+                    <label class="size-item__label" for="1kg">1 кг</label>
+                    <input class="size-item__radio visually-hidden" id="1kg" type="radio" name="size" value="1kg">
+                    <p class="size-item__description">
+                      17-18 см<br>
+                      (1 кг – 6 персон)
+                    </p>
+                    <button class="size-item__button button" type="button">Выбрать</button>
+                  </li>
+                  <li class="size-item">
+                    <label class="size-item__label" for="2kg">2 кг</label>
+                    <input class="size-item__radio visually-hidden" id="2kg" type="radio" name="size" value="2kg">
+                    <p class="size-item__description">
+                      23-24 см<br>
+                      (10 кг – 12 персон)
+                    </p>
+                    <button class="size-item__button button" type="button">Выбрать</button>
+                  </li>
+                  <li class="size-item">
+                    <label class="size-item__label" for="5kg">5 кг</label>
+                    <input class="size-item__radio visually-hidden" id="5kg" type="radio" name="size" value="5kg">
+                    <p class="size-item__description">
+                      Два яруса 25 и 20 см<br>
+                      (15 кг – 20 персон)
+                    </p>
+                    <button class="size-item__button button" type="button">Выбрать</button>
+                  </li>
+                  <li class="size-item">
+                    <label class="size-item__label" for="8kg">8 кг</label>
+                    <input class="size-item__radio visually-hidden" id="8kg" type="radio" name="size" value="8kg">
+                    <p class="size-item__description">
+                      Три яруса 30,25 и 18 см<br>
+                      (25 кг – 30 персон)
+                    </p>
+                    <button class="size-item__button button" type="button">Выбрать</button>
+                  </li>
+                </ul>
+              </li>
+              <li class="form__item">
+                <h3 class="form__item-heading">Оформление</h3>
+                <ul class="form__design-list design-list">
+                  <li class="design-item design-item--current">
+                    <h4 class="design-item__heading">Ягодное ассорти</h4>
+                    <img class="design-item__image" src="http://placehold.it/170x95" alt="Изображение оформления «Ягодное ассорти»">
+                    <p class="design-item__price">700 руб/кг</p>
+                    <label class="visually-hidden" for="berry-allsorts">Ягодное ассорти</label>
+                    <input class="design-item__radio visually-hidden" id="berry-allsorts" type="radio" name="design" value="berry-allsorts">
+                    <button class="design-item__button button" type="button">Выбрать</button>
+                  </li>
+                  <li class="design-item design-item--current">
+                    <h4 class="design-item__heading">Маршмэллоу</h4>
+                    <img class="design-item__image" src="http://placehold.it/170x95" alt="Изображение оформления «Маршмэллоу»">
+                    <p class="design-item__price">700 руб/кг</p>
+                    <label class="visually-hidden" for="marshmallow">Маршмэллоу</label>
+                    <input class="design-item__radio visually-hidden" id="marshmallow" type="radio" name="design" value="marshmallow">
+                    <button class="design-item__button button" type="button">Выбрать</button>
+                  </li>
+                </ul>
+                <div class="form__item-count">1/35</div>
+              </li>
+            </ol>
+            <section class="form__total-choise total-choise">
+              <h3 class="total-choise__heading">Ваш выбор</h3>
+              <ul class="total-choise__list">
+                <li class="total-choise__item">
+                  <p class="total-choise__item-heading">Начинка</p>
+                  <p class="total-choise__item-text">Шоколадный ганаш</p>
+                </li>
+                <li class="total-choise__item">
+                  <p class="total-choise__item-heading">Размер</p>
+                  <p class="total-choise__item-text">1 кг</p>
+                </li>
+                <li class="total-choise__item">
+                  <p class="total-choise__item-heading">Оформление</p>
+                  <p class="total-choise__item-text">Маршмэллоу</p>
+                </li>
+              </ul>
+              <button class="form__button button" type="submit">Заказать торт</button>
+            </section>
+          </form>
+        </div>
+      </section>
+      <section class="reviews">
+        <div class="container">
+          <h2 class="reviews__heading">Отзывы</h2>
+          <ul class="reviews__list">
+            <li class="reviews__item">
+              <p class="reviews__item-name">Мария</p>
+              <p class="reviews__item-info">юрист, 33 года</p>
+              <img src="http://placehold.it/60x60" alt="Фотография владельца отзыва">
+              <p class="reviews__item-description">
+                Заказывала торт брауни на юбилей мужа. Гости были в восторге!
+                Отдельное спасибо за своевременную доставку!
+                Теперь будем заказывать торты только у вас для наших семейных праздников:)
+                <a class="reviews__item-show-full" href="#">Развернуть</a>
+              </p>
+            </li>
+          </ul>
+          <div class="reviews__count">1/26</div>
+        </div>
+      </section>
+      <section class="about-confectioner">
+        <div class="container">
+          <h2 class="about-confectioner__heading">О кондитере</h2>
+          <div class="about-confectioner__advantage">
+            <h3 class="about-confectioner__advantage-heading">Кондитер как призвание</h3>
+            <p class="about-confectioner__advantage-description">
+              Павел — профессиональный повар в различных гастрономических областях,
+              но однажды его сердце покорило кондитерское искусство. С ранних лет
+              он увлекался утонченным мастерством и обратился к своим талантам как кондитер.
+            </p>
+          </div>
+          <div class="about-confectioner__advantage">
+            <h3 class="about-confectioner__advantage-heading">Принцип — натуральные ингредиенты</h3>
+            <p class="about-confectioner__advantage-description">
+              Сегодня Павел радует изделиями не только близких, но и тех, кто предпочитает
+              качественную продукцию для торжества, а главным принципом является выбор
+              натуральных ингредиентов.
+            </p>
+          </div>
+          <ul class="about-confectioner__socials-list">
+            <li class="about-confectioner__socials-item">
+              <a class="about-confectioner__socials-link about-confectioner__socials-link--instagram" href="#">
+                <span class="visually-hidden">Павел в инстаграм</span>
+              </a>
+            </li>
+            <li class="about-confectioner__socials-item">
+              <a class="about-confectioner__socials-link about-confectioner__socials-link--vkontakte" href="#">
+                <span class="visually-hidden">Павел в вконтакте</span>
+              </a>
+            </li>
+            <li class="about-confectioner__socials-item">
+              <a class="about-confectioner__socials-link about-confectioner__socials-link--twitter" href="#">
+                <span class="visually-hidden">Павел в твиттер</span>
+              </a>
+            </li>
+          </ul>
+          <img class="about-confectioner__photo" src="http://placehold.it/155x155" alt="Фотография кондитера">
+          <div class="about-confectioner__commas">,,</div>
+          <blockquote class="about-confectioner__quote">
+            Я за простые рецепты. В Италии это называют cucina povera:
+            когда обычные ингредиенты превращаются в божественное блюдо.
+          </blockquote>
+          <img class="about-confectioner__signature" src="http://placehold.it/64x31" alt="Подпись кондитера">
+        </div>
+      </section>
+      <section class="features">
+        <div class="container">
+          <h2 class="features__heading">Наши преимущества<br>
+            <span class="features__heading-addon">Почему нас выбирают?</span>
+          </h2>
+          <ul class="features__list">
+            <li class="features__item">
+              <h3 class="features__item-heading">Без искусственных добавок</h3>
+              <p class="features__item-text">
+                Работаем  с натуральными ингредиентами и свежими продуктами
+              </p>
+            </li>
+            <li class="features__item">
+              <h3 class="features__item-heading">Свежий торт в день торжества</h3>
+              <p class="features__item-text">
+                Торты изготавливаются в течение суток до отправки
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="customer-care">
+        <div class="container">
+          <h2 class="costumer-care__heading">Забота о клиентах<br>
+            <span class="costumer-care__heading-addon">Для нас важно</span>
+          </h2>
+          <p class="customer-care__text">
+            Нам важно чтобы каждый торт был безупречным, как внутри, так и снаружи,
+            чтобы он был создан исключительно для вас и для вашего события.
           </p>
-        </li>
-      </ul>
-      <div class="reviews__count">1/26</div>
-    </section>
-    <section class="about-confectioner">
-      <h2 class="about-confectioner__heading">О кондитере</h2>
-      <div class="about-confectioner__advantage">
-        <h3 class="about-confectioner__advantage-heading">Кондитер как призвание</h3>
-        <p class="about-confectioner__advantage-description">
-          Павел — профессиональный повар в различных гастрономических областях,
-          но однажды его сердце покорило кондитерское искусство. С ранних лет
-          он увлекался утонченным мастерством и обратился к своим талантам как кондитер.
-        </p>
+        </div>
+      </section>
+      <section class="order">
+        <div class="container">
+          <h2 class="order__heading">Как заказать</h2>
+          <ol class="order__list">
+            <li class="order__item">
+              <h3 class="order__item-heading">Срок заказа</h3>
+              <p class="order__item-text">
+                Размещать заказы желательно за 2-3 дня. На выходные заказы лучше
+                размещать минимум за неделю.
+              </p>
+            </li>
+            <li class="order__item">
+              <h3 class="order__item-heading">Доставка по городу</h3>
+              <p class="order__item-text">
+                Доставка в пределах города 200 рубей, при заказе на сумму более
+                2000 доставка бесплатно.
+              </p>
+            </li>
+            <li class="order__item">
+              <h3 class="order__item-heading">Доставка за городом</h3>
+              <p class="order__item-text">
+                Доставка за пределами города рассчитывается индивидуально.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+      <section class="contacts">
+        <div class="container">
+          <h2 class="contacts__heading">Контакты</h2>
+          <form class="contacts__form" action="https://echo.htmlacademy.ru" method="post">
+            <h3 class="contacts__form-heading">Остались вопросы?</h3>
+            <p class="contacts__form-text">
+              Заполните форму ниже и наш кондитер свяжется с Вами
+            </p>
+            <p class="contacts__form-item">
+              <label class="visually-hidden" for="name-field">Поле для вашего имени</label>
+              <input class="contacts__form-field" type="text" name="name" id="name-field" placeholder="Ваше имя">
+            </p>
+            <p class="contacts__form-item">
+              <label class="visually-hidden" for="email-field">Поле для вашего Email адреса</label>
+              <input class="contacts__form-field" type="email" name="email" id="email-field" placeholder="Email адрес">
+            </p>
+            <p class="contacts__form-item">
+              <label class="visually-hidden" for="question-field">Поле для вашего вопроса</label>
+              <textarea class="contacts__form-field contacts__form-field--question" name="question" id="question-field" placeholder="Ваш вопрос"></textarea>
+            </p>
+            <button class="contacts__form-button button" type="submit">Отправить</button>
+          </form>
+          <p class="contacts__phone">Или позвоните по телефону:<br>+7 906 899 92 96</p>
+          <p class="contacts__email">Наша почта: bakerybypavel@mail.ru</p>
+          <p class="contacts__socials">Мы всоц. сетях:</p>
+          <ul class="contacts__socials-list">
+            <li class="contacts__socials-item"><a class="contacts__socials-link contacts__socials-link--instagram" href="#">Инстаграм</a></li>
+            <li class="contacts__socials-item"><a class="contacts__socials-link contacts__socials-link--vkontakte" href="#">Вконтакте</a></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+    <footer class="page-footer">
+      <div class="container">
+        <div class="page-footer__logo">Cakes</div>
+        <nav class="footer-nav">
+          <ul class="footer-nav__list">
+            <li class="footer-nav__item"><a class="footer-nav__link" href="#">Наши торты</a></li>
+            <li class="footer-nav__item"><a class="footer-nav__link" href="#">Индивидуальный заказ</a></li>
+            <li class="footer-nav__item"><a class="footer-nav__link" href="#">Отзывы</a></li>
+            <li class="footer-nav__item"><a class="footer-nav__link" href="#">О нас</a></li>
+            <li class="footer-nav__item"><a class="footer-nav__link" href="#">Как заказать</a></li>
+            <li class="footer-nav__item"><a class="footer-nav__link" href="#">Контакты</a></li>
+          </ul>
+        </nav>
+        <p class="page-footer__phone-number">+7 906 899 92 96</p>
+        <ul class="page-footer__socials-list">
+          <li class="page-footer__socials-item"><a class="page-footer__socials-link page-footer__socials-link--instagram" href="#">Инстаграм</a></li>
+          <li class="page-footer__socials-item"><a class="page-footer__socials-link page-footer__socials-link--vkontakte" href="#">Вконтакте</a></li>
+        </ul>
+        <hr class="page-footer__line">
+        <div class="page-footer__copyrights">© 2018 Cakes</div>
       </div>
-      <div class="about-confectioner__advantage">
-        <h3 class="about-confectioner__advantage-heading">Принцип — натуральные ингредиенты</h3>
-        <p class="about-confectioner__advantage-description">
-          Сегодня Павел радует изделиями не только близких, но и тех, кто предпочитает
-          качественную продукцию для торжества, а главным принципом является выбор
-          натуральных ингредиентов.
-        </p>
-      </div>
-      <ul class="about-confectioner__socials-list">
-        <li class="about-confectioner__socials-item">
-          <a class="about-confectioner__socials-link about-confectioner__socials-link--instagram" href="#">
-            <span class="visually-hidden">Павел в инстаграм</span>
-          </a>
-        </li>
-        <li class="about-confectioner__socials-item">
-          <a class="about-confectioner__socials-link about-confectioner__socials-link--vkontakte" href="#">
-            <span class="visually-hidden">Павел в вконтакте</span>
-          </a>
-        </li>
-        <li class="about-confectioner__socials-item">
-          <a class="about-confectioner__socials-link about-confectioner__socials-link--twitter" href="#">
-            <span class="visually-hidden">Павел в твиттер</span>
-          </a>
-        </li>
-      </ul>
-      <img class="about-confectioner__photo" src="http://placehold.it/155x155" alt="Фотография кондитера">
-      <div class="about-confectioner__commas">,,</div>
-      <blockquote class="about-confectioner__quote">
-        Я за простые рецепты. В Италии это называют cucina povera:
-        когда обычные ингредиенты превращаются в божественное блюдо.
-      </blockquote>
-      <img class="about-confectioner__signature" src="http://placehold.it/64x31" alt="Подпись кондитера">
-    </section>
-    <section class="features">
-      <h2 class="features__heading">Наши преимущества<br>
-        <span class="features__heading-addon">Почему нас выбирают?</span>
-      </h2>
-      <ul class="features__list">
-        <li class="features__item">
-          <h3 class="features__item-heading">Без искусственных добавок</h3>
-          <p class="features__item-text">
-            Работаем  с натуральными ингредиентами и свежими продуктами
-          </p>
-        </li>
-        <li class="features__item">
-          <h3 class="features__item-heading">Свежий торт в день торжества</h3>
-          <p class="features__item-text">
-            Торты изготавливаются в течение суток до отправки
-          </p>
-        </li>
-      </ul>
-    </section>
-    <section class="customer-care">
-      <h2 class="costumer-care__heading">Забота о клиентах<br>
-        <span class="costumer-care__heading-addon">Для нас важно</span>
-      </h2>
-      <p class="customer-care__text">
-        Нам важно чтобы каждый торт был безупречным, как внутри, так и снаружи,
-        чтобы он был создан исключительно для вас и для вашего события.
-      </p>
-    </section>
-    <section class="order">
-      <h2 class="order__heading">Как заказать</h2>
-      <ol class="order__list">
-        <li class="order__item">
-          <h3 class="order__item-heading">Срок заказа</h3>
-          <p class="order__item-text">
-            Размещать заказы желательно за 2-3 дня. На выходные заказы лучше
-            размещать минимум за неделю.
-          </p>
-        </li>
-        <li class="order__item">
-          <h3 class="order__item-heading">Доставка по городу</h3>
-          <p class="order__item-text">
-            Доставка в пределах города 200 рубей, при заказе на сумму более
-            2000 доставка бесплатно.
-          </p>
-        </li>
-        <li class="order__item">
-          <h3 class="order__item-heading">Доставка за городом</h3>
-          <p class="order__item-text">
-            Доставка за пределами города рассчитывается индивидуально.
-          </p>
-        </li>
-      </ol>
-    </section>
-    <section class="contacts">
-      <h2 class="contacts__heading">Контакты</h2>
-      <form class="contacts__form" action="https://echo.htmlacademy.ru" method="post">
-        <h3 class="contacts__form-heading">Остались вопросы?</h3>
-        <p class="contacts__form-text">
-          Заполните форму ниже и наш кондитер свяжется с Вами
-        </p>
-        <p class="contacts__form-item">
-          <label class="visually-hidden" for="name-field">Поле для вашего имени</label>
-          <input class="contacts__form-field" type="text" name="name" id="name-field" placeholder="Ваше имя">
-        </p>
-        <p class="contacts__form-item">
-          <label class="visually-hidden" for="email-field">Поле для вашего Email адреса</label>
-          <input class="contacts__form-field" type="email" name="email" id="email-field" placeholder="Email адрес">
-        </p>
-        <p class="contacts__form-item">
-          <label class="visually-hidden" for="question-field">Поле для вашего вопроса</label>
-          <textarea class="contacts__form-field contacts__form-field--question" name="question" id="question-field" placeholder="Ваш вопрос"></textarea>
-        </p>
-        <button class="contacts__form-button button" type="submit">Отправить</button>
-      </form>
-      <p class="contacts__phone">Или позвоните по телефону:<br>+7 906 899 92 96</p>
-      <p class="contacts__email">Наша почта: bakerybypavel@mail.ru</p>
-      <p class="contacts__socials">Мы всоц. сетях:</p>
-      <ul class="contacts__socials-list">
-        <li class="contacts__socials-item"><a class="contacts__socials-link contacts__socials-link--instagram" href="#">Инстаграм</a></li>
-        <li class="contacts__socials-item"><a class="contacts__socials-link contacts__socials-link--vkontakte" href="#">Вконтакте</a></li>
-      </ul>
-    </section>
-  </main>
-  <footer class="page-footer">
-    <div class="page-footer__logo">Cakes</div>
-    <nav class="footer-nav">
-      <ul class="footer-nav__list">
-        <li class="footer-nav__item"><a class="footer-nav__link" href="#">Наши торты</a></li>
-        <li class="footer-nav__item"><a class="footer-nav__link" href="#">Индивидуальный заказ</a></li>
-        <li class="footer-nav__item"><a class="footer-nav__link" href="#">Отзывы</a></li>
-        <li class="footer-nav__item"><a class="footer-nav__link" href="#">О нас</a></li>
-        <li class="footer-nav__item"><a class="footer-nav__link" href="#">Как заказать</a></li>
-        <li class="footer-nav__item"><a class="footer-nav__link" href="#">Контакты</a></li>
-      </ul>
-    </nav>
-    <p class="page-footer__phone-number">+7 906 899 92 96</p>
-    <ul class="page-footer__socials-list">
-      <li class="page-footer__socials-item"><a class="page-footer__socials-link page-footer__socials-link--instagram" href="#">Инстаграм</a></li>
-      <li class="page-footer__socials-item"><a class="page-footer__socials-link page-footer__socials-link--vkontakte" href="#">Вконтакте</a></li>
-    </ul>
-    <hr class="page-footer__line">
-    <div class="page-footer__copyrights">© 2018 Cakes</div>
-  </footer>
-</body>
+    </footer>
+  </body>
 </html>
