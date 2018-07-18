@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "editorconfig": "editorconfig-cli",
+    "stylelint": "stylelint \"src/less/**/*.less\" --syntax less"
   },
   "keywords": [],
   "author": "",
