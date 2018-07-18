@@ -1,0 +1,27 @@
+.font(@font-size: 16px, @line-height: auto, @font-style: normal) {
+  font-size: @font-size;
+  line-height: @line-height;
+}
+
+.indent-reset() {
+  margin: 0;
+  padding: 0;
+}
+
+.list-reset() {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.marking(@width: 1px, @color: pink, @type: solid) {
+  outline-width: @width;
+  outline-color: @color;
+  outline-style: @type;
+}
+
+.box() {
+  box-shadow: inset 0 0 0 1px red;
+  background-color: rgba(255, 0, 0, 0.1);
+}

@@ -1,7 +1,7 @@
 @font-face {
   font-family: "Circe";
-  src: url("../fonts/Circe-Regular.woff.woff2") format("woff2"),
-    url("../fonts/Circe-Regular.woff.woff") format("woff");
+  src: url("../fonts/Circe-Regular.woff2") format("woff2"),
+    url("../fonts/Circe-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -22,7 +22,7 @@
     url("../fonts/PlayfairDisplayBold.woff") format("woff");
   font-weight: 700;
   font-style: bold;
-  font-display: swap
+  font-display: swap;
 }
 
 @font-face {
@@ -37,9 +37,11 @@
 body {
   margin: 0 auto;
 
-  font-family: "Circe", "Arial", sans-serif;
+  font-family: @circe;
   font-size: 14px;
   line-height: auto;
+
+  background-color: #fbebea;
 }
 
 img {
