@@ -2,6 +2,9 @@
 
 var gulp = require('gulp');
 var less = require('gulp-less');
+var stylelintGulp = require("gulp-stylelint");
+var plumber = require("gulp-plumber");
+var notify = require("gulp-notify");
 var del = require('del');
 var newer = require('gulp-newer');
 var postcss = require("gulp-postcss");
@@ -15,6 +18,7 @@ var browserSync = require('browser-sync').create();
 
 gulp.task('style', function () {
   return gulp.src('src/less/style.less')
+    .pipe(plumber())
     .pipe(less())
     .pipe(postcss([
       autoprefixer()
