@@ -1,0 +1,56 @@
+.size-list {
+  .list-reset;
+}
+
+.size-item {
+  display: none;
+
+  &:first-child .size-item__label {
+    width: 110px;
+    height: 110px;
+
+    background-image: url("../img/size-1-mobile-desktop.png");
+  }
+
+  &:nth-child(2) .size-item__label {
+    width: 154px;
+    height: 154px;
+
+    background-image: url("../img/size-2-mobile-desktop.png");
+  }
+
+  &:nth-child(3) .size-item__label {
+    width: 173px;
+    height: 174px;
+
+    background-image: url("../img/size-3-mobile-desktop.png");
+  }
+
+  &:nth-child(4) .size-item__label {
+    width: 200px;
+    height: 202px;
+
+    background-image: url("../img/size-4-mobile-desktop.png");
+  }
+
+  &--current {
+    display: block;
+  }
+}
+
+.size-item__label {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+}
+
+.size-item__description {
+  text-align: center;
+}
+
+.size-item__button {
+  margin: 0 auto;
+}

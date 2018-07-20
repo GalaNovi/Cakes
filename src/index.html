@@ -116,8 +116,10 @@
               <li class="form__item">
                 <h3 class="form__item-heading">Размер</h3>
                 <ul class="form__size-list size-list">
-                  <li class="size-item">
-                    <label class="size-item__label" for="1kg">1 кг</label>
+                  <li class="size-item size-item--current">
+                    <div class="size-item__label-wrapper">
+                      <label class="size-item__label" for="1kg"><span>1 кг</span></label>
+                    </div>
                     <input class="size-item__radio visually-hidden" id="1kg" type="radio" name="size" value="1kg">
                     <p class="size-item__description">
                       17-18 см<br>
@@ -159,22 +161,27 @@
                 <ul class="form__design-list design-list">
                   <li class="design-item design-item--current">
                     <h4 class="design-item__heading">Ягодное ассорти</h4>
-                    <img class="design-item__image" src="http://placehold.it/170x95" alt="Изображение оформления «Ягодное ассорти»">
+                    <div class="design-item__image-wrapper">
+                      <img class="design-item__image" src="img/berries-mobile@1x.jpg" alt="Изображение оформления «Ягодное ассорти»">
+                      <div class="design-list-count">1/35</div>
+                    </div>
                     <p class="design-item__price">700 руб/кг</p>
                     <label class="visually-hidden" for="berry-allsorts">Ягодное ассорти</label>
                     <input class="design-item__radio visually-hidden" id="berry-allsorts" type="radio" name="design" value="berry-allsorts">
                     <button class="design-item__button button" type="button">Выбрать</button>
                   </li>
-                  <li class="design-item design-item--current">
+                  <li class="design-item">
                     <h4 class="design-item__heading">Маршмэллоу</h4>
-                    <img class="design-item__image" src="http://placehold.it/170x95" alt="Изображение оформления «Маршмэллоу»">
-                    <p class="design-item__price">700 руб/кг</p>
+                    <div class="design-item__image-wrapper">
+                      <img class="design-item__image" src="img/marshmallow-mobile@1x.jpg" width="169" height="196" alt="Изображение оформления «Маршмэллоу»">
+                      <div class="design-list-count">1/35</div>
+                    </div>
+                      <p class="design-item__price">700 руб/кг</p>
                     <label class="visually-hidden" for="marshmallow">Маршмэллоу</label>
                     <input class="design-item__radio visually-hidden" id="marshmallow" type="radio" name="design" value="marshmallow">
                     <button class="design-item__button button" type="button">Выбрать</button>
                   </li>
                 </ul>
-                <div class="form__item-count">1/35</div>
               </li>
             </ol>
             <section class="form__total-choise total-choise">
