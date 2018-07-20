@@ -77,4 +77,4 @@ gulp.task('watch', function () {
   gulp.watch('src/*.html', gulp.series('copyHTML'));
 });
 
-gulp.task('dev', gulp.series(gulp.parallel('style', 'copy', gulp.series('sprite', 'copyHTML')), gulp.parallel('watch', 'serve')));
+gulp.task('dev', gulp.series('clean', gulp.parallel('style', 'copy', gulp.series('sprite', 'copyHTML')), gulp.parallel('watch', 'serve')));

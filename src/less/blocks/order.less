@@ -1,0 +1,48 @@
+.order {
+  padding: 30px 0 130px;
+  background-color: #e7383f;
+  background-image: url("../img/hands-mobile@1x.png");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  color: #ffffff;
+}
+
+.order__list {
+  list-style: none;
+  counter-reset: myCounter;
+}
+
+.order__item {
+  position: relative;
+  margin-bottom: 20px;
+
+  &::before {
+    position: absolute;
+    top: -15px;
+    left: -30px;
+
+    font-family: @playfair;
+    font-size: 35px;
+
+    counter-increment: myCounter;
+    content: counter(myCounter);
+  }
+}
+
+.order__heading {
+  .indent-reset;
+  font-family: @playfair;
+  font-size: 24px;
+  text-align: center;
+}
+
+.order__item-heading {
+  .indent-reset;
+  margin-bottom: 5px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.order__item-text {
+  .indent-reset;
+}
