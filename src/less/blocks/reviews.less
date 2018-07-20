@@ -1,0 +1,53 @@
+.reviews {
+  position: relative;
+}
+
+.reviews__heading {
+  font-family: @playfair;
+  font-size: 24px;
+  text-align: center;
+}
+
+.reviews__list {
+  .list-reset;
+}
+
+.reviews__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  width: 235px;
+}
+
+.reviews__item-name {
+  .indent-reset;
+  font-weight: bold;
+}
+
+.reviews__item-info {
+  .indent-reset;
+  font-size: 12px;
+}
+
+.reviews__item-text {
+  font-size: 12px;
+  text-align: center;
+}
+
+.reviews__item-photo {
+  order: -1;
+}
+
+.reviews__item-show-full {
+  color: #f87b91;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.reviews__count {
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+  color: @brand-color;
+}
