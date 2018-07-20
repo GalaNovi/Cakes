@@ -250,7 +250,7 @@
           </ul>
           <ul class="about-confectioner__socials-list">
             <li class="about-confectioner__socials-item">
-              <a class="about-confectioner__socials-link about-confectioner__socials-link--instagram" href="#">
+              <a class="about-confectioner__socials-link" href="#">
                 <span class="visually-hidden">Павел в инстаграм</span>
                 <svg class="about-confectioner__socials-icon" width="18" height="18" aria-hidden="true">
                   <use xlink:href="#icon-instagram"></use>
@@ -258,7 +258,7 @@
               </a>
             </li>
             <li class="about-confectioner__socials-item">
-              <a class="about-confectioner__socials-link about-confectioner__socials-link--vkontakte" href="#">
+              <a class="about-confectioner__socials-link" href="#">
                 <span class="visually-hidden">Павел в вконтакте</span>
                 <svg class="about-confectioner__socials-icon" width="22" height="14" aria-hidden="true">
                   <use xlink:href="#icon-vk"></use>
@@ -266,7 +266,7 @@
               </a>
             </li>
             <li class="about-confectioner__socials-item">
-              <a class="about-confectioner__socials-link about-confectioner__socials-link--twitter" href="#">
+              <a class="about-confectioner__socials-link" href="#">
                 <span class="visually-hidden">Павел в твиттер</span>
                 <svg class="about-confectioner__socials-icon" width="19" height="16" aria-hidden="true">
                   <use xlink:href="#icon-twitter"></use>
@@ -357,16 +357,16 @@
               Заполните форму ниже и наш кондитер свяжется с Вами
             </p>
             <p class="contacts__form-item">
-              <label class="visually-hidden" for="name-field">Поле для вашего имени</label>
-              <input class="contacts__form-field" type="text" name="name" id="name-field" placeholder="Ваше имя">
+              <input class="contacts__form-field" type="text" name="name" id="name-field">
+              <label class="contacts__form-label" for="name-field">Ваше имя</label>
             </p>
             <p class="contacts__form-item">
-              <label class="visually-hidden" for="email-field">Поле для вашего Email адреса</label>
-              <input class="contacts__form-field" type="email" name="email" id="email-field" placeholder="Email адрес">
+              <input class="contacts__form-field" type="email" name="email" id="email-field" required>
+              <label class="contacts__form-label" for="email-field">Email адрес</label>
             </p>
             <p class="contacts__form-item">
-              <label class="visually-hidden" for="question-field">Поле для вашего вопроса</label>
-              <textarea class="contacts__form-field contacts__form-field--question" name="question" id="question-field" placeholder="Ваш вопрос"></textarea>
+              <textarea class="contacts__form-field contacts__form-field--question" name="question" id="question-field" required></textarea>
+              <label class="contacts__form-label" for="question-field">Ваш вопрос</label>
             </p>
             <button class="contacts__form-button button" type="submit">Отправить</button>
           </form>
@@ -374,8 +374,22 @@
           <p class="contacts__email">Наша почта: bakerybypavel@mail.ru</p>
           <p class="contacts__socials">Мы всоц. сетях:</p>
           <ul class="contacts__socials-list">
-            <li class="contacts__socials-item"><a class="contacts__socials-link contacts__socials-link--instagram" href="#">Инстаграм</a></li>
-            <li class="contacts__socials-item"><a class="contacts__socials-link contacts__socials-link--vkontakte" href="#">Вконтакте</a></li>
+            <li class="contacts__socials-item">
+              <a class="contacts__socials-link" href="#">
+                <span class="visually-hidden">Инстаграм</span>
+                <svg class="contacts__socials-icon" width="32" height="32" aria-hidden="true">
+                  <use xlink:href="#icon-instagram"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="contacts__socials-item">
+              <a class="contacts__socials-link" href="#">
+                <span class="visually-hidden">Вконтакте</span>
+                <svg class="contacts__socials-icon" width="42" height="26" aria-hidden="true">
+                    <use xlink:href="#icon-vk"></use>
+                </svg>
+              </a>
+            </li>
           </ul>
         </div>
       </section>
