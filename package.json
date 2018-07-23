@@ -6,7 +6,8 @@
   "scripts": {
     "editorconfig": "editorconfig-cli",
     "stylelint": "stylelint \"src/less/**/*.less\" --syntax less",
-    "test": "npm run editorconfig && npm run stylelint"
+    "test": "npm run editorconfig && npm run stylelint",
+    "start": "gulp dev"
   },
   "keywords": [],
   "author": "",
