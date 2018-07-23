@@ -1,0 +1,56 @@
+.page-header {
+  padding-top: 5px;
+  background-color: #ffffff;
+}
+
+.page-header__logo {
+  padding-bottom: 2px;
+  font-family: @playfair;
+  .font(16px, 32px);
+}
+
+.page-header__menu-button {
+  position: absolute;
+  top: 13px;
+  right: 20px;
+
+  width: 18px;
+  height: 14px;
+
+  background: none;
+  outline: none;
+  border: none;
+
+  cursor: pointer;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 18px;
+    height: 2px;
+
+    background-color: #000000;
+    box-shadow: 0 12px 0 0;
+
+    content: "";
+  }
+
+  &::after {
+    position: absolute;
+    top: 6px;
+    left: 0;
+
+    width: 18px;
+    height: 2px;
+
+    background-color: #000000;
+
+    content: "";
+  }
+}
+
+.page-header__phone-number {
+  display: none;
+}

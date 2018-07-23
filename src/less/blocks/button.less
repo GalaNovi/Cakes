@@ -1,0 +1,20 @@
+.button {
+  display: block;
+  padding: 16px 65px;
+
+  .font(13px);
+  text-transform: uppercase;
+  color: #ffffff;
+
+  background-color: @brand-color;
+  border: none;
+  outline: none;
+  border-radius: 25px;
+
+  transition: box-shadow 0.1s;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 5px 12px 0 @brand-color-shadow;
+  }
+}

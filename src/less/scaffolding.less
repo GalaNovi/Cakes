@@ -1,11 +1,48 @@
+@font-face {
+  font-family: "Circe";
+  src: url("../fonts/Circe-Regular.woff2") format("woff2"),
+    url("../fonts/Circe-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IntroScriptR";
+  src: url("../fonts/IntroScriptR-H2Base.woff2") format("woff2"),
+    url("../fonts/IntroScriptR-H2Base.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PlayfairDisplay";
+  src: url("../fonts/PlayfairDisplayBold.woff2") format("woff2"),
+    url("../fonts/PlayfairDisplayBold.woff") format("woff");
+  font-weight: 700;
+  font-style: bold;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PlayfairDisplay";
+  src: url("../fonts/PlayfairDisplay-BoldItalic.woff2") format("woff2"),
+    url("../fonts/PlayfairDisplay-BoldItalic.woff") format("woff");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
 body {
   margin: 0 auto;
 
-  font-family: "Oswald", "Arial", sans-serif;
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 400;
-  text-transform: uppercase;
+  color: @color-text;
+  font-family: @circe;
+  font-size: 14px;
+  line-height: auto;
+
+  background-color: #fbebea;
 }
 
 img {
@@ -16,13 +53,12 @@ a {
   text-decoration: none;
 }
 
+html {
+  box-sizing: border-box;
+}
+
 *,
 *::before,
 *::after {
   box-sizing: inherit;
 }
-
-h1 {
-  color: lightgreen;
-  text-shadow: 3px 5px 10px rgba(0, 0, 0, 0.3);
-};
