@@ -2,7 +2,8 @@
   display: block;
   padding: 16px 65px;
 
-  .font(13px);
+  font-size: 13px;
+  font-weight: normal;
   text-transform: uppercase;
   color: #ffffff;
 
@@ -16,5 +17,13 @@
 
   &:hover {
     box-shadow: 0 5px 12px 0 @brand-color-shadow;
+  }
+}
+
+// ====================== Tablet ======================
+
+@media (min-width: @tablet) {
+  .button {
+    padding: 19px 65px;
   }
 }

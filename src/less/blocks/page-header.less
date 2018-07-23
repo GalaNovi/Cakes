@@ -54,3 +54,47 @@
 .page-header__phone-number {
   display: none;
 }
+
+// ================================ Tablet =========================
+
+@media (min-width: @tablet) {
+  .page-header {
+    padding: 5px 28px 0;
+    min-height: 60px;
+  }
+
+  .page-header .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .page-header__menu-button {
+    right: 0;
+    left: 100px;
+
+    width: 26px;
+    height: 18px;
+
+    &::before {
+      width: 26px;
+
+      box-shadow: 0 16px 0 0;
+    }
+
+    &::after {
+      top: 8px;
+
+      width: 26px;
+    }
+  }
+
+  .page-header__phone-number {
+    .indent-reset;
+    margin-top: 20px;
+    display: block;
+
+    font-weight: bold;
+    font-size: 15px;
+    color: @color-text;
+  }
+}

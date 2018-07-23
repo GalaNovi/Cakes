@@ -21,3 +21,27 @@
   .font(22px, 78px);
   color: @color-subheading-text;
 }
+
+// ================================= Tablet ===========================
+
+@media (min-width: @tablet) {
+  .page-main {
+    background-image: url("../img/main-cake-bg-tablet@1x.png");
+    background-position: 270px 13px;
+  }
+
+  .page-main > .container {
+    padding: 0 48px;
+  }
+
+  .page-main__heading {
+    .font(60px, 55px);
+    letter-spacing: 5px;
+    text-align: left;
+  }
+
+  .page-main__heading-addon {
+    font-size: 36px;
+    letter-spacing: -1px;
+  }
+}

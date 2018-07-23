@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <div style="display:none">
+    <div style="display:none;">
       <include src="dev/img/sprite.svg"></include>
     </div>
     <header class="page-header">
@@ -35,8 +35,18 @@
         <div class="container">
           <h2 class="visually-hidden">Наши главные преимущества</h2>
           <ul class="key-features__list">
-            <li class="key-features__item">Натуральные ингредиенты</li>
-            <li class="key-features__item">Доставка бесплатно при заказе  от 2000 рублей*</li>
+            <li class="key-features__item">
+              <svg class="key-features__icon" width="33" height="33" aria-hidden="true">
+                <use xlink:href="#icon-naturals"></use>
+              </svg>
+              <p class="key-features__text">Натуральные ингредиенты</p>
+            </li>
+            <li class="key-features__item">
+              <svg class="key-features__icon" width="33" height="32" aria-hidden="true">
+                <use xlink:href="#icon-gift"></use>
+              </svg>
+              <p class="key-features__text">Доставка бесплатно при заказе  от 2000 рублей*</p>
+            </li>
           </ul>
           <a class="key-features__button button" href="#">Выбрать торт</a>
         </div>

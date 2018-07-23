@@ -5,6 +5,53 @@
   color: #000000;
 }
 
+.key-features__item {
+  display: flex;
+  margin-bottom: 10px;
+}
+
 .key-features__button {
   display: inline-block;
+}
+
+.key-features__icon {
+  flex-shrink: 0;
+  margin-right: 10px;
+  fill: @brand-color;
+}
+
+.key-features__text {
+  .indent-reset;
+  padding-top: 3px;
+  align-items: center;
+}
+
+// ================================ Tablet ==============================
+
+@media (min-width: @tablet) {
+  .key-features .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 48px;
+  }
+
+  .key-features__list {
+    display: flex;
+  }
+
+  .key-features__text {
+    padding-top: 15px;
+    width: 180px;
+  }
+
+  .key-features__icon {
+    width: 55px;
+    height: 55px;
+  }
+
+  .key-features__button {
+    margin-bottom: 150px;
+    order: -1;
+  }
 }
