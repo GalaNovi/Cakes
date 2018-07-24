@@ -3,12 +3,25 @@
   width: 225px;
 
   font-family: @playfair;
-  .font(24px);
+  .font(24px, 30px);
   text-align: center;
 }
 
 .individual-order__heading-addon {
   color: @color-subheading-text;
   font-family: @introscriptr;
-  .font(22px);
+  .font(22px, 26px);
+}
+
+// ================================== Tablet ===============================
+
+@media (min-width: @tablet) {
+  .individual-order__heading {
+    width: auto;
+    .font(28px, 36px);
+  }
+
+  .individual-order__heading-addon {
+    .font(28px, 34px);
+  }
 }

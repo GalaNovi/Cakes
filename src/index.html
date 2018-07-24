@@ -129,18 +129,23 @@
                 <h3 class="form__item-heading">Выберите начинку</h3>
                 <ul class="form__stuffing-list stuffing-list">
                   <li class="stuffing-item stuffing-item--current">
-                    <h4 class="stuffing-item__heading">Шоколадный ганаш</h4>
-                    <p class="stuffing-item__description">
-                      Ароматный шоколадный бисквит, густой шоколадный крем – самый шоколадный из всех возможных десертов!
-                    </p>
+                    <div class="stuffing-item__text-wrapper">
+                      <h4 class="stuffing-item__heading">Шоколадный ганаш</h4>
+                      <p class="stuffing-item__description">
+                        Ароматный шоколадный бисквит, густой шоколадный крем – самый шоколадный из всех возможных десертов!
+                      </p>
+                      <p class="stuffing-item__price">1000 руб/кг</p>
+                      <label class="visually-hidden" for="shocolate-cream">Выбрать шоколадный ганаш</label>
+                      <input class="stuffing-item__radio visually-hidden" id="shocolate-cream" type="radio" name="staffing" value="shocolate-cream">
+                      <button class="stuffing-item__button button" type="button">Выбрать</button>
+                    </div>
                     <div class="stuffing-item__image-wrapper">
-                      <img class="stuffing-item__image" src="img/staffing-shoco-mobile@1x.jpg" alt="Изображение шоколадного бисквита с шоколадным кремом">
+                      <picture class="stuffing-item__image">
+                        <source media="(min-width: 768px)" srcset="img/staffing-shoco-tablet@1x.jpg">
+                        <img src="img/staffing-shoco-mobile@1x.jpg" alt="Изображение шоколадного бисквита с шоколадным кремом">
+                      </picture>
                       <div class="stuffing-item__count">1/12</div>
                     </div>
-                    <p class="stuffing-item__price">1000 руб/кг</p>
-                    <label class="visually-hidden" for="shocolate-cream">Выбрать шоколадный ганаш</label>
-                    <input class="stuffing-item__radio visually-hidden" id="shocolate-cream" type="radio" name="staffing" value="shocolate-cream">
-                    <button class="stuffing-item__button button" type="button">Выбрать</button>
                   </li>
                 </ul>
               </li>
