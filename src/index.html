@@ -55,46 +55,64 @@
         <div class="container">
           <h2 class="cakes__heading">Наши торты</h2>
           <ul class="cakes__list">
-            <li class="cakes__item">
+            <li class="cakes__item cakes__item--classic">
               <a class="cakes__item-link" href="#">
                 <h3 class="cakes__item-heading">Классические</h3>
                 <p class="cakes__item-types">24 вида</p>
-                <img class="cakes__item-image" src="img/classic-cakes-mobile@1x.jpg" alt="Классические торты">
+                <picture class="cakes__item-image">
+                  <source media="(min-width: 768px)" srcset="img/classic-cakes-tablet@1x.jpg">
+                  <img src="img/classic-cakes-mobile@1x.jpg" alt="Классические торты">
+                </picture>
               </a>
             </li>
-            <li class="cakes__item">
+            <li class="cakes__item cakes__item--mousse">
               <a class="cakes__item-link" href="#">
                 <h3 class="cakes__item-heading">Муссовые</h3>
                 <p class="cakes__item-types">12 видов</p>
-                <img class="cakes__item-image" src="img/mousse-cakes-mobile@1x.jpg" alt="Муссовые торты">
+                <picture class="cakes__item-image">
+                  <source media="(min-width: 768px)" srcset="img/mousse-cakes-tablet@1x.jpg">
+                  <img class="cakes__item-image" src="img/mousse-cakes-mobile@1x.jpg" alt="Муссовые торты">
+                </picture>
               </a>
             </li>
-            <li class="cakes__item">
+            <li class="cakes__item cakes__item--wedding">
               <a class="cakes__item-link" href="#">
                 <h3 class="cakes__item-heading">Свадебные</h3>
                 <p class="cakes__item-types">20 видов</p>
-                <img class="cakes__item-image" src="img/wedding-cakes-mobile@1x.jpg" alt="Свадебные торты">
+                <picture class="cakes__item-image">
+                  <source media="(min-width: 768px)" srcset="img/wedding-cakes-tablet@1x.jpg">
+                  <img class="cakes__item-image" src="img/wedding-cakes-mobile@1x.jpg" alt="Свадебные торты">
+                </picture>
               </a>
             </li>
-            <li class="cakes__item">
+            <li class="cakes__item cakes__item--mens">
               <a class="cakes__item-link" href="#">
                 <h3 class="cakes__item-heading">Мужчинам</h3>
                 <p class="cakes__item-types">12 видов</p>
-                <img class="cakes__item-image" src="img/mens-cakes-mobile@1x.jpg" alt="Торты для мужчин">
+                <picture class="cakes__item-image">
+                  <source media="(min-width: 768px)" srcset="img/mens-cakes-tablet@1x.jpg">
+                  <img class="cakes__item-image" src="img/mens-cakes-mobile@1x.jpg" alt="Торты для мужчин">
+                </picture>
               </a>
             </li>
-            <li class="cakes__item">
+            <li class="cakes__item cakes__item--womans">
               <a class="cakes__item-link" href="#">
                 <h3 class="cakes__item-heading">Женщин</h3>
                 <p class="cakes__item-types">16 видов</p>
-                <img class="cakes__item-image" src="img/womans-cakes-mobile@1x.jpg" alt="Торты для женщин">
+                <picture class="cakes__item-image">
+                  <source media="(min-width: 768px)" srcset="img/womans-cakes-tablet@1x.jpg">
+                  <img class="cakes__item-image" src="img/womans-cakes-mobile@1x.jpg" alt="Торты для женщин">
+                </picture>
               </a>
             </li>
-            <li class="cakes__item">
+            <li class="cakes__item cakes__item--kids">
               <a class="cakes__item-link" href="#">
                 <h3 class="cakes__item-heading">Детские</h3>
                 <p class="cakes__item-types">18 видов</p>
-                <img class="cakes__item-image" src="img/kids-cakes-mobile@1x.jpg" alt="Детские торты">
+                <picture class="cakes__item-image">
+                  <source media="(min-width: 768px)" srcset="img/kids-cakes-tablet@1x.jpg">
+                  <img class="cakes__item-image" src="img/kids-cakes-mobile@1x.jpg" alt="Детские торты">
+                </picture>
               </a>
             </li>
           </ul>
@@ -440,5 +458,6 @@
         <div class="page-footer__copyrights">© 2018 Cakes</div>
       </div>
     </footer>
+    <script src="js/picturefill.js"></script>
   </body>
 </html>

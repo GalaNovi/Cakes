@@ -36,6 +36,7 @@
   right: 0;
   margin: 0 auto;
   display: block;
+  text-align: center;
 }
 
 .cakes__item-heading {
@@ -54,4 +55,91 @@
 
 .cakes__item-link:hover .cakes__item-image {
   opacity: 0.4;
+}
+
+// ======================== Tablet ======================
+
+@media (min-width: @tablet) {
+  .cakes__heading {
+    .font(28px, 40px);
+    text-align: left;
+  }
+
+  .cakes__list {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 288px 1fr 288px;
+    grid-template-rows: repeat(4, minmax(184px, auto));
+    grid-template-areas:
+      "classic classic mousse"
+      "classic classic wedding"
+      "mens kids kids"
+      "womans kids kids";
+  }
+
+  .cakes__item {
+    margin: 0;
+
+    box-shadow: 0 10px 13px 0 rgba(163, 6, 60, 0.05);
+
+    &:nth-child(1) {
+      grid-area: classic;
+    }
+
+    &:nth-child(2) {
+      grid-area: mousse;
+    }
+
+    &:nth-child(3) {
+      grid-area: wedding;
+    }
+
+    &:nth-child(4) {
+      grid-area: mens;
+    }
+
+    &:nth-child(5) {
+      grid-area: womans;
+    }
+
+    &:nth-child(6) {
+      grid-area: kids;
+    }
+  }
+
+  .cakes__item-link {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* IE11 */
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .cakes__list {
+      margin: 0 -10px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .cakes__item {
+      flex-grow: 1;
+      margin: 0 10px 20px;
+      min-width: 350px;
+      min-height: 188px;
+      overflow: hidden;
+
+      &:first-child .cakes__item-image,
+      &:last-child .cakes__item-image {
+        margin-top: 5px;
+        width: 200px;
+      }
+
+      &:last-child .cakes__item-image {
+        width: 170px;
+      }
+    }
+  }
+
+  .cakes__item-image {
+    text-align: center;
+  }
 }
