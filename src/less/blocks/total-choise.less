@@ -8,7 +8,7 @@
   .indent-reset;
   margin-bottom: 10px;
   font-family: @playfair;
-  font-size: 22px;
+  .font(22px, 26px);
 }
 
 .total-choise__list {
@@ -19,7 +19,7 @@
 .total-choise__item-heading {
   .indent-reset;
   font-family: @introscriptr;
-  font-size: 20px;
+  .font(20px, 24px);
   color: @brand-color;
   font-weight: bold;
   text-align: center;
@@ -33,4 +33,48 @@
 
   border: 1px solid #dddddd;
   border-radius: 20px;
+}
+
+// ================================= Tablet ===========================
+
+@media (min-width: @tablet) {
+  .total-choise {
+    box-shadow: 0 10px 13px 0 rgba(163, 6, 60, 0.05);
+  }
+
+  .total-choise__heading {
+    .font(18px, 24px);
+  }
+
+  .total-choise__content-wrapper {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .total-choise__list {
+    display: flex;
+  }
+
+  .total-choise__item {
+    margin-right: 20px;
+
+    &:nth-child(2) .total-choise__item-text {
+      width: 75px;
+    }
+  }
+
+  .total-choise__item-heading {
+    .font(18px, 20px);
+  }
+
+  .total-choise__item-text {
+    padding: 0;
+    padding-top: 6px;
+    width: 160px;
+    min-height: 30px;
+
+    .font(12px, 16px);
+
+    border-radius: 20px;
+  }
 }

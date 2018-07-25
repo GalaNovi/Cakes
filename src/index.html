@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <div style="display:none;">
+    <div style="display:none;
+">
       <include src="dev/img/sprite.svg"></include>
     </div>
     <header class="page-header">
@@ -153,10 +154,8 @@
                 <h3 class="form__item-heading">Размер</h3>
                 <ul class="form__size-list size-list">
                   <li class="size-item size-item--current">
-                    <div class="size-item__label-wrapper">
-                      <label class="size-item__label" for="1kg"><span>1 кг</span></label>
-                    </div>
-                    <input class="size-item__radio visually-hidden" id="1kg" type="radio" name="size" value="1kg">
+                    <input class="size-item__radio visually-hidden" id="1kg" type="radio" name="size" value="1kg" checked>
+                    <label class="size-item__label" for="1kg"><span>1 кг</span></label>
                     <p class="size-item__description">
                       17-18 см<br>
                       (1 кг – 6 персон)
@@ -164,8 +163,8 @@
                     <button class="size-item__button button" type="button">Выбрать</button>
                   </li>
                   <li class="size-item">
-                    <label class="size-item__label" for="2kg">2 кг</label>
                     <input class="size-item__radio visually-hidden" id="2kg" type="radio" name="size" value="2kg">
+                    <label class="size-item__label" for="2kg">2 кг</label>
                     <p class="size-item__description">
                       23-24 см<br>
                       (10 кг – 12 персон)
@@ -173,8 +172,8 @@
                     <button class="size-item__button button" type="button">Выбрать</button>
                   </li>
                   <li class="size-item">
-                    <label class="size-item__label" for="5kg">5 кг</label>
                     <input class="size-item__radio visually-hidden" id="5kg" type="radio" name="size" value="5kg">
+                    <label class="size-item__label" for="5kg">5 кг</label>
                     <p class="size-item__description">
                       Два яруса 25 и 20 см<br>
                       (15 кг – 20 персон)
@@ -182,8 +181,8 @@
                     <button class="size-item__button button" type="button">Выбрать</button>
                   </li>
                   <li class="size-item">
-                    <label class="size-item__label" for="8kg">8 кг</label>
                     <input class="size-item__radio visually-hidden" id="8kg" type="radio" name="size" value="8kg">
+                    <label class="size-item__label" for="8kg">8 кг</label>
                     <p class="size-item__description">
                       Три яруса 30,25 и 18 см<br>
                       (25 кг – 30 персон)
@@ -198,8 +197,11 @@
                   <li class="design-item design-item--current">
                     <h4 class="design-item__heading">Ягодное ассорти</h4>
                     <div class="design-item__image-wrapper">
-                      <img class="design-item__image" src="img/berries-mobile@1x.jpg" alt="Изображение оформления «Ягодное ассорти»">
-                      <div class="design-list-count">1/35</div>
+                      <picture class="design-item__image">
+                        <source media="(min-width: 768px)" srcset="img/berries-tablet@1x.jpg">
+                        <img src="img/berries-mobile@1x.jpg" alt="Изображение оформления «Ягодное ассорти»">
+                      </picture>
+                        <div class="design-list-count">1/35</div>
                     </div>
                     <p class="design-item__price">700 руб/кг</p>
                     <label class="visually-hidden" for="berry-allsorts">Ягодное ассорти</label>
@@ -209,8 +211,11 @@
                   <li class="design-item">
                     <h4 class="design-item__heading">Маршмэллоу</h4>
                     <div class="design-item__image-wrapper">
-                      <img class="design-item__image" src="img/marshmallow-mobile@1x.jpg" width="169" height="196" alt="Изображение оформления «Маршмэллоу»">
-                      <div class="design-list-count">1/35</div>
+                      <picture class="design-item__image">
+                        <source media="(min-width: 768px)" srcset="img/marshmallow-tablet@1x.jpg">
+                        <img src="img/marshmallow-mobile@1x.jpg" alt="Изображение оформления «Маршмэллоу»">
+                      </picture>
+                        <div class="design-list-count">1/35</div>
                     </div>
                       <p class="design-item__price">700 руб/кг</p>
                     <label class="visually-hidden" for="marshmallow">Маршмэллоу</label>
@@ -222,21 +227,23 @@
             </ol>
             <section class="form__total-choise total-choise">
               <h3 class="total-choise__heading">Ваш выбор</h3>
-              <ul class="total-choise__list">
-                <li class="total-choise__item">
-                  <p class="total-choise__item-heading">Начинка</p>
-                  <p class="total-choise__item-text">Шоколадный ганаш</p>
-                </li>
-                <li class="total-choise__item">
-                  <p class="total-choise__item-heading">Размер</p>
-                  <p class="total-choise__item-text">1 кг</p>
-                </li>
-                <li class="total-choise__item">
-                  <p class="total-choise__item-heading">Оформление</p>
-                  <p class="total-choise__item-text">Маршмэллоу</p>
-                </li>
-              </ul>
-              <button class="form__button button" type="submit">Заказать торт</button>
+              <div class="total-choise__content-wrapper">
+                <ul class="total-choise__list">
+                  <li class="total-choise__item">
+                    <p class="total-choise__item-heading">Начинка</p>
+                    <p class="total-choise__item-text">Шоколадный ганаш</p>
+                  </li>
+                  <li class="total-choise__item">
+                    <p class="total-choise__item-heading">Размер</p>
+                    <p class="total-choise__item-text">1 кг</p>
+                  </li>
+                  <li class="total-choise__item">
+                    <p class="total-choise__item-heading">Оформление</p>
+                    <p class="total-choise__item-text">Маршмэллоу</p>
+                  </li>
+                </ul>
+                <button class="form__button button" type="submit">Заказать торт</button>
+              </div>
             </section>
           </form>
         </div>
