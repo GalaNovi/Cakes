@@ -8,6 +8,28 @@
 
 .footer-nav__link {
   color: inherit;
-  font-size: 15px;
+  .font(15px, 18px);
   opacity: 0.8;
+}
+
+// ================================== Tablet ==============================
+
+@media (min-width: @tablet) {
+  .footer-nav {
+    flex-grow: 1;
+  }
+
+  .footer-nav__list {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .footer-nav__item {
+    margin-bottom: 0;
+  }
+
+  .footer-nav__link {
+    .font(12px, 14px);
+    opacity: 0.8;
+  }
 }

@@ -6,14 +6,14 @@
 .contacts__heading {
   .indent-reset;
   font-family: @playfair;
-  font-size: 24px;
+  .font(24px, 28px);
   text-align: center;
 }
 
 .contacts__form-heading {
   .indent-reset;
   font-family: @introscriptr;
-  font-size: 22px;
+  .font(22px, 26px);
   color: #32313d;
 }
 
@@ -84,4 +84,27 @@
 
 .contacts__socials-icon {
   fill: @brand-color;
+}
+
+// ============================== Tablet ========================
+
+@media (min-width: @tablet) {
+  .contacts {
+    background: url("../img/strawberry-tablet@1x.jpg") no-repeat right bottom;
+  }
+
+  .contacts .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .contacts__heading {
+    width: 100%;
+    .font(28px, 34px);
+    text-align: left;
+  }
+
+  .contacts__form {
+    margin-right: 65px;
+  }
 }

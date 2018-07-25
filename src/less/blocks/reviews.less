@@ -3,8 +3,9 @@
 }
 
 .reviews__heading {
+  .indent-reset;
   font-family: @playfair;
-  font-size: 24px;
+  .font(24px, 30px);
   text-align: center;
 }
 
@@ -20,6 +21,10 @@
   width: 235px;
 }
 
+.reviews__text-wrapper {
+  text-align: center;
+}
+
 .reviews__item-name {
   .indent-reset;
   font-weight: bold;
@@ -27,11 +32,11 @@
 
 .reviews__item-info {
   .indent-reset;
-  font-size: 12px;
+  .font(12px, 14px);
 }
 
 .reviews__item-text {
-  font-size: 12px;
+  .font(12px, 14px);
   text-align: center;
 }
 
@@ -50,4 +55,48 @@
   right: 20px;
   bottom: 10px;
   color: @brand-color;
+}
+
+// ==================================== Tablet ===============================
+
+@media (min-width: @tablet) {
+  .reviews {
+    margin-bottom: 70px;
+    padding-top: 30px;
+    background: url("../img/ribbons-bg-tablet@1x.png") no-repeat center -10px;
+  }
+
+  .reviews__heading {
+    .font(28px, 34px);
+  }
+
+  .reviews__item {
+    flex-direction: row;
+    align-items: center;
+    margin: 0 auto;
+    width: 450px;
+  }
+
+  .reviews__text-wrapper {
+    width: 255px;
+  }
+
+  .reviews__item-name {
+    .font(16px, 20px);
+    text-align: left;
+  }
+
+  .reviews__item-info {
+    .font(14px, 16px);
+    text-align: left;
+  }
+
+  .reviews__item-text {
+    .font(14px, 16px);
+    text-align: left;
+  }
+
+  .reviews__item-photo {
+    margin-right: 25px;
+  }
 }

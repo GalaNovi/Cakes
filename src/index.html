@@ -253,15 +253,20 @@
           <h2 class="reviews__heading">Отзывы</h2>
           <ul class="reviews__list">
             <li class="reviews__item">
-              <p class="reviews__item-name">Мария</p>
-              <p class="reviews__item-info">юрист, 33 года</p>
-              <img class="reviews__item-photo" src="img/review-photo1-mobile@1x.png" alt="Фотография владельца отзыва">
-              <p class="reviews__item-text">
-                Заказывала торт брауни на юбилей мужа. Гости были в восторге!
-                Отдельное спасибо за своевременную доставку!
-                Теперь будем заказывать торты только у вас для наших семейных праздников:)
-                <a class="reviews__item-show-full" href="#">Развернуть</a>
-              </p>
+              <div class="reviews__text-wrapper">
+                <p class="reviews__item-name">Мария</p>
+                <p class="reviews__item-info">юрист, 33 года</p>
+                <p class="reviews__item-text">
+                  Заказывала торт брауни на юбилей мужа. Гости были в восторге!
+                  Отдельное спасибо за своевременную доставку!
+                  Теперь будем заказывать торты только у вас для наших семейных праздников:)
+                  <a class="reviews__item-show-full" href="#">Развернуть</a>
+                </p>
+              </div>
+              <picture class="reviews__item-photo">
+                <source media="(min-width: 768px)" srcset="img/review-photo1-tablet@1x.png">
+                <img src="img/review-photo1-mobile@1x.png" alt="Фотография владельца отзыва">
+              </picture>
             </li>
           </ul>
           <div class="reviews__count">1/26</div>
@@ -314,14 +319,22 @@
               </a>
             </li>
           </ul>
-          <img class="about-confectioner__photo" src="img/confectioner-photo-mobile@1x.png" alt="Фотография кондитера">
+          <picture class="about-confectioner__photo">
+            <source media="(min-width: 768px)" srcset="img/confectioner-photo-tablet@1x.png">
+            <img src="img/confectioner-photo-mobile@1x.png" alt="Фотография кондитера">
+          </picture>
           <div class="about-confectioner__commas">,,</div>
-          <blockquote class="about-confectioner__quote">
-            Я за простые рецепты. В Италии это называют cucina povera:
-            когда обычные ингредиенты превращаются в божественное блюдо.
-          </blockquote>
-          <img class="about-confectioner__signature" src="img/signature-mobile@1x.png" alt="Подпись кондитера">
-        </div>
+          <div class="about-confectioner__quote-wrapper">
+            <blockquote class="about-confectioner__quote">
+              Я за простые рецепты. В Италии это называют cucina povera:
+              когда обычные ингредиенты превращаются в божественное блюдо.
+            </blockquote>
+          </div>
+          <picture class="about-confectioner__signature">
+            <source media="(min-width: 768px)" srcset="img/signature-tablet@1x.png">
+            <img src="img/signature-mobile@1x.png" alt="Подпись кондитера">
+          </picture>
+          </div>
       </section>
       <section class="features">
         <div class="container">
@@ -334,7 +347,7 @@
               <p class="features__item-text">
                 Работаем  с натуральными ингредиентами и свежими продуктами
               </p>
-              <svg class="features__item-icon" width="61" height="62" aria-hidden="true">
+              <svg class="features__item-icon features__item-icon--natural" width="61" height="62" aria-hidden="true">
                 <use xlink:href="#icon-naturals"></use>
               </svg>
             </li>
@@ -343,7 +356,7 @@
               <p class="features__item-text">
                 Торты изготавливаются в течение суток до отправки
               </p>
-              <svg class="features__item-icon" width="84" height="50" aria-hidden="true">
+              <svg class="features__item-icon features__item-icon--fresh" width="84" height="50" aria-hidden="true">
                   <use xlink:href="#icon-fresh"></use>
               </svg>
             </li>
@@ -410,27 +423,29 @@
             </p>
             <button class="contacts__form-button button" type="submit">Отправить</button>
           </form>
-          <p class="contacts__phone">Или позвоните по телефону:<br>+7 906 899 92 96</p>
-          <p class="contacts__email">Наша почта: bakerybypavel@mail.ru</p>
-          <p class="contacts__socials">Мы всоц. сетях:</p>
-          <ul class="contacts__socials-list">
-            <li class="contacts__socials-item">
-              <a class="contacts__socials-link" href="#">
-                <span class="visually-hidden">Инстаграм</span>
-                <svg class="contacts__socials-icon" width="32" height="32" aria-hidden="true">
-                  <use xlink:href="#icon-instagram"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="contacts__socials-item">
-              <a class="contacts__socials-link" href="#">
-                <span class="visually-hidden">Вконтакте</span>
-                <svg class="contacts__socials-icon" width="42" height="26" aria-hidden="true">
-                    <use xlink:href="#icon-vk"></use>
-                </svg>
-              </a>
-            </li>
-          </ul>
+          <div class="contacts__text-wrapper">
+            <p class="contacts__phone">Или позвоните по телефону:<br>+7 906 899 92 96</p>
+            <p class="contacts__email">Наша почта: bakerybypavel@mail.ru</p>
+            <p class="contacts__socials">Мы всоц. сетях:</p>
+            <ul class="contacts__socials-list">
+              <li class="contacts__socials-item">
+                <a class="contacts__socials-link" href="#">
+                  <span class="visually-hidden">Инстаграм</span>
+                  <svg class="contacts__socials-icon" width="32" height="32" aria-hidden="true">
+                    <use xlink:href="#icon-instagram"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="contacts__socials-item">
+                <a class="contacts__socials-link" href="#">
+                  <span class="visually-hidden">Вконтакте</span>
+                  <svg class="contacts__socials-icon" width="42" height="26" aria-hidden="true">
+                      <use xlink:href="#icon-vk"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
     </main>
