@@ -131,3 +131,45 @@
     display: none;
   }
 }
+
+// ============================== Desktop ==========================
+
+@media (min-width: @desktop) {
+  .size-item {
+    &:first-child .size-item__label {
+      width: 140px;
+      height: 140px;
+
+      background-image: url("../img/size-1-mobile-desktop@1x.png");
+    }
+
+    &:nth-child(2) .size-item__label {
+      width: 185px;
+      height: 185px;
+
+      background-image: url("../img/size-2-mobile-desktop@1x.png");
+    }
+
+    &:nth-child(3) .size-item__label {
+      width: 205px;
+      height: 205px;
+
+      background-image: url("../img/size-3-mobile-desktop@1x.png");
+    }
+
+    &:nth-child(4) .size-item__label {
+      width: 235px;
+      height: 235px;
+
+      background-image: url("../img/size-4-mobile-desktop@1x.png");
+    }
+  }
+
+  .size-item__label {
+    .font(16px, 20px);
+  }
+
+  .size-item__description {
+    .font(18px, 22px);
+  }
+}

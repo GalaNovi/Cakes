@@ -98,3 +98,32 @@
     color: @color-text;
   }
 }
+
+// ================================ Desktop =========================
+
+@media (min-width: @desktop) {
+  .page-header {
+    padding: 0;
+    padding-top: 60px;
+    background-color: transparent;
+  }
+
+  .page-header .container {
+    justify-content: flex-start;
+  }
+
+  .page-header__logo {
+    padding-bottom: 0;
+    .font(23px, 32px);
+    margin-right: 45px;
+  }
+
+  .page-header__menu-button {
+    display: none;
+  }
+
+  .page-header__phone-number {
+    margin: 0;
+    margin-left: auto;
+  }
+}

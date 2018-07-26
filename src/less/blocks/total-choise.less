@@ -78,3 +78,31 @@
     border-radius: 20px;
   }
 }
+
+// ================================= Tablet ===========================
+
+@media (min-width: @tablet) {
+  .total-choise__heading {
+    .font(27px, 66px);
+  }
+
+  .total-choise__item-heading {
+    .font(27px, 30px);
+  }
+
+  .total-choise__item-text {
+    padding: 0;
+    width: 250px;
+
+    .font(18px, 30px);
+    text-align: left;
+
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid #dddddd;
+
+    &:nth-child(2) {
+      width: 140px;
+    }
+  }
+}

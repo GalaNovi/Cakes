@@ -108,3 +108,42 @@
     margin-right: 65px;
   }
 }
+
+// ==================================== Desktop ===============================
+
+@media (min-width: @desktop) {
+  .contacts {
+    background: url("../img/strawberry-desktop@1x.jpg") no-repeat right bottom;
+  }
+
+  .contacts__heading {
+    .font(40px, 50px);
+  }
+
+  .contacts__form-heading {
+    .font(35px, 40px);
+  }
+
+  .contacts__form-text {
+    .font(19px, 24px);
+    font-weight: normal;
+  }
+
+  .contacts__form-field {
+    height: 0;
+    background-color: transparent;
+    border-radius: 0;
+    border-bottom: 1px solid #dddddd;
+
+    &:hover,
+    &:focus {
+      border: none;
+      border-bottom: 1px solid #dddddd;
+    }
+  }
+
+  .contacts__text-wrapper {
+    .font(19px, 24px);
+    font-weight: normal;
+  }
+}

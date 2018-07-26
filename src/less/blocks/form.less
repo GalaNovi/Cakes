@@ -31,7 +31,7 @@
     &:last-child {
       margin-bottom: 0;
 
-      background: #ffffff url("../img/design-bg-tablet@1x.png") no-repeat 20px 100px;
+      background: #ffffff url("../img/design-bg-tablet@1x.jpg") no-repeat 20px 100px;
     }
   }
 
@@ -42,5 +42,20 @@
   .form__button {
     padding: 15px 40px;
     .font(11px, 14px);
+  }
+}
+
+//  =============================== Desktop =========================
+
+@media (min-width: @desktop) {
+  .form__item-heading {
+    width: 250px;
+    .font(27px, 30px);
+  }
+
+  .form__item {
+    &:last-child {
+      background: #ffffff url("../img/design-bg-desktop@1x.jpg") no-repeat 20px 100px;
+    }
   }
 }

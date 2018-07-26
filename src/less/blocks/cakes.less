@@ -68,7 +68,7 @@
   .cakes__list {
     display: grid;
     grid-gap: 20px;
-    grid-template-columns: 288px 1fr 288px;
+    grid-template-columns: 39.5% 1fr 39.5%;
     grid-template-rows: repeat(4, minmax(184px, auto));
     grid-template-areas:
       "classic classic mousse"
@@ -79,8 +79,6 @@
 
   .cakes__item {
     margin: 0;
-
-    box-shadow: 0 10px 13px 0 rgba(163, 6, 60, 0.05);
 
     &:nth-child(1) {
       grid-area: classic;
@@ -110,6 +108,13 @@
   .cakes__item-link {
     width: 100%;
     height: 100%;
+    box-shadow: 0 10px 13px 0 rgba(163, 6, 60, 0.05);
+  }
+
+  .cakes__item-link:hover .cakes__item-image,
+  .cakes__item-link:focus .cakes__item-image {
+    box-shadow: 0 10px 13px 0 rgba(163, 6, 60, 0.12);
+    opacity: 1;
   }
 
   /* IE11 */
@@ -140,6 +145,32 @@
   }
 
   .cakes__item-image {
+    height: 100%;
     text-align: center;
+  }
+
+  .cakes__item-image img {
+    height: 100%;
+  }
+}
+
+// ======================== Desktop ======================
+
+@media (min-width: @desktop) {
+  .cakes__heading {
+    .font(40px, 66px);
+  }
+
+  .cakes__list {
+    grid-gap: 43px;
+    grid-template-rows: repeat(4, minmax(305px, auto));
+  }
+
+  .cakes__item-heading {
+    .font(24px, 28px);
+  }
+
+  .cakes__item-types {
+    .font(20px, 24px);
   }
 }

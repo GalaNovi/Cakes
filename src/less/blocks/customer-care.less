@@ -22,7 +22,7 @@
   .customer-care {
     margin-top: -100px;
     padding-top: 140px;
-    background: url("../img/cake-bg-mobile@1x.png") no-repeat 350px 0;
+    background: url("../img/cake-bg-tablet@1x.png") no-repeat 350px 0;
   }
 
   .customer-care .container {
@@ -39,5 +39,26 @@
 
   .customer-care__text {
     width: 320px;
+  }
+}
+
+// ==================================== Desktop ===============================
+
+@media (min-width: @desktop) {
+  .customer-care {
+    background: url("../img/cake-bg-desktop@1x.png") no-repeat 350px 0;
+  }
+
+  .costumer-care__heading {
+    .font(40px, 50px);
+  }
+
+  .costumer-care__heading-addon {
+    .font(35px, 40px);
+  }
+
+  .customer-care__text {
+    .font(19px, 22px);
+    font-weight: normal;
   }
 }

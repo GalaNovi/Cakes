@@ -42,7 +42,28 @@
   }
 
   .page-main__heading-addon {
-    font-size: 36px;
+    .font(36px, 44px);
     letter-spacing: -1px;
+  }
+}
+
+// ================================= Desktop ===========================
+
+@media (min-width: @desktop) {
+  .page-main {
+    background-image: url("../img/main-cake-bg-desktop@1x.png");
+    background-position: 355px 0;
+  }
+
+  .page-main > .container {
+    padding: 0 74px;
+  }
+
+  .page-main__heading {
+    .font(78px, 70px);
+  }
+
+  .page-main__heading-addon {
+    .font(40px, 48px);
   }
 }
