@@ -12,10 +12,50 @@
 .form__item-heading {
   .indent-reset;
   font-family: @playfair;
-  .font(16px);
+  .font(16px, 20px);
   color: @brand-color;
 }
 
 .form__button {
   margin: 0 auto;
+}
+
+//  =============================== Tablet =========================
+
+@media (min-width: @tablet) {
+  .form__item {
+    display: flex;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 13px 0 rgba(163, 6, 60, 0.05);
+
+    &:last-child {
+      margin-bottom: 0;
+
+      background: #ffffff url("../img/design-bg-tablet@1x.jpg") no-repeat 20px 100px;
+    }
+  }
+
+  .form__item-heading {
+    .font(18px, 24px);
+  }
+
+  .form__button {
+    padding: 15px 40px;
+    .font(11px, 14px);
+  }
+}
+
+//  =============================== Desktop =========================
+
+@media (min-width: @desktop) {
+  .form__item-heading {
+    width: 250px;
+    .font(27px, 30px);
+  }
+
+  .form__item {
+    &:last-child {
+      background: #ffffff url("../img/design-bg-desktop@1x.jpg") no-repeat 20px 100px;
+    }
+  }
 }

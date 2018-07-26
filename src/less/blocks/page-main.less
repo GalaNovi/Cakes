@@ -1,4 +1,5 @@
 .page-main {
+  display: block;
   padding-top: 130px;
 
   background-image: url("../img/main-cake-bg-mobile@1x.png");
@@ -20,4 +21,49 @@
   font-family: @introscriptr;
   .font(22px, 78px);
   color: @color-subheading-text;
+}
+
+// ================================= Tablet ===========================
+
+@media (min-width: @tablet) {
+  .page-main {
+    background-image: url("../img/main-cake-bg-tablet@1x.png");
+    background-position: 270px 13px;
+  }
+
+  .page-main > .container {
+    padding: 0 48px;
+  }
+
+  .page-main__heading {
+    .font(60px, 55px);
+    letter-spacing: 5px;
+    text-align: left;
+  }
+
+  .page-main__heading-addon {
+    .font(36px, 44px);
+    letter-spacing: -1px;
+  }
+}
+
+// ================================= Desktop ===========================
+
+@media (min-width: @desktop) {
+  .page-main {
+    background-image: url("../img/main-cake-bg-desktop@1x.png");
+    background-position: 355px 0;
+  }
+
+  .page-main > .container {
+    padding: 0 74px;
+  }
+
+  .page-main__heading {
+    .font(78px, 70px);
+  }
+
+  .page-main__heading-addon {
+    .font(40px, 48px);
+  }
 }

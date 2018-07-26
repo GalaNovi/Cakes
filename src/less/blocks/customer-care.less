@@ -7,11 +7,58 @@
 
 .costumer-care__heading {
   font-family: @playfair;
-  font-size: 24px;
+  .font(24px, 28px);
 }
 
 .costumer-care__heading-addon {
   font-family: @introscriptr;
-  font-size: 22px;
+  .font(22px, 26px);
   color: #32313d;
+}
+
+// =================================== Tablet =========================
+
+@media (min-width: @tablet) {
+  .customer-care {
+    margin-top: -100px;
+    padding-top: 140px;
+    background: url("../img/cake-bg-tablet@1x.png") no-repeat 350px 0;
+  }
+
+  .customer-care .container {
+    padding: 0 48px;
+  }
+
+  .costumer-care__heading {
+    .font(28px, 34px);
+  }
+
+  .costumer-care__heading-addon {
+    .font(26px, 30px);
+  }
+
+  .customer-care__text {
+    width: 320px;
+  }
+}
+
+// ==================================== Desktop ===============================
+
+@media (min-width: @desktop) {
+  .customer-care {
+    background: url("../img/cake-bg-desktop@1x.png") no-repeat 350px 0;
+  }
+
+  .costumer-care__heading {
+    .font(40px, 50px);
+  }
+
+  .costumer-care__heading-addon {
+    .font(35px, 40px);
+  }
+
+  .customer-care__text {
+    .font(19px, 22px);
+    font-weight: normal;
+  }
 }

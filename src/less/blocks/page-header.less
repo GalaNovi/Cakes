@@ -54,3 +54,76 @@
 .page-header__phone-number {
   display: none;
 }
+
+// ================================ Tablet =========================
+
+@media (min-width: @tablet) {
+  .page-header {
+    padding: 5px 28px 0;
+    min-height: 60px;
+  }
+
+  .page-header .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .page-header__menu-button {
+    right: 0;
+    left: 100px;
+
+    width: 26px;
+    height: 18px;
+
+    &::before {
+      width: 26px;
+
+      box-shadow: 0 16px 0 0;
+    }
+
+    &::after {
+      top: 8px;
+
+      width: 26px;
+    }
+  }
+
+  .page-header__phone-number {
+    .indent-reset;
+    margin-top: 20px;
+    display: block;
+
+    font-weight: bold;
+    font-size: 15px;
+    color: @color-text;
+  }
+}
+
+// ================================ Desktop =========================
+
+@media (min-width: @desktop) {
+  .page-header {
+    padding: 0;
+    padding-top: 60px;
+    background-color: transparent;
+  }
+
+  .page-header .container {
+    justify-content: flex-start;
+  }
+
+  .page-header__logo {
+    padding-bottom: 0;
+    .font(23px, 32px);
+    margin-right: 45px;
+  }
+
+  .page-header__menu-button {
+    display: none;
+  }
+
+  .page-header__phone-number {
+    margin: 0;
+    margin-left: auto;
+  }
+}

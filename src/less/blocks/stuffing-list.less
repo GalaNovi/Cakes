@@ -11,7 +11,7 @@
 .stuffing-item__heading {
   .indent-reset;
   font-family: @circe;
-  .font(16px);
+  .font(16px, 20px);
   font-weight: bold;
   color: @color-text;
 }
@@ -37,7 +37,7 @@
 
 .stuffing-item__price {
   font-family: @playfair;
-  .font(18px);
+  .font(18px, 22px);
   font-style: bold;
   text-align: center;
 }
@@ -46,4 +46,65 @@
   padding: 19px 60px 17px;
   border-radius: 30px;
   align-self: center;
+}
+
+// ================================ Tablet ===========================
+
+@media (min-width: @tablet) {
+  .stuffing-item {
+    flex-direction: row;
+    width: 425px;
+  }
+
+  .stuffing-item__image-wrapper {
+    width: 210px;
+  }
+
+  .stuffing-item__text-wrapper {
+    width: 200px;
+  }
+
+  .stuffing-item__heading {
+    .font(18px, 24px);
+  }
+
+  .stuffing-item__price {
+    .font(20px, 24px);
+    text-align: left;
+  }
+
+  .stuffing-item__button {
+    padding: 15px 45px 14px;
+    .font(11px, 14px);
+  }
+}
+
+// ================================ Desktop ===========================
+
+@media (min-width: @desktop) {
+  .stuffing-item {
+    justify-content: space-between;
+    width: 660px;
+  }
+
+  .stuffing-item__image-wrapper {
+    width: 343px;
+  }
+
+  .stuffing-item__text-wrapper {
+    width: 280px;
+  }
+
+  .stuffing-item__heading {
+    .font(20px, 26px);
+  }
+
+  .stuffing-item__description {
+    .font(18px, 24px);
+    font-weight: normal;
+  }
+
+  .stuffing-item__price {
+    .font(22px, 26px);
+  }
 }

@@ -1,13 +1,13 @@
 .features__heading {
   .indent-reset;
   font-family: @playfair;
-  font-size: 24px;
+  .font(24px, 28px);
   text-align: center;
 }
 
 .features__heading-addon {
   font-family: @introscriptr;
-  font-size: 22px;
+  .font(22px, 26px);
   color: #32313d;
 }
 
@@ -43,4 +43,95 @@
   right: 0;
   margin: 0 auto;
   fill: @brand-color;
+}
+
+// ============================== Tablet ===========================
+
+@media (min-width: @tablet) {
+  .features {
+    padding-bottom: 110px;
+    background: url("../img/features-bg-tablet@1x.png") no-repeat -15px 0;
+  }
+
+  .features__heading {
+    margin-bottom: 50px;
+    .font(28px, 34px);
+  }
+
+  .features__heading-addon {
+    .font(26px, 30px);
+  }
+
+  .features__list {
+    margin: 0;
+    background-color: transparent;
+  }
+
+  .features__item {
+    margin-left: auto;
+    padding: 0;
+    padding-left: 80px;
+    width: 350px;
+  }
+
+  .features__item-heading {
+    margin-bottom: 5px;
+    .font(15px, 18px);
+    text-align: left;
+  }
+
+  .features__item-text {
+    .font(14px, 18px);
+    text-align: left;
+  }
+
+  .features__item-icon {
+    position: absolute;
+    right: auto;
+    margin: 0;
+
+    &--natural {
+      top: 5px;
+      left: 10px;
+      width: 48px;
+      height: 48px;
+    }
+
+    &--fresh {
+      top: 10px;
+      width: 63px;
+      height: 38px;
+    }
+  }
+}
+
+// ==================================== Desktop ===============================
+
+@media (min-width: @desktop) {
+  .features {
+    padding-bottom: 360px;
+    background: url("../img/features-bg-desktop@1x.png") no-repeat -15px 0;
+  }
+
+  .features__heading {
+    .font(40px, 50px);
+  }
+
+  .features__heading-addon {
+    .font(35px, 40px);
+  }
+
+  .features__item {
+    padding-left: 80px;
+    width: 460px;
+  }
+
+  .features__item-heading {
+    .font(20px, 24px);
+  }
+
+  .features__item-text {
+    .font(19px, 22px);
+    font-weight: normal;
+  }
 }
