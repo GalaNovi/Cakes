@@ -35,15 +35,6 @@
   display: block;
 }
 
-.stuffing-item__count {
-  position: absolute;
-  right: 8px;
-  bottom: 8px;
-
-  .font(12px);
-  color: #ffffff;
-}
-
 .stuffing-item__price {
   .indent-reset;
   margin-bottom: 20px;
@@ -59,14 +50,19 @@
 @media (min-width: @tablet) {
   .stuffing-item {
     flex-direction: row;
+    align-items: flex-start;
     width: 425px;
   }
 
   .stuffing-item__image-wrapper {
+    flex-shrink: 0;
+    margin-right: 25px;
+    margin-bottom: 0;
     width: 210px;
   }
 
   .stuffing-item__text-wrapper {
+    margin-top: 20px;
     width: 200px;
   }
 
@@ -74,14 +70,14 @@
     .font(18px, 24px);
   }
 
-  .stuffing-item__price {
-    .font(20px, 24px);
-    text-align: left;
+  .stuffing-item__description {
+    margin-bottom: 10px;
   }
 
-  .stuffing-item__button {
-    padding: 15px 45px 14px;
-    .font(11px, 14px);
+  .stuffing-item__price {
+    margin-bottom: 23px;
+    .font(20px, 24px);
+    text-align: left;
   }
 }
 

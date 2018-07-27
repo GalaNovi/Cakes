@@ -56,13 +56,16 @@
 @media (min-width: @tablet) {
   .design-list {
     display: flex;
-    margin-left: 50px;
+    margin-top: -23px;
+    margin-left: 45px;
   }
 
   .design-item {
     display: block;
     position: relative;
-    margin-right: 26px;
+    margin-right: 24px;
+
+    .transition;
 
     &:hover {
       box-shadow: 0 7px 13px 0 rgba(0, 0, 0, 0.14);
@@ -83,6 +86,7 @@
   }
 
   .design-item__image-wrapper {
+    margin-bottom: 0;
     box-shadow: 0 7px 13px 0 rgba(0, 0, 0, 0.05);
   }
 
@@ -102,9 +106,9 @@
   }
 }
 
-// =================================== Tablet =================================
+// =================================== Desktop =================================
 
-@media (min-width: @tablet) {
+@media (min-width: @desktop) {
   .design-item__heading {
     .font(20px, 30px);
   }

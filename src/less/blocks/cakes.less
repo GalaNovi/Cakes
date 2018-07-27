@@ -64,7 +64,13 @@
 // ======================== Tablet ======================
 
 @media (min-width: @tablet) {
+  .cakes {
+    padding-top: 100px;
+  }
+
   .cakes__heading {
+    margin-bottom: 30px;
+
     .font(28px, 40px);
     text-align: left;
   }
@@ -110,6 +116,7 @@
   }
 
   .cakes__item-link {
+    padding: 18px 25px;
     width: 100%;
     height: 100%;
     box-shadow: 0 10px 13px 0 rgba(163, 6, 60, 0.05);
@@ -151,6 +158,8 @@
   .cakes__item-image {
     height: 100%;
     text-align: center;
+
+    .transition;
   }
 
   .cakes__item-image img {

@@ -59,18 +59,24 @@
 
 @media (min-width: @tablet) {
   .page-header {
-    padding: 5px 28px 0;
+    padding-top: 15px;
     min-height: 60px;
   }
 
   .page-header .container {
+    padding: 0 48px;
     display: flex;
     justify-content: space-between;
   }
 
+  .page-header__logo {
+    .font(20px, 32px);
+  }
+
   .page-header__menu-button {
+    top: 20px;
     right: 0;
-    left: 100px;
+    left: 130px;
 
     width: 26px;
     height: 18px;
@@ -90,11 +96,11 @@
 
   .page-header__phone-number {
     .indent-reset;
-    margin-top: 20px;
+    margin-top: 10px;
     display: block;
 
     font-weight: bold;
-    font-size: 15px;
+    .font(15px, 16px);
     color: @color-text;
   }
 }
