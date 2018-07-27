@@ -49,7 +49,9 @@
               <p class="key-features__text">Доставка бесплатно при заказе  от 2000 рублей*</p>
             </li>
           </ul>
-          <a class="key-features__button button" href="#">Выбрать торт</a>
+          <div class="key-features__button-wrapper">
+            <a class="key-features__button button" href="#">Выбрать торт</a>
+          </div>
         </div>
       </section>
       <section class="cakes">
@@ -102,7 +104,7 @@
             </li>
             <li class="cakes__item cakes__item--womans">
               <a class="cakes__item-link" href="#">
-                <h3 class="cakes__item-heading">Женщин</h3>
+                <h3 class="cakes__item-heading">Женщинам</h3>
                 <p class="cakes__item-types">16 видов</p>
                 <picture class="cakes__item-image">
                   <source media="(min-width: 1366px)" srcset="img/womans-cakes-desktop@1x.jpg">
@@ -144,7 +146,7 @@
                       <p class="stuffing-item__price">1000 руб/кг</p>
                       <label class="visually-hidden" for="shocolate-cream">Выбрать шоколадный ганаш</label>
                       <input class="stuffing-item__radio visually-hidden" id="shocolate-cream" type="radio" name="staffing" value="shocolate-cream">
-                      <button class="stuffing-item__button button" type="button">Выбрать</button>
+                      <button class="form__item-button button" type="button">Выбрать</button>
                     </div>
                     <div class="stuffing-item__image-wrapper">
                       <picture class="stuffing-item__image">
@@ -167,7 +169,7 @@
                       17-18 см<br>
                       (1 кг – 6 персон)
                     </p>
-                    <button class="size-item__button button" type="button">Выбрать</button>
+                    <button class="form__item-button button" type="button">Выбрать</button>
                   </li>
                   <li class="size-item">
                     <input class="size-item__radio visually-hidden" id="2kg" type="radio" name="size" value="2kg">
@@ -176,7 +178,7 @@
                       23-24 см<br>
                       (10 кг – 12 персон)
                     </p>
-                    <button class="size-item__button button" type="button">Выбрать</button>
+                    <button class="form__item-button button" type="button">Выбрать</button>
                   </li>
                   <li class="size-item">
                     <input class="size-item__radio visually-hidden" id="5kg" type="radio" name="size" value="5kg">
@@ -185,7 +187,7 @@
                       Два яруса 25 и 20 см<br>
                       (15 кг – 20 персон)
                     </p>
-                    <button class="size-item__button button" type="button">Выбрать</button>
+                    <button class="form__item-button button" type="button">Выбрать</button>
                   </li>
                   <li class="size-item">
                     <input class="size-item__radio visually-hidden" id="8kg" type="radio" name="size" value="8kg">
@@ -194,14 +196,14 @@
                       Три яруса 30,25 и 18 см<br>
                       (25 кг – 30 персон)
                     </p>
-                    <button class="size-item__button button" type="button">Выбрать</button>
+                    <button class="form__item-button button" type="button">Выбрать</button>
                   </li>
                 </ul>
               </li>
               <li class="form__item">
                 <h3 class="form__item-heading">Оформление</h3>
                 <ul class="form__design-list design-list">
-                  <li class="design-item design-item--current">
+                  <li class="design-item">
                     <h4 class="design-item__heading">Ягодное ассорти</h4>
                     <div class="design-item__image-wrapper">
                       <picture class="design-item__image">
@@ -214,9 +216,9 @@
                     <p class="design-item__price">700 руб/кг</p>
                     <label class="visually-hidden" for="berry-allsorts">Ягодное ассорти</label>
                     <input class="design-item__radio visually-hidden" id="berry-allsorts" type="radio" name="design" value="berry-allsorts">
-                    <button class="design-item__button button" type="button">Выбрать</button>
+                    <button class="form__item-button button" type="button">Выбрать</button>
                   </li>
-                  <li class="design-item">
+                  <li class="design-item design-item--current">
                     <h4 class="design-item__heading">Маршмэллоу</h4>
                     <div class="design-item__image-wrapper">
                       <picture class="design-item__image">
@@ -226,10 +228,10 @@
                       </picture>
                         <div class="design-list-count">1/35</div>
                     </div>
-                      <p class="design-item__price">700 руб/кг</p>
+                      <p class="design-item__price">600 руб/кг</p>
                     <label class="visually-hidden" for="marshmallow">Маршмэллоу</label>
                     <input class="design-item__radio visually-hidden" id="marshmallow" type="radio" name="design" value="marshmallow">
-                    <button class="design-item__button button" type="button">Выбрать</button>
+                    <button class="form__item-button button" type="button">Выбрать</button>
                   </li>
                 </ul>
               </li>
@@ -290,7 +292,7 @@
               <h3 class="about-confectioner__item-heading">Кондитер как призвание</h3>
               <p class="about-confectioner__item-description">
                 Павел — профессиональный повар в различных гастрономических областях,
-                но однажды его сердце покорило кондитерское искусство. С ранних лет
+                но однажды его сердце покорило кондитерское искусство.<br> С ранних лет
                 он увлекался утонченным мастерством и обратился к своим талантам как кондитер.
               </p>
             </li>
@@ -429,7 +431,7 @@
               <input class="contacts__form-field" type="email" name="email" id="email-field" required>
               <label class="contacts__form-label" for="email-field">Email адрес</label>
             </p>
-            <p class="contacts__form-item">
+            <p class="contacts__form-item contacts__form-item--question">
               <textarea class="contacts__form-field contacts__form-field--question" name="question" id="question-field" required></textarea>
               <label class="contacts__form-label" for="question-field">Ваш вопрос</label>
             </p>

@@ -1,24 +1,33 @@
 .stuffing-list {
   .list-reset;
+  padding-top: 17px;
 }
 
 .stuffing-item {
-  padding: 18px 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
 }
 
 .stuffing-item__heading {
   .indent-reset;
+  margin-bottom: 3px;
+
   font-family: @circe;
-  .font(16px, 20px);
+  .font(16px, 22px);
   font-weight: bold;
   color: @color-text;
 }
 
+.stuffing-item__description {
+  .indent-reset;
+  .font(14px, 17px);
+  margin-bottom: 13px;
+}
+
 .stuffing-item__image-wrapper {
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 32px;
   order: -1;
 }
 
@@ -36,16 +45,13 @@
 }
 
 .stuffing-item__price {
+  .indent-reset;
+  margin-bottom: 20px;
+
   font-family: @playfair;
   .font(18px, 22px);
   font-style: bold;
   text-align: center;
-}
-
-.stuffing-item__button {
-  padding: 19px 60px 17px;
-  border-radius: 30px;
-  align-self: center;
 }
 
 // ================================ Tablet ===========================

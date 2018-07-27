@@ -1,23 +1,50 @@
 .form__list {
   .list-reset;
+  counter-reset: myCounter;
 }
 
 .form__item {
-  padding: 20px;
+  position: relative;
+  padding: 18px 20px 26px;
   margin-bottom: 10px;
   background-color: #ffffff;
-  list-style: none;
+
+  &::before {
+    position: absolute;
+    top: 5px;
+    left: 17px;
+    display: inline-block;
+    counter-increment: myCounter;
+    content: counter(myCounter, decimal-leading-zero);
+
+    .font(30px, 36px);
+    font-family: @playfair;
+    color: @brand-color;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .form__item-heading {
   .indent-reset;
+  margin-left: 40px;
   font-family: @playfair;
   .font(16px, 20px);
   color: @brand-color;
 }
 
+.form__item-button {
+  margin: 0 auto;
+  padding: 20px 60px 17px;
+  border-radius: 30px;
+  align-self: center;
+}
+
 .form__button {
   margin: 0 auto;
+  padding: 20px 62px 17px;
 }
 
 //  =============================== Tablet =========================

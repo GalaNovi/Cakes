@@ -1,10 +1,17 @@
+.about-confectioner {
+  padding-top: 65px;
+}
+
 .about-confectioner .container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .about-confectioner__heading {
   .indent-reset;
+  margin-bottom: 25px;
+
   font-family: @playfair;
   .font(24px, 28px);
   text-align: center;
@@ -15,14 +22,23 @@
   .list-reset;
 }
 
+.about-confectioner__item {
+  margin-bottom: 13px;
+}
+
 .about-confectioner__item-heading {
   .indent-reset;
-  font-weight: bold;
-  .font(15px, 18px);
+  margin-bottom: 5px;
+
+  .font(15px, 20px);
 }
 
 .about-confectioner__item-description {
   .indent-reset;
+
+  .font(14px, 17px);
+  font-weight: normal;
+  letter-spacing: -0.1px;
 }
 
 .about-confectioner__socials-list {
@@ -55,15 +71,16 @@
 
 .about-confectioner__photo {
   margin-right: 35px;
+  margin-bottom: 35px;
   border-radius: 50%;
   order: -2;
 }
 
 .about-confectioner__commas {
-  margin: 0 auto 15px;
+  margin: -20px auto 15px;
   color: #ffffff;
   font-family: @playfair;
-  font-size: 60px;
+  .font(60px, 60px);
   font-weight: bold;
 }
 
@@ -73,6 +90,8 @@
 
 .about-confectioner__quote {
   .indent-reset;
+  margin-bottom: 5px;
+
   font-family: @playfair;
   .font(13px, 16px);
   font-style: italic;

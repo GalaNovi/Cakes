@@ -1,6 +1,9 @@
 .contacts {
   padding-top: 35px;
-  padding-bottom: 50px;
+}
+
+.contacts__form {
+  margin-bottom: 30px;
 }
 
 .contacts__heading {
@@ -13,16 +16,25 @@
 .contacts__form-heading {
   .indent-reset;
   font-family: @introscriptr;
-  .font(22px, 26px);
+  .font(22px, 40px);
   color: #32313d;
 }
 
 .contacts__form-text {
   .indent-reset;
+  margin-bottom: 10px;
+
+  font-weight: bold;
 }
 
 .contacts__form-item {
+  .indent-reset;
   position: relative;
+  margin-bottom: 10px;
+
+  &--question {
+    margin-bottom: 15px;
+  }
 }
 
 .contacts__form-label {
@@ -52,10 +64,34 @@
   &:hover {
     border: 1px solid rgba(245, 0, 73, 0.15);
   }
+
+  &:focus + .contacts__form-label,
+  &:active + .contacts__form-label {
+    display: none;
+  }
 }
 
 .contacts__form-button {
   margin: 0 auto;
+  padding: 13px 45px;
+
+  .font(19px, 24px);
+  text-transform: none;
+}
+
+.contacts__phone {
+  .indent-reset;
+  margin-bottom: 15px;
+}
+
+.contacts__email {
+  .indent-reset;
+  margin-bottom: 15px;
+}
+
+.contacts__socials {
+  .indent-reset;
+  margin-bottom: 15px;
 }
 
 .contacts__socials-list {
