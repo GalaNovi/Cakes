@@ -52,6 +52,8 @@
 
 @media (min-width: @tablet) {
   .page-footer {
+    padding-top: 33px;
+    padding-bottom: 20px;
     position: relative;
   }
 
@@ -61,7 +63,7 @@
   }
 
   .page-footer__logo {
-    margin-right: 60px;
+    margin-right: 40px;
     .font(18px, 24px);
   }
 
@@ -70,14 +72,28 @@
   }
 
   .page-footer__line {
+    margin-bottom: 20px;
     width: 100%;
   }
 
   .page-footer__socials-list {
     position: absolute;
-    left: 50%;
-    bottom: 2px;
+    left: 53%;
+    bottom: 12px;
     margin-bottom: 0;
+
+    z-index: 1;
+  }
+
+  .page-footer__copyrights-wrapper {
+    position: relative;
+    margin: 0 auto;
+    width: 190px;
+  }
+
+  .page-footer__copyrights {
+    .font(14px, 14px);
+    cursor: default;
   }
 }
 

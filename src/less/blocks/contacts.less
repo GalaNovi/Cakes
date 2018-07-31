@@ -79,17 +79,7 @@
   text-transform: none;
 }
 
-.contacts__phone {
-  .indent-reset;
-  margin-bottom: 15px;
-}
-
-.contacts__email {
-  .indent-reset;
-  margin-bottom: 15px;
-}
-
-.contacts__socials {
+.contacts__text-wrapper p {
   .indent-reset;
   margin-bottom: 15px;
 }
@@ -126,10 +116,13 @@
 
 @media (min-width: @tablet) {
   .contacts {
+    padding-top: 42px;
+    padding-bottom: 78px;
     background: url("../img/strawberry-tablet@1x.jpg") no-repeat right bottom;
   }
 
   .contacts .container {
+    padding: 0 48px;
     display: flex;
     flex-wrap: wrap;
   }
@@ -142,6 +135,36 @@
 
   .contacts__form {
     margin-right: 65px;
+    width: 345px;
+  }
+
+  .contacts__form-heading {
+    margin-bottom: 5px;
+  }
+
+  .contacts__form-text {
+    margin-bottom: 15px;
+    width: 300px;
+  }
+
+  .contacts__form-item {
+    &--question {
+      margin-bottom: 25px;
+    }
+  }
+
+  .contacts__form-button {
+    margin: 0;
+    padding: 10px 45px;
+    font-size: 14px;
+  }
+
+  .contacts__text-wrapper {
+    padding-top: 47px;
+  }
+
+  .contacts__text-wrapper p {
+    margin-bottom: 18px;
   }
 }
 
