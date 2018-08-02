@@ -11,6 +11,16 @@
   .font(28px, 34px);
 }
 
+.page-footer__logo-link {
+  color: inherit;
+
+  .transition;
+
+  &:hover {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  }
+}
+
 .page-footer__phone-number {
   margin-bottom: 25px;
   opacity: 0.8;
@@ -28,6 +38,8 @@
 
 .page-footer__socials-link {
   opacity: 0.4;
+
+  .transition;
 
   &:hover {
     opacity: 1;
@@ -113,9 +125,12 @@
   }
 
   .page-footer__socials-list {
-    left: auto;
-    right: 55px;
-    bottom: 85px;
+    position: static;
+    padding-top: 20px;
+  }
+
+  .page-footer__socials-item:last-child {
+    margin-right: 0;
   }
 
   .page-footer__socials-icon {
