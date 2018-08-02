@@ -5,7 +5,7 @@
 
   background-image: url("../img/main-cake-bg-mobile@1x.png");
   background-repeat: no-repeat;
-  background-position: -30px -40px;
+  background-position: center -40px;
 }
 
 .page-main__heading {
@@ -32,13 +32,14 @@
     padding-top: 105px;
     padding-bottom: 0;
     background-image: url("../img/main-cake-bg-tablet@1x.png");
-    background-position: 270px 13px;
+    background-position: right -136px top 13px;
   }
 
   .page-main > .container {
     display: flex;
     flex-direction: column;
     padding: 0 48px;
+    width: 768px;
   }
 
   .page-main__heading {
@@ -58,8 +59,9 @@
 
 @media (min-width: @desktop) {
   .page-main {
+    padding-top: 150px;
     background-image: url("../img/main-cake-bg-desktop@1x.png");
-    background-position: 355px 0;
+    background-position: 627px 17px;
   }
 
   .page-main > .container {
@@ -68,6 +70,7 @@
 
   .page-main__heading {
     .font(78px, 70px);
+    letter-spacing: 6px;
   }
 
   .page-main__heading-addon {

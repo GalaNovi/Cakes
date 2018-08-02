@@ -68,6 +68,10 @@
     background: url("../img/features-bg-tablet@1x.png") no-repeat -15px 70px;
   }
 
+  .features > .container {
+    width: 768px;
+  }
+
   .features__heading {
     margin-bottom: 50px;
     .font(28px, 34px);
@@ -129,12 +133,14 @@
 
 @media (min-width: @desktop) {
   .features {
+    padding-top: 125px;
     padding-bottom: 360px;
-    background: url("../img/features-bg-desktop@1x.png") no-repeat -15px 0;
+    background: url("../img/features-bg-desktop@1x.png") no-repeat -33px 112px;
   }
 
   .features__heading {
-    .font(40px, 50px);
+    margin-bottom: 115px;
+    .font(40px, 60px);
   }
 
   .features__heading-addon {
@@ -142,6 +148,8 @@
   }
 
   .features__item {
+    margin-right: 180px;
+    margin-bottom: 40px;
     padding-left: 80px;
     width: 460px;
   }
@@ -153,5 +161,23 @@
   .features__item-text {
     .font(19px, 22px);
     font-weight: normal;
+  }
+
+  .features__item-icon {
+    top: 10px;
+    left: -10px;
+    margin: 0;
+
+    &--natural {
+      width: 61px;
+      height: 61px;
+    }
+
+    &--fresh {
+      top: 5px;
+      left: -25px;
+      width: 80px;
+      height: 48px;
+    }
   }
 }

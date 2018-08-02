@@ -30,11 +30,12 @@
     margin-top: -90px;
     padding-top: 166px;
     padding-bottom: 133px;
-    background: url("../img/cake-bg-tablet@1x.png") no-repeat 350px 0;
+    background: url("../img/cake-bg-tablet@1x.png") no-repeat right -32px top 0;
   }
 
   .customer-care .container {
     padding: 0 48px;
+    width: 768px;
   }
 
   .costumer-care__heading {
@@ -54,11 +55,19 @@
 
 @media (min-width: @desktop) {
   .customer-care {
-    background: url("../img/cake-bg-desktop@1x.png") no-repeat 350px 0;
+    margin-top: -330px;
+    padding-top: 330px;
+    padding-bottom: 260px;
+    background: url("../img/cake-bg-desktop@1x.png") no-repeat 600px 0;
+  }
+
+  .customer-care > .container {
+    padding: 0 74px;
   }
 
   .costumer-care__heading {
-    .font(40px, 50px);
+    margin-bottom: 5px;
+    .font(40px, 55px);
   }
 
   .costumer-care__heading-addon {
@@ -66,6 +75,7 @@
   }
 
   .customer-care__text {
+    width: 440px;
     .font(19px, 22px);
     font-weight: normal;
   }

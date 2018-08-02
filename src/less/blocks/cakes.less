@@ -170,13 +170,22 @@
 // ======================== Desktop ======================
 
 @media (min-width: @desktop) {
+  .cakes {
+    padding-top: 195px;
+  }
+
   .cakes__heading {
+    margin-bottom: 50px;
     .font(40px, 66px);
   }
 
   .cakes__list {
     grid-gap: 43px;
     grid-template-rows: repeat(4, minmax(305px, auto));
+  }
+
+  .cakes__item-link {
+    padding: 35px 40px;
   }
 
   .cakes__item-heading {

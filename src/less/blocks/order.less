@@ -57,6 +57,7 @@
 
   .order .container {
     padding: 0 48px;
+    width: 768px;
   }
 
   .order__heading {
@@ -84,12 +85,29 @@
 
 @media (min-width: @desktop) {
   .order {
-    padding: 30px 0 130px;
-    background: #e7383f url("../img/hands-desktop@1x.png") no-repeat 0 50px;
+    padding: 108px 0 150px;
+    background: #e7383f url("../img/hands-desktop@1x.png") no-repeat 0 57px;
   }
 
   .order__heading {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: 235px;
+
     .font(40px, 66px);
+  }
+
+  .order__list {
+    width: 460px;
+    margin-right: 37px;
+  }
+
+  .order__item {
+    &::before {
+      top: -20px;
+      left: -43px;
+      .font(64px, 66px);
+    }
   }
 
   .order__item-heading {
@@ -99,11 +117,5 @@
   .order__item-text {
     .font(19px, 24px);
     font-weight: normal;
-  }
-
-  .order__item {
-    &::before {
-      .font(64px, 66px);
-    }
   }
 }

@@ -29,7 +29,7 @@
 
 .form__item-heading {
   .indent-reset;
-  margin-left: 0;
+  margin-left: 40px;
   font-family: @playfair;
   .font(16px, 20px);
   color: @brand-color;
@@ -59,7 +59,7 @@
     &:last-child {
       margin-bottom: 0;
 
-      background: #ffffff url("../img/design-bg-tablet@1x.jpg") no-repeat 10px 120px;
+      background: #ffffff url("../img/design-bg-tablet@1x.jpg") no-repeat 40px 120px;
     }
 
     &::before {
@@ -100,7 +100,6 @@
   .form__button {
     margin: 0;
     margin-top: auto;
-    margin-left: auto;
     padding: 16px 41px 13px;
 
     .font(10px, 14px);
@@ -110,14 +109,40 @@
 //  =============================== Desktop =========================
 
 @media (min-width: @desktop) {
+  .form__item {
+    margin-bottom: 35px;
+    padding: 73px 55px 90px;
+
+    &:last-child {
+      padding-bottom: 60px;
+      background: #ffffff url("../img/design-bg-desktop@1x.jpg") no-repeat 20px 200px;
+    }
+
+    &::before {
+      top: 55px;
+      left: 80px;
+
+      .font(58px, 60px);
+    }
+  }
+
   .form__item-heading {
-    width: 250px;
+    margin-top: 50px;
+    margin-right: 35px;
+    width: 180px;
     .font(27px, 30px);
   }
 
-  .form__item {
-    &:last-child {
-      background: #ffffff url("../img/design-bg-desktop@1x.jpg") no-repeat 20px 100px;
-    }
+  .form__item-button {
+    padding: 19px 60px 16px;
+    .font(13px, 16px);
+  }
+
+  .form__button {
+    margin: 0;
+    margin-top: 20px;
+    padding: 19px 60px 16px;
+
+    .font(13px, 16px);
   }
 }

@@ -33,6 +33,7 @@
 
 .stuffing-item__image {
   display: block;
+  text-align: center;
 }
 
 .stuffing-item__price {
@@ -48,9 +49,14 @@
 // ================================ Tablet ===========================
 
 @media (min-width: @tablet) {
+  .stuffing-list {
+    margin: 0 auto;
+  }
+
   .stuffing-item {
     flex-direction: row;
     align-items: flex-start;
+    margin-left: -110px;
     width: 425px;
   }
 
@@ -86,14 +92,16 @@
 @media (min-width: @desktop) {
   .stuffing-item {
     justify-content: space-between;
-    width: 660px;
+    width: 665px;
   }
 
   .stuffing-item__image-wrapper {
+    margin-right: 0;
     width: 343px;
   }
 
   .stuffing-item__text-wrapper {
+    padding-top: 47px;
     width: 280px;
   }
 
@@ -102,11 +110,13 @@
   }
 
   .stuffing-item__description {
+    margin-bottom: 15px;
     .font(18px, 24px);
     font-weight: normal;
   }
 
   .stuffing-item__price {
+    margin-bottom: 50px;
     .font(22px, 26px);
   }
 }

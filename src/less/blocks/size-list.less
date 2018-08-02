@@ -65,7 +65,7 @@
 @media (min-width: @tablet) {
   .size-list {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: flex-end;
     width: 100%;
     margin-top: -25px;
@@ -76,6 +76,7 @@
 
   .size-item {
     display: block;
+    margin-right: 10px;
 
     &:first-child .size-item__label {
       width: 105px;
@@ -111,6 +112,10 @@
       background-image: url("../img/size-4-tablet@1x.png");
       background-repeat: no-repeat;
       background-position: center center;
+    }
+
+    &:last-child {
+      margin-right: 0;
     }
   }
 
@@ -148,6 +153,13 @@
 // ============================== Desktop ==========================
 
 @media (min-width: @desktop) {
+  .size-list {
+    padding-top: 75px;
+    padding-bottom: 62px;
+    margin-left: -125px;
+    width: 880px;
+  }
+
   .size-item {
     &:first-child .size-item__label {
       width: 140px;
@@ -179,6 +191,7 @@
   }
 
   .size-item__label {
+    margin-bottom: 17px;
     .font(16px, 20px);
   }
 

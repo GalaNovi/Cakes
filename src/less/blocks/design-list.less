@@ -48,8 +48,11 @@
 @media (min-width: @tablet) {
   .design-list {
     display: flex;
+    flex-grow: 1;
+    justify-content: center;
     margin-top: -23px;
     margin-left: 45px;
+    margin-right: 50px;
   }
 
   .design-item {
@@ -101,11 +104,22 @@
 // =================================== Desktop =================================
 
 @media (min-width: @desktop) {
+  .design-list {
+    padding-top: 15px;
+    margin-left: 75px;
+  }
+
+  .design-item {
+    margin-right: 40px;
+  }
+
   .design-item__heading {
+    bottom: 50px;
     .font(20px, 30px);
   }
 
   .design-item__price {
+    bottom: 27px;
     .font(22px, 30px);
   }
 }

@@ -118,24 +118,40 @@
 
 @media (min-width: @desktop) {
   .reviews {
-    background: url("../img/ribbons-bg-desktop@1x.png") no-repeat center -10px;
+    padding-top: 100px;
+    background: url("../img/ribbons-bg-desktop@1x.png") no-repeat center 0;
   }
 
   .reviews__heading {
     .font(40px, 66px);
   }
 
+  .reviews__item {
+    width: 630px;
+  }
+
+  .reviews__item-photo {
+    margin-right: 50px;
+  }
+
+  .reviews__text-wrapper {
+    padding-top: 5px;
+  }
+
   .reviews__item-name {
+    margin-bottom: 5px;
     .font(27px, 30px);
   }
 
   .reviews__item-info {
+    margin-bottom: 20px;
     .font(20px, 24px);
     font-weight: normal;
   }
 
   .reviews__item-text {
-    .font(19px, 22px);
+    width: 360px;
+    .font(18px, 24px);
     font-weight: normal;
   }
 }

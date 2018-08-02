@@ -7,8 +7,9 @@
 
 .key-features__item {
   display: flex;
+  margin: 0 auto;
   margin-bottom: 13px;
-  width: 250px;
+  width: 280px;
 }
 
 .key-features__button-wrapper {
@@ -40,6 +41,7 @@
     flex-direction: column;
     align-items: flex-start;
     padding: 0 48px;
+    width: 768px;
   }
 
   .key-features__list {
@@ -72,5 +74,10 @@
 @media (min-width: @desktop) {
   .key-features .container {
     padding: 0 74px;
+  }
+
+  .key-features__button {
+    margin-bottom: 125px;
+    order: -1;
   }
 }
