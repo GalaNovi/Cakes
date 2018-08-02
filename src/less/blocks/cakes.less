@@ -122,13 +122,18 @@
     box-shadow: 0 10px 13px 0 rgba(163, 6, 60, 0.05);
   }
 
+  .cakes__item-link:hover,
+  .cakes__item-link:focus {
+    box-shadow: 0 10px 13px 0 rgba(163, 6, 60, 0.12);
+  }
+
   .cakes__item-link:hover .cakes__item-image,
   .cakes__item-link:focus .cakes__item-image {
-    box-shadow: 0 10px 13px 0 rgba(163, 6, 60, 0.12);
     opacity: 1;
   }
 
   /* IE11 */
+
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
     .cakes__list {
       margin: 0 -10px;
@@ -141,7 +146,13 @@
       margin: 0 10px 20px;
       min-width: 350px;
       min-height: 188px;
+      box-shadow: 0 10px 13px 0 rgba(163, 6, 60, 0.05);
       overflow: hidden;
+
+      &:hover,
+      &:focus {
+        box-shadow: 0 10px 13px 0 rgba(163, 6, 60, 0.12);
+      }
 
       &:first-child .cakes__item-image,
       &:last-child .cakes__item-image {
@@ -194,5 +205,31 @@
 
   .cakes__item-types {
     .font(20px, 24px);
+  }
+
+  /* IE11 */
+
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .cakes__list {
+      margin: 0 -10px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .cakes__item {
+      min-width: auto;
+      width: 45%;
+      min-height: 400px;
+
+      &:first-child .cakes__item-image,
+      &:last-child .cakes__item-image {
+        width: auto;
+      }
+
+      &:last-child .cakes__item-image {
+        width: auto;
+        margin-top: -10px;
+      }
+    }
   }
 }
