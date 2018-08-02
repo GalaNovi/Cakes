@@ -1,23 +1,50 @@
 .form__list {
   .list-reset;
+  counter-reset: myCounter;
 }
 
 .form__item {
-  padding: 20px;
+  position: relative;
+  padding: 18px 20px 26px;
   margin-bottom: 10px;
   background-color: #ffffff;
-  list-style: none;
+
+  &::before {
+    position: absolute;
+    top: 5px;
+    left: 17px;
+    display: inline-block;
+    counter-increment: myCounter;
+    content: counter(myCounter, decimal-leading-zero);
+
+    .font(30px, 36px);
+    font-family: @playfair;
+    color: @brand-color;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .form__item-heading {
   .indent-reset;
+  margin-left: 40px;
   font-family: @playfair;
   .font(16px, 20px);
   color: @brand-color;
 }
 
+.form__item-button {
+  margin: 0 auto;
+  padding: 20px 60px 17px;
+  border-radius: 30px;
+  align-self: center;
+}
+
 .form__button {
   margin: 0 auto;
+  padding: 20px 62px 17px;
 }
 
 //  =============================== Tablet =========================
@@ -25,37 +52,97 @@
 @media (min-width: @tablet) {
   .form__item {
     display: flex;
-    margin-bottom: 20px;
+    padding: 36px 20px 52px;
+    margin-bottom: 21px;
     box-shadow: 0 10px 13px 0 rgba(163, 6, 60, 0.05);
 
     &:last-child {
       margin-bottom: 0;
 
-      background: #ffffff url("../img/design-bg-tablet@1x.jpg") no-repeat 20px 100px;
+      background: #ffffff url("../img/design-bg-tablet@1x.jpg") no-repeat 40px 120px;
+    }
+
+    &::before {
+      top: 30px;
+      left: 45px;
+
+      .font(36px, 40px);
     }
   }
 
   .form__item-heading {
-    .font(18px, 24px);
+    margin-top: 35px;
+    margin-left: 25px;
+    margin-right: 38px;
+    width: 90px;
+    .font(18px, 20px);
+  }
+
+  .form__item-button {
+    margin: 0 auto;
+    padding: 15px 46px 14px;
+
+    .font(10px, 14px);
+
+    &--stuffing {
+      margin: 0;
+    }
+
+    &--size {
+      display: none;
+    }
+
+    &--design {
+      display: none;
+    }
   }
 
   .form__button {
-    padding: 15px 40px;
-    .font(11px, 14px);
+    margin: 0;
+    margin-top: auto;
+    padding: 16px 41px 13px;
+
+    .font(10px, 14px);
   }
 }
 
 //  =============================== Desktop =========================
 
 @media (min-width: @desktop) {
+  .form__item {
+    margin-bottom: 35px;
+    padding: 73px 55px 90px;
+
+    &:last-child {
+      padding-bottom: 60px;
+      background: #ffffff url("../img/design-bg-desktop@1x.jpg") no-repeat 20px 200px;
+    }
+
+    &::before {
+      top: 55px;
+      left: 80px;
+
+      .font(58px, 60px);
+    }
+  }
+
   .form__item-heading {
-    width: 250px;
+    margin-top: 50px;
+    margin-right: 35px;
+    width: 180px;
     .font(27px, 30px);
   }
 
-  .form__item {
-    &:last-child {
-      background: #ffffff url("../img/design-bg-desktop@1x.jpg") no-repeat 20px 100px;
-    }
+  .form__item-button {
+    padding: 19px 60px 16px;
+    .font(13px, 16px);
+  }
+
+  .form__button {
+    margin: 0;
+    margin-top: 20px;
+    padding: 19px 60px 16px;
+
+    .font(13px, 16px);
   }
 }

@@ -1,10 +1,11 @@
 .page-main {
   display: block;
   padding-top: 130px;
+  padding-bottom: 50px;
 
   background-image: url("../img/main-cake-bg-mobile@1x.png");
   background-repeat: no-repeat;
-  background-position: -30px -40px;
+  background-position: center -40px;
 }
 
 .page-main__heading {
@@ -19,31 +20,38 @@
 .page-main__heading-addon {
   .indent-reset;
   font-family: @introscriptr;
-  .font(22px, 78px);
+  .font(22px, 60px);
   color: @color-subheading-text;
+  letter-spacing: 0;
 }
 
 // ================================= Tablet ===========================
 
 @media (min-width: @tablet) {
   .page-main {
+    padding-top: 105px;
+    padding-bottom: 0;
     background-image: url("../img/main-cake-bg-tablet@1x.png");
-    background-position: 270px 13px;
+    background-position: right -136px top 13px;
   }
 
   .page-main > .container {
+    display: flex;
+    flex-direction: column;
     padding: 0 48px;
+    max-width: 768px;
   }
 
   .page-main__heading {
+    margin-bottom: 50px;
+
     .font(60px, 55px);
-    letter-spacing: 5px;
+    letter-spacing: 4px;
     text-align: left;
   }
 
   .page-main__heading-addon {
     .font(36px, 44px);
-    letter-spacing: -1px;
   }
 }
 
@@ -51,16 +59,19 @@
 
 @media (min-width: @desktop) {
   .page-main {
+    padding-top: 150px;
     background-image: url("../img/main-cake-bg-desktop@1x.png");
-    background-position: 355px 0;
+    background-position: 627px 17px;
   }
 
   .page-main > .container {
     padding: 0 74px;
+    max-width: 1366px;
   }
 
   .page-main__heading {
     .font(78px, 70px);
+    letter-spacing: 6px;
   }
 
   .page-main__heading-addon {

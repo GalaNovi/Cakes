@@ -1,5 +1,6 @@
 .design-list {
   .list-reset;
+  padding-top: 25px;
 }
 
 .design-item {
@@ -12,8 +13,14 @@
   }
 }
 
+.design-item__heading {
+  .indent-reset;
+  margin-bottom: 3px;
+}
+
 .design-item__image-wrapper {
   position: relative;
+  margin-bottom: 35px;
   box-shadow: 0 2px 5px 0 rgba(163, 6, 60, 0.14);
   order: -1;
 }
@@ -26,14 +33,10 @@
   display: block;
 }
 
-.design-list-count {
-  position: absolute;
-  right: 7px;
-  bottom: 7px;
-  .font(12px, 16px);
-}
-
 .design-item__price {
+  .indent-reset;
+  margin-bottom: 30px;
+
   font-family: @playfair;
   .font(18px, 22px);
   font-style: bold;
@@ -45,13 +48,19 @@
 @media (min-width: @tablet) {
   .design-list {
     display: flex;
-    margin-left: 50px;
+    flex-grow: 1;
+    justify-content: center;
+    margin-top: -23px;
+    margin-left: 45px;
+    margin-right: 50px;
   }
 
   .design-item {
     display: block;
     position: relative;
-    margin-right: 26px;
+    margin-right: 24px;
+
+    .transition;
 
     &:hover {
       box-shadow: 0 7px 13px 0 rgba(0, 0, 0, 0.14);
@@ -72,6 +81,7 @@
   }
 
   .design-item__image-wrapper {
+    margin-bottom: 0;
     box-shadow: 0 7px 13px 0 rgba(0, 0, 0, 0.05);
   }
 
@@ -91,14 +101,25 @@
   }
 }
 
-// =================================== Tablet =================================
+// =================================== Desktop =================================
 
-@media (min-width: @tablet) {
+@media (min-width: @desktop) {
+  .design-list {
+    padding-top: 15px;
+    margin-left: 55px;
+  }
+
+  .design-item {
+    margin-right: 40px;
+  }
+
   .design-item__heading {
+    bottom: 50px;
     .font(20px, 30px);
   }
 
   .design-item__price {
+    bottom: 27px;
     .font(22px, 30px);
   }
 }

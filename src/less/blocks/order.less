@@ -1,11 +1,21 @@
 .order {
-  padding: 30px 0 130px;
+  padding: 30px 0 135px;
   background: #e7383f url("../img/hands-mobile@1x.png") no-repeat center bottom;
   color: #ffffff;
 }
 
+.order__heading {
+  .indent-reset;
+  margin-bottom: 32px;
+
+  font-family: @playfair;
+  .font(24px, 28px);
+  text-align: center;
+}
+
 .order__list {
-  list-style: none;
+  .list-reset;
+  padding-left: 47px;
   counter-reset: myCounter;
 }
 
@@ -15,8 +25,8 @@
 
   &::before {
     position: absolute;
-    top: -15px;
-    left: -30px;
+    top: -13px;
+    left: -28px;
 
     font-family: @playfair;
     font-size: 35px;
@@ -24,13 +34,6 @@
     counter-increment: myCounter;
     content: counter(myCounter);
   }
-}
-
-.order__heading {
-  .indent-reset;
-  font-family: @playfair;
-  .font(24px, 28px);
-  text-align: center;
 }
 
 .order__item-heading {
@@ -48,21 +51,30 @@
 
 @media (min-width: @tablet) {
   .order {
-    padding: 30px 0 130px;
-    background: #e7383f url("../img/hands-tablet@1x.png") no-repeat 0 50px;
+    padding: 45px 0 38px;
+    background: #e7383f url("../img/hands-tablet@1x.png") no-repeat -210px 40px;
   }
 
   .order .container {
     padding: 0 48px;
-    padding-left: 330px;
+    max-width: 768px;
   }
 
   .order__heading {
+    padding-left: 70px;
     .font(28px, 34px);
-    text-align: left;
+    text-align: center;
+  }
+
+  .order__list {
+    margin-left: auto;
+    margin-right: 20px;
+    width: 375px;
   }
 
   .order__item {
+    margin-bottom: 30px;
+
     &::before {
       left: -40px;
     }
@@ -73,12 +85,32 @@
 
 @media (min-width: @desktop) {
   .order {
-    padding: 30px 0 130px;
-    background: #e7383f url("../img/hands-desktop@1x.png") no-repeat 0 50px;
+    padding: 108px 0 150px;
+    background: #e7383f url("../img/hands-desktop@1x.png") no-repeat right 780px top 57px;
+  }
+
+  .order .container {
+    max-width: 1366px;
   }
 
   .order__heading {
+    text-align: right;
+    padding-right: 235px;
+
     .font(40px, 66px);
+  }
+
+  .order__list {
+    width: 460px;
+    margin-right: 37px;
+  }
+
+  .order__item {
+    &::before {
+      top: -20px;
+      left: -43px;
+      .font(64px, 66px);
+    }
   }
 
   .order__item-heading {
@@ -88,11 +120,5 @@
   .order__item-text {
     .font(19px, 24px);
     font-weight: normal;
-  }
-
-  .order__item {
-    &::before {
-      .font(64px, 66px);
-    }
   }
 }

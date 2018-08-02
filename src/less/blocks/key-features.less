@@ -1,17 +1,24 @@
 .key-features__list {
   .list-reset;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
 
   color: #000000;
 }
 
 .key-features__item {
   display: flex;
-  margin-bottom: 10px;
+  margin: 0 auto;
+  margin-bottom: 13px;
+  width: 280px;
+}
+
+.key-features__button-wrapper {
+  text-align: center;
 }
 
 .key-features__button {
   display: inline-block;
+  vertical-align: top;
 }
 
 .key-features__icon {
@@ -34,10 +41,16 @@
     flex-direction: column;
     align-items: flex-start;
     padding: 0 48px;
+    max-width: 768px;
   }
 
   .key-features__list {
     display: flex;
+    order: 1;
+  }
+
+  .key-features__item {
+    width: 220px;
   }
 
   .key-features__text {
@@ -61,5 +74,11 @@
 @media (min-width: @desktop) {
   .key-features .container {
     padding: 0 74px;
+    max-width: 1366px;
+  }
+
+  .key-features__button {
+    margin-bottom: 125px;
+    order: -1;
   }
 }

@@ -1,5 +1,5 @@
 .individual-order__heading {
-  margin: 0 auto;
+  margin: 0 auto 20px;
   width: 225px;
 
   font-family: @playfair;
@@ -16,7 +16,12 @@
 // ================================== Tablet ===============================
 
 @media (min-width: @tablet) {
+  .individual-order {
+    padding-top: 10px;
+  }
+
   .individual-order__heading {
+    margin-bottom: 28px;
     width: auto;
     .font(28px, 36px);
   }
@@ -29,12 +34,17 @@
 // ================================== Desktop ===============================
 
 @media (min-width: @desktop) {
+  .individual-order {
+    padding-top: 55px;
+  }
+
   .individual-order__heading {
+    margin-bottom: 40px;
     width: auto;
-    .font(40px, 66px);
+    .font(40px, 50px);
   }
 
   .individual-order__heading-addon {
-    .font(35px, 78px);
+    .font(35px, 45px);
   }
 }

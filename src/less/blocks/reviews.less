@@ -1,9 +1,12 @@
 .reviews {
   position: relative;
+  padding-top: 40px;
 }
 
 .reviews__heading {
   .indent-reset;
+  margin-bottom: 18px;
+
   font-family: @playfair;
   .font(24px, 30px);
   text-align: center;
@@ -22,6 +25,7 @@
 }
 
 .reviews__text-wrapper {
+  width: 280px;
   text-align: center;
 }
 
@@ -32,10 +36,14 @@
 
 .reviews__item-info {
   .indent-reset;
-  .font(12px, 14px);
+  margin-bottom: 5px;
+
+  .font(12px, 16px);
 }
 
 .reviews__item-text {
+  .indent-reset;
+
   .font(12px, 14px);
   text-align: center;
 }
@@ -48,13 +56,8 @@
   color: #f87b91;
   font-style: italic;
   text-decoration: underline;
-}
 
-.reviews__count {
-  position: absolute;
-  right: 20px;
-  bottom: 10px;
-  color: @brand-color;
+  .transition;
 }
 
 // ==================================== Tablet ===============================
@@ -62,7 +65,7 @@
 @media (min-width: @tablet) {
   .reviews {
     margin-bottom: 70px;
-    padding-top: 30px;
+    padding-top: 40px;
     background: url("../img/ribbons-bg-tablet@1x.png") no-repeat center -10px;
   }
 
@@ -74,7 +77,7 @@
     flex-direction: row;
     align-items: center;
     margin: 0 auto;
-    width: 450px;
+    width: 405px;
   }
 
   .reviews__text-wrapper {
@@ -87,7 +90,9 @@
   }
 
   .reviews__item-info {
-    .font(14px, 16px);
+    margin-bottom: 10px;
+
+    .font(14px, 18px);
     text-align: left;
   }
 
@@ -96,7 +101,15 @@
     text-align: left;
   }
 
+  .reviews__item-show-full {
+    &:hover,
+    &:focus {
+      color: @brand-color;
+    }
+  }
+
   .reviews__item-photo {
+    margin-top: 30px;
     margin-right: 25px;
   }
 }
@@ -105,24 +118,40 @@
 
 @media (min-width: @desktop) {
   .reviews {
-    background: url("../img/ribbons-bg-desktop@1x.png") no-repeat center -10px;
+    padding-top: 100px;
+    background: url("../img/ribbons-bg-desktop@1x.png") no-repeat center 0;
   }
 
   .reviews__heading {
     .font(40px, 66px);
   }
 
+  .reviews__item {
+    width: 630px;
+  }
+
+  .reviews__item-photo {
+    margin-right: 50px;
+  }
+
+  .reviews__text-wrapper {
+    padding-top: 5px;
+  }
+
   .reviews__item-name {
+    margin-bottom: 5px;
     .font(27px, 30px);
   }
 
   .reviews__item-info {
+    margin-bottom: 20px;
     .font(20px, 24px);
     font-weight: normal;
   }
 
   .reviews__item-text {
-    .font(19px, 22px);
+    width: 360px;
+    .font(18px, 24px);
     font-weight: normal;
   }
 }

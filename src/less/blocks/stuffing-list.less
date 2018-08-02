@@ -1,66 +1,74 @@
 .stuffing-list {
   .list-reset;
+  padding-top: 17px;
 }
 
 .stuffing-item {
-  padding: 18px 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
 }
 
 .stuffing-item__heading {
   .indent-reset;
+  margin-bottom: 3px;
+
   font-family: @circe;
-  .font(16px, 20px);
+  .font(16px, 22px);
   font-weight: bold;
   color: @color-text;
 }
 
+.stuffing-item__description {
+  .indent-reset;
+  .font(14px, 17px);
+  margin-bottom: 13px;
+}
+
 .stuffing-item__image-wrapper {
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 32px;
   order: -1;
 }
 
 .stuffing-item__image {
   display: block;
-}
-
-.stuffing-item__count {
-  position: absolute;
-  right: 8px;
-  bottom: 8px;
-
-  .font(12px);
-  color: #ffffff;
+  text-align: center;
 }
 
 .stuffing-item__price {
+  .indent-reset;
+  margin-bottom: 20px;
+
   font-family: @playfair;
   .font(18px, 22px);
   font-style: bold;
   text-align: center;
 }
 
-.stuffing-item__button {
-  padding: 19px 60px 17px;
-  border-radius: 30px;
-  align-self: center;
-}
-
 // ================================ Tablet ===========================
 
 @media (min-width: @tablet) {
+  .stuffing-list {
+    margin: 0 auto;
+  }
+
   .stuffing-item {
     flex-direction: row;
+    align-items: flex-start;
+    margin-left: -110px;
     width: 425px;
   }
 
   .stuffing-item__image-wrapper {
+    flex-shrink: 0;
+    margin-right: 25px;
+    margin-bottom: 0;
     width: 210px;
   }
 
   .stuffing-item__text-wrapper {
+    margin-top: 20px;
     width: 200px;
   }
 
@@ -68,30 +76,37 @@
     .font(18px, 24px);
   }
 
-  .stuffing-item__price {
-    .font(20px, 24px);
-    text-align: left;
+  .stuffing-item__description {
+    margin-bottom: 10px;
   }
 
-  .stuffing-item__button {
-    padding: 15px 45px 14px;
-    .font(11px, 14px);
+  .stuffing-item__price {
+    margin-bottom: 23px;
+    .font(20px, 24px);
+    text-align: left;
   }
 }
 
 // ================================ Desktop ===========================
 
 @media (min-width: @desktop) {
+  .stuffing-list {
+    margin: 0;
+  }
+
   .stuffing-item {
     justify-content: space-between;
-    width: 660px;
+    margin: 0;
+    width: 665px;
   }
 
   .stuffing-item__image-wrapper {
+    margin-right: 0;
     width: 343px;
   }
 
   .stuffing-item__text-wrapper {
+    padding-top: 47px;
     width: 280px;
   }
 
@@ -100,11 +115,13 @@
   }
 
   .stuffing-item__description {
+    margin-bottom: 15px;
     .font(18px, 24px);
     font-weight: normal;
   }
 
   .stuffing-item__price {
+    margin-bottom: 50px;
     .font(22px, 26px);
   }
 }

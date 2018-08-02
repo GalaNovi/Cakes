@@ -1,8 +1,11 @@
 .cakes {
-  margin-bottom: 50px;
+  padding-top: 30px;
+  margin-bottom: 45px;
 }
 
 .cakes__heading {
+  .indent-reset;
+  margin-bottom: 10px;
   font-family: @playfair;
   .font(24px, 66px);
   text-align: center;
@@ -42,7 +45,7 @@
 .cakes__item-heading {
   position: relative;
   .indent-reset;
-  font-weight: normal;
+  .font(14px, 18px);
   z-index: 1;
 }
 
@@ -50,6 +53,7 @@
   position: relative;
   .indent-reset;
   opacity: 0.7;
+  .font(12px, 16px);
   z-index: 1;
 }
 
@@ -60,7 +64,13 @@
 // ======================== Tablet ======================
 
 @media (min-width: @tablet) {
+  .cakes {
+    padding-top: 100px;
+  }
+
   .cakes__heading {
+    margin-bottom: 30px;
+
     .font(28px, 40px);
     text-align: left;
   }
@@ -106,18 +116,24 @@
   }
 
   .cakes__item-link {
+    padding: 18px 25px;
     width: 100%;
     height: 100%;
     box-shadow: 0 10px 13px 0 rgba(163, 6, 60, 0.05);
   }
 
+  .cakes__item-link:hover,
+  .cakes__item-link:focus {
+    box-shadow: 0 10px 13px 0 rgba(163, 6, 60, 0.12);
+  }
+
   .cakes__item-link:hover .cakes__item-image,
   .cakes__item-link:focus .cakes__item-image {
-    box-shadow: 0 10px 13px 0 rgba(163, 6, 60, 0.12);
     opacity: 1;
   }
 
   /* IE11 */
+
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
     .cakes__list {
       margin: 0 -10px;
@@ -130,7 +146,13 @@
       margin: 0 10px 20px;
       min-width: 350px;
       min-height: 188px;
+      box-shadow: 0 10px 13px 0 rgba(163, 6, 60, 0.05);
       overflow: hidden;
+
+      &:hover,
+      &:focus {
+        box-shadow: 0 10px 13px 0 rgba(163, 6, 60, 0.12);
+      }
 
       &:first-child .cakes__item-image,
       &:last-child .cakes__item-image {
@@ -147,6 +169,8 @@
   .cakes__item-image {
     height: 100%;
     text-align: center;
+
+    .transition;
   }
 
   .cakes__item-image img {
@@ -157,7 +181,12 @@
 // ======================== Desktop ======================
 
 @media (min-width: @desktop) {
+  .cakes {
+    padding-top: 195px;
+  }
+
   .cakes__heading {
+    margin-bottom: 50px;
     .font(40px, 66px);
   }
 
@@ -166,11 +195,41 @@
     grid-template-rows: repeat(4, minmax(305px, auto));
   }
 
+  .cakes__item-link {
+    padding: 35px 40px;
+  }
+
   .cakes__item-heading {
     .font(24px, 28px);
   }
 
   .cakes__item-types {
     .font(20px, 24px);
+  }
+
+  /* IE11 */
+
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .cakes__list {
+      margin: 0 -10px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .cakes__item {
+      min-width: auto;
+      width: 45%;
+      min-height: 400px;
+
+      &:first-child .cakes__item-image,
+      &:last-child .cakes__item-image {
+        width: auto;
+      }
+
+      &:last-child .cakes__item-image {
+        width: auto;
+        margin-top: -10px;
+      }
+    }
   }
 }

@@ -1,6 +1,6 @@
 .button {
   display: block;
-  padding: 16px 65px;
+  padding: 18px 65px;
 
   font-size: 13px;
   font-weight: normal;
@@ -12,11 +12,17 @@
   outline: none;
   border-radius: 25px;
 
-  transition: box-shadow 0.1s;
+  .transition;
   cursor: pointer;
 
-  &:hover {
+  &:hover,
+  &:focus {
     box-shadow: 0 5px 12px 0 @brand-color-shadow;
+  }
+
+  &:active {
+    transform: translateY(2px);
+    box-shadow: 0 5px 10px -1px @brand-color-shadow;
   }
 }
 

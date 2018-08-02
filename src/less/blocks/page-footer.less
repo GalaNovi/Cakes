@@ -6,13 +6,23 @@
 }
 
 .page-footer__logo {
-  margin-bottom: 25px;
+  margin-bottom: 23px;
   font-family: @playfair;
   .font(28px, 34px);
 }
 
+.page-footer__logo-link {
+  color: inherit;
+
+  .transition;
+
+  &:hover {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  }
+}
+
 .page-footer__phone-number {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   opacity: 0.8;
 }
 
@@ -23,11 +33,13 @@
 }
 
 .page-footer__socials-item {
-  margin-right: 20px;
+  margin-right: 17px;
 }
 
 .page-footer__socials-link {
   opacity: 0.4;
+
+  .transition;
 
   &:hover {
     opacity: 1;
@@ -52,6 +64,8 @@
 
 @media (min-width: @tablet) {
   .page-footer {
+    padding-top: 33px;
+    padding-bottom: 20px;
     position: relative;
   }
 
@@ -61,7 +75,7 @@
   }
 
   .page-footer__logo {
-    margin-right: 60px;
+    margin-right: 40px;
     .font(18px, 24px);
   }
 
@@ -70,14 +84,28 @@
   }
 
   .page-footer__line {
+    margin-bottom: 20px;
     width: 100%;
   }
 
   .page-footer__socials-list {
     position: absolute;
-    left: 50%;
-    bottom: 2px;
+    left: 53%;
+    bottom: 12px;
     margin-bottom: 0;
+
+    z-index: 1;
+  }
+
+  .page-footer__copyrights-wrapper {
+    position: relative;
+    margin: 0 auto;
+    width: 190px;
+  }
+
+  .page-footer__copyrights {
+    .font(14px, 14px);
+    cursor: default;
   }
 }
 
@@ -85,11 +113,35 @@
 
 @media (min-width: @desktop) {
   .page-footer {
+    padding-top: 25px;
     background-color: #e8e8e8;
     color: @color-text;
   }
 
   .page-footer__logo {
+    margin-right: 135px;
     .font(28px, 44px);
+    letter-spacing: 1px;
+  }
+
+  .page-footer__socials-list {
+    position: static;
+    padding-top: 20px;
+  }
+
+  .page-footer__socials-item:last-child {
+    margin-right: 0;
+  }
+
+  .page-footer__socials-icon {
+    fill: #000000;
+  }
+
+  .page-footer__line {
+    margin-bottom: 15px;
+  }
+
+  .page-footer__copyrights-wrapper {
+    width: auto;
   }
 }
