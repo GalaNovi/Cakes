@@ -34,6 +34,7 @@
     background-color: #000000;
     box-shadow: 0 12px 0 0;
 
+    animation: close-one 0.3s;
     content: "";
   }
 
@@ -47,12 +48,96 @@
 
     background-color: #000000;
 
+    animation: close-two 0.3s;
     content: "";
+  }
+
+  &--nojs {
+    display: none;
+  }
+
+  &--opened {
+    &::before {
+      top: 6px;
+      box-shadow: 0 0 0 0;
+      transform: rotate(45deg);
+      animation: open-one 0.3s;
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+      animation: open-two 0.3s;
+    }
   }
 }
 
 .page-header__phone-number {
   display: none;
+}
+
+@keyframes open-one {
+  0% {
+    top: 0;
+    box-shadow: 0 12px 0 0;
+    transform: rotate(0deg);
+  }
+
+  50% {
+    top: 6px;
+    box-shadow: 0 0 0 0;
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes open-two {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-45deg);
+  }
+}
+
+@keyframes close-one {
+  0% {
+    top: 6px;
+    box-shadow: 0 0 0 0;
+    transform: rotate(45deg);
+  }
+
+  50% {
+    top: 6px;
+    box-shadow: 0 0 0 0;
+  }
+
+  100% {
+    top: 0;
+    box-shadow: 0 12px 0 0;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes close-two {
+  0% {
+    transform: rotate(-45deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 // ================================ Tablet =========================
@@ -92,6 +177,13 @@
 
       width: 26px;
     }
+
+    &--opened {
+      &::before {
+        top: 8px;
+        box-shadow: 0 0 0 0;
+      }
+    }
   }
 
   .page-header__phone-number {
@@ -102,6 +194,43 @@
     font-weight: bold;
     .font(15px, 16px);
     color: @color-text;
+  }
+
+  @keyframes open-one {
+    0% {
+      top: 0;
+      box-shadow: 0 16px 0 0;
+      transform: rotate(0deg);
+    }
+
+    50% {
+      top: 8px;
+      box-shadow: 0 0 0 0;
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(45deg);
+    }
+  }
+
+  @keyframes close-one {
+    0% {
+      top: 8px;
+      box-shadow: 0 0 0 0;
+      transform: rotate(45deg);
+    }
+
+    50% {
+      top: 8px;
+      box-shadow: 0 0 0 0;
+    }
+
+    100% {
+      top: 0;
+      box-shadow: 0 16px 0 0;
+      transform: rotate(0deg);
+    }
   }
 }
 
