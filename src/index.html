@@ -136,27 +136,12 @@
             <ol class="form__list">
               <li class="form__item">
                 <h3 class="form__item-heading">Выберите начинку</h3>
-                <ul class="form__stuffing-list stuffing-list">
-                  <li class="stuffing-item stuffing-item--current">
-                    <div class="stuffing-item__text-wrapper">
-                      <h4 class="stuffing-item__heading">Шоколадный ганаш</h4>
-                      <p class="stuffing-item__description">
-                        Ароматный шоколадный бисквит, густой шоколадный крем – самый шоколадный из всех возможных десертов!
-                      </p>
-                      <p class="stuffing-item__price">1000 руб/кг</p>
-                      <label class="visually-hidden" for="shocolate-cream">Выбрать шоколадный ганаш</label>
-                      <input class="stuffing-item__radio visually-hidden" id="shocolate-cream" type="radio" name="staffing" value="shocolate-cream">
-                      <button class="form__item-button form__item-button--stuffing button" type="button">Выбрать</button>
-                    </div>
-                    <div class="stuffing-item__image-wrapper">
-                      <picture class="stuffing-item__image">
-                        <source media="(min-width: 1366px)" srcset="img/staffing-shoco-desktop@1x.jpg">
-                        <source media="(min-width: 768px)" srcset="img/staffing-shoco-tablet@1x.jpg">
-                        <img src="img/staffing-shoco-mobile@1x.jpg" alt="Изображение шоколадного бисквита с шоколадным кремом">
-                      </picture>
-                    </div>
-                  </li>
-                </ul>
+                <div class="form__stuffing-list-wrapper">
+                  <ul class="form__stuffing-list stuffing-list"></ul>
+                  <div class="stuffing-item__indicator"></div>
+                  <div class="stuffing__list-navigation stuffing__list-navigation--previous"></div>
+                  <div class="stuffing__list-navigation stuffing__list-navigation--next"></div>
+                </div>
               </li>
               <li class="form__item">
                 <h3 class="form__item-heading">Размер</h3>
@@ -497,8 +482,33 @@
         </div>
       </div>
     </footer>
+
+    <template id="stuffing-item">
+      <div class="stuffing-item__text-wrapper">
+        <h4 class="stuffing-item__heading">Шоколадный ганаш</h4>
+        <p class="stuffing-item__description">
+          Ароматный шоколадный бисквит, густой шоколадный крем – самый шоколадный из всех возможных десертов!
+        </p>
+        <p class="stuffing-item__price">1000 руб/кг</p>
+        <label class="visually-hidden" for="shocolate-cream">Выбрать «Шоколадный ганаш»</label>
+        <input class="stuffing-item__radio visually-hidden" id="shocolate-cream" type="radio" name="staffing" value="shocolate-cream">
+        <button class="form__item-button form__item-button--stuffing button" type="button">Выбрать</button>
+      </div>
+      <div class="stuffing-item__image-wrapper">
+        <picture class="stuffing-item__image">
+          <source media="(min-width: 1366px)" srcset="img/staffing-shoco-desktop@1x.jpg">
+          <source media="(min-width: 768px)" srcset="img/staffing-shoco-tablet@1x.jpg">
+          <img src="img/staffing-shoco-mobile@1x.jpg" alt="Изображение шоколадного бисквита с шоколадным кремом">
+        </picture>
+        <span class="stuffing-item__counter">1/12</span>
+      </div>
+    </template>
+
     <script src="js/menu.js"></script>
     <script src="js/picturefill.js"></script>
     <script src="js/scroll.js"></script>
+    <script src="js/stuffing-data.js"></script>
+    <script src="js/stuffing-slides-load.js"></script>
+    <script src="js/stuffing-slider.js"></script>
   </body>
 </html>

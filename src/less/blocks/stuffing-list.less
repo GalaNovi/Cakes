@@ -5,13 +5,19 @@
 
 .stuffing-item {
   padding: 0;
-  display: flex;
+  display: none;
   flex-direction: column;
+
+  &--current {
+    display: flex;
+  }
 }
 
 .stuffing-item__heading {
   .indent-reset;
+  margin: 0 auto;
   margin-bottom: 3px;
+  width: 240px;
 
   font-family: @circe;
   .font(16px, 22px);
@@ -21,12 +27,17 @@
 
 .stuffing-item__description {
   .indent-reset;
+  margin: 0 auto;
+  width: 240px;
+
   .font(14px, 17px);
   margin-bottom: 13px;
 }
 
 .stuffing-item__image-wrapper {
   position: relative;
+  display: inline-block;
+  margin: 0 auto;
   margin-bottom: 32px;
   order: -1;
 }
@@ -46,13 +57,53 @@
   text-align: center;
 }
 
+.stuffing-item__counter {
+  position: absolute;
+  right: 7px;
+  bottom: 5px;
+
+  .font(12px, 25px);
+  color: #ffffff;
+}
+
+.stuffing-item__indicator {
+  position: absolute;
+  left: 50%;
+  top: 180px;
+  transform: translateX(-50%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stuffing-item__indicator-element {
+  margin-right: 5px;
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+  background-color: #dddddd;
+
+  &--extreme {
+    width: 4px;
+    height: 4px;
+  }
+
+  &--current {
+    width: 8px;
+    height: 8px;
+    background-color: @brand-color;
+  }
+
+  .stuffing__list-navigation {
+    display: none;
+  }
+}
+
 // ================================ Tablet ===========================
 
 @media (min-width: @tablet) {
-  .stuffing-list {
-    margin: 0 auto;
-  }
-
   .stuffing-item {
     flex-direction: row;
     align-items: flex-start;
@@ -62,6 +113,7 @@
 
   .stuffing-item__image-wrapper {
     flex-shrink: 0;
+    margin: 0;
     margin-right: 25px;
     margin-bottom: 0;
     width: 210px;
@@ -73,10 +125,12 @@
   }
 
   .stuffing-item__heading {
+    margin: 0;
     .font(18px, 24px);
   }
 
   .stuffing-item__description {
+    margin: 0;
     margin-bottom: 10px;
   }
 
@@ -85,15 +139,91 @@
     .font(20px, 24px);
     text-align: left;
   }
+
+  .stuffing-item__counter {
+    right: -275px;
+    bottom: 0;
+    .font(11px, 14px);
+    color: @color-text;
+  }
+
+  .stuffing-item__indicator {
+    display: none;
+  }
+
+  .stuffing__list-navigation {
+    display: block;
+    position: absolute;
+    top: 125px;
+
+    width: 12px;
+    height: 12px;
+    border-left: 2px solid @brand-color;
+    border-bottom: 2px solid @brand-color;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+    cursor: pointer;
+
+    &::before {
+      position: absolute;
+      top: -13px;
+      left: -19px;
+      width: 42px;
+      height: 42px;
+
+      border-radius: 50%;
+
+      transition: box-shadow 0.2s;
+      content: "";
+    }
+
+    &--previous {
+      left: -175px;
+      transform: rotate(45deg);
+
+      &::before {
+        box-shadow: 1px 1px 2px 0 #e0e0e0;
+      }
+
+      &:hover::before {
+        box-shadow: 1px 1px 2px 0 #adadad;
+      }
+    }
+
+    &--next {
+      right: -65px;
+      transform: rotate(-135deg);
+
+      &::before {
+        box-shadow: -1px -1px 2px 0 #e0e0e0;
+      }
+
+      &:hover::before {
+        box-shadow: -1px -1px 2px 0 #adadad;
+      }
+    }
+
+    &--disabled {
+      border-left: 2px solid #adadad;
+      border-bottom: 2px solid #adadad;
+      cursor: default;
+
+      &:hover::before {
+        box-shadow: 1px 1px 2px 0 #e0e0e0;
+      }
+    }
+
+    &--disabled.stuffing__list-navigation--next {
+      &:hover::before {
+        box-shadow: -1px -1px 2px 0 #e0e0e0;
+      }
+    }
+  }
 }
 
 // ================================ Desktop ===========================
 
 @media (min-width: @desktop) {
-  .stuffing-list {
-    margin: 0;
-  }
-
   .stuffing-item {
     justify-content: space-between;
     margin: 0;
@@ -123,5 +253,49 @@
   .stuffing-item__price {
     margin-bottom: 50px;
     .font(22px, 26px);
+  }
+
+  .stuffing-item__counter {
+    right: -453px;
+    bottom: -5px;
+    .font(18px, 25px);
+  }
+
+  .stuffing__list-navigation {
+    top: 205px;
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+
+    &::before {
+      box-shadow: none;
+    }
+
+    &:hover::before {
+      box-shadow: none;
+    }
+
+    &--previous {
+      left: -100px;
+    }
+
+    &--next {
+      right: -130px;
+    }
+
+    &--disabled {
+      &:hover,
+      &:focus {
+        opacity: 0.5;
+      }
+    }
+
+    &--disabled.stuffing__list-navigation--next {
+      &:hover::before {
+        box-shadow: none;
+      }
+    }
   }
 }
