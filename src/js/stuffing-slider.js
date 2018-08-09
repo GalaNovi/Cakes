@@ -2,10 +2,10 @@
 
 (function () {
   var sliderElement = document.querySelector('.stuffing-list');
-  var slidesElements = Array.from(document.querySelectorAll('.stuffing-item'));
-  var buttonsElements = Array.from(document.querySelectorAll('.form__item-button--stuffing'));
-  var inputsElements = Array.from(document.querySelectorAll('.stuffing-item__radio'));
-  var headingsElements = Array.from(document.querySelectorAll('.stuffing-item__heading'));
+  var slidesElements = Array.from(sliderElement.querySelectorAll('.stuffing-item'));
+  var buttonsElements = Array.from(sliderElement.querySelectorAll('.form__item-button--stuffing'));
+  var inputsElements = Array.from(sliderElement.querySelectorAll('.stuffing-item__radio'));
+  var headingsElements = Array.from(sliderElement.querySelectorAll('.stuffing-item__heading'));
   var previousButtonElement = document.querySelector('.stuffing__list-navigation--previous');
   var nextButtonElement = document.querySelector('.stuffing__list-navigation--next');
   var totalChoiseElement = document.querySelector('.total-choise__item-text');

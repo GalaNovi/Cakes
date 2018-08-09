@@ -483,15 +483,18 @@
       </div>
     </footer>
 
-    <template id="stuffing-item">
+    <!-- Templates -->
+    <div id="template" style="display:none;
+    ">
+    <li class="stuffing-item">
       <div class="stuffing-item__text-wrapper">
         <h4 class="stuffing-item__heading">Шоколадный ганаш</h4>
         <p class="stuffing-item__description">
           Ароматный шоколадный бисквит, густой шоколадный крем – самый шоколадный из всех возможных десертов!
         </p>
         <p class="stuffing-item__price">1000 руб/кг</p>
-        <label class="visually-hidden" for="shocolate-cream">Выбрать «Шоколадный ганаш»</label>
-        <input class="stuffing-item__radio visually-hidden" id="shocolate-cream" type="radio" name="staffing" value="shocolate-cream">
+        <label class="visually-hidden" for="input">Выбрать «Шоколадный ганаш»</label>
+        <input class="stuffing-item__radio visually-hidden" id="input" type="radio" name="staffing" value="">
         <button class="form__item-button form__item-button--stuffing button" type="button">Выбрать</button>
       </div>
       <div class="stuffing-item__image-wrapper">
@@ -502,8 +505,11 @@
         </picture>
         <span class="stuffing-item__counter">1/12</span>
       </div>
-    </template>
+    </li>
+    </div>
+    <!-- Templates -->
 
+    <script src="js/polyfill.js"></script>
     <script src="js/menu.js"></script>
     <script src="js/picturefill.js"></script>
     <script src="js/scroll.js"></script>

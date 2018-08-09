@@ -1,10 +1,7 @@
 'use strict';
 
 (function () {
-  var headerMenuLinks = Array.from(document.querySelectorAll('.main-nav__link'));
-  var footerMenuLinks = Array.from(document.querySelectorAll('.footer-nav__link'));
-  var footerLogoLink = document.querySelector('.page-footer__logo-link');
-  var links = headerMenuLinks.concat(footerMenuLinks).concat(footerLogoLink);
+  var links = Array.from(document.querySelectorAll('a'));
 
   // Вешает обработчик клика по ссылке (плавный скролл)
   var addClickListener = function(link) {

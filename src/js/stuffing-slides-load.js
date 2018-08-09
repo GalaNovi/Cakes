@@ -2,13 +2,15 @@
 
 (function () {
   var sliderElement = document.querySelector('.stuffing-list');
+  var template = document.querySelector('#template');
 
   // Создает новый слайд
   var createSlide = function (data, index) {
-    var tempSlide = document.createElement('li');
-    var template = document.querySelector('#stuffing-item').content.cloneNode(true);
-    tempSlide.appendChild(template);
-    tempSlide.classList.add('stuffing-item');
+    var tempSlide = template.querySelector('.stuffing-item').cloneNode(true);
+    // var tempSlide = template.querySelector('.stuffing-item');
+    // tempSlide.appendChild(template);
+    // tempSlide.classList.add('stuffing-item');
+    // template.removeAttribute('style');
     tempSlide.querySelector('.stuffing-item__heading').textContent = data.headings[index];
     tempSlide.querySelector('.stuffing-item__description').textContent = data.texts[index];
     tempSlide.querySelector('.stuffing-item__price').textContent = data.prices[index];
@@ -23,9 +25,9 @@
   var setNumberSlides = function (slidesContainer) {
     var slides = slidesContainer.querySelectorAll('.stuffing-item');
     var slidesQuantity = slides.length;
-    slides.forEach(function (slide, index) {
-      slide.querySelector('.stuffing-item__counter').textContent = (index + 1) + '/' + slidesQuantity;
-    });
+    for (var i = 0; i < slides.length; i++) {
+      slides[i].querySelector('.stuffing-item__counter').textContent = (i + 1) + '/' + slidesQuantity;
+    };
   };
 
   // Создает фрагмент со слайдами
