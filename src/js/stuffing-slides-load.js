@@ -7,10 +7,6 @@
   // Создает новый слайд
   var createSlide = function (data, index) {
     var tempSlide = template.querySelector('.stuffing-item').cloneNode(true);
-    // var tempSlide = template.querySelector('.stuffing-item');
-    // tempSlide.appendChild(template);
-    // tempSlide.classList.add('stuffing-item');
-    // template.removeAttribute('style');
     tempSlide.querySelector('.stuffing-item__heading').textContent = data.headings[index];
     tempSlide.querySelector('.stuffing-item__description').textContent = data.texts[index];
     tempSlide.querySelector('.stuffing-item__price').textContent = data.prices[index];

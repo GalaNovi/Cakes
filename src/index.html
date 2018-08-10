@@ -148,12 +148,11 @@
                 <ul class="form__size-list size-list">
                   <li class="size-item size-item--current">
                     <input class="size-item__radio visually-hidden" id="1kg" type="radio" name="size" value="1kg" checked>
-                    <label class="size-item__label" for="1kg"><span>1 кг</span></label>
+                    <label class="size-item__label" for="1kg">1 кг</label>
                     <p class="size-item__description">
                       17-18 см<br>
                       (4 – 6 персон)
                     </p>
-                    <button class="form__item-button form__item-button--size button" type="button">Выбрать</button>
                   </li>
                   <li class="size-item">
                     <input class="size-item__radio visually-hidden" id="2kg" type="radio" name="size" value="2kg">
@@ -162,7 +161,6 @@
                       23-24 см<br>
                       (10 – 12 персон)
                     </p>
-                    <button class="form__item-button form__item-button--size button" type="button">Выбрать</button>
                   </li>
                   <li class="size-item">
                     <input class="size-item__radio visually-hidden" id="5kg" type="radio" name="size" value="5kg">
@@ -171,7 +169,6 @@
                       Два яруса 25 и 20 см<br>
                       (15 – 20 персон)
                     </p>
-                    <button class="form__item-button form__item-button--size button" type="button">Выбрать</button>
                   </li>
                   <li class="size-item">
                     <input class="size-item__radio visually-hidden" id="8kg" type="radio" name="size" value="8kg">
@@ -180,9 +177,9 @@
                       Три яруса 30,25 и 18 см<br>
                       (25 – 30 персон)
                     </p>
-                    <button class="form__item-button form__item-button--size button" type="button">Выбрать</button>
                   </li>
                 </ul>
+                <button class="form__item-button form__item-button--size button" type="button">Выбрать</button>
               </li>
               <li class="form__item">
                 <h3 class="form__item-heading">Оформление</h3>
@@ -224,15 +221,15 @@
                 <ul class="total-choise__list">
                   <li class="total-choise__item">
                     <p class="total-choise__item-heading">Начинка</p>
-                    <p class="total-choise__item-text">Шоколадный ганаш</p>
+                    <p id="stuffing" class="total-choise__item-text">Шоколадный ганаш</p>
                   </li>
                   <li class="total-choise__item">
                     <p class="total-choise__item-heading">Размер</p>
-                    <p class="total-choise__item-text">1 кг</p>
+                    <p id="size" class="total-choise__item-text">1 кг</p>
                   </li>
                   <li class="total-choise__item">
                     <p class="total-choise__item-heading">Оформление</p>
-                    <p class="total-choise__item-text">Маршмэллоу</p>
+                    <p id="design" class="total-choise__item-text">Маршмэллоу</p>
                   </li>
                 </ul>
                 <button class="form__button button" type="submit">Заказать торт</button>
@@ -486,26 +483,26 @@
     <!-- Templates -->
     <div id="template" style="display:none;
     ">
-    <li class="stuffing-item">
-      <div class="stuffing-item__text-wrapper">
-        <h4 class="stuffing-item__heading">Шоколадный ганаш</h4>
-        <p class="stuffing-item__description">
-          Ароматный шоколадный бисквит, густой шоколадный крем – самый шоколадный из всех возможных десертов!
-        </p>
-        <p class="stuffing-item__price">1000 руб/кг</p>
-        <label class="visually-hidden" for="input">Выбрать «Шоколадный ганаш»</label>
-        <input class="stuffing-item__radio visually-hidden" id="input" type="radio" name="staffing" value="">
-        <button class="form__item-button form__item-button--stuffing button" type="button">Выбрать</button>
-      </div>
-      <div class="stuffing-item__image-wrapper">
-        <picture class="stuffing-item__image">
-          <source media="(min-width: 1366px)" srcset="img/staffing-shoco-desktop@1x.jpg">
-          <source media="(min-width: 768px)" srcset="img/staffing-shoco-tablet@1x.jpg">
-          <img src="img/staffing-shoco-mobile@1x.jpg" alt="Изображение шоколадного бисквита с шоколадным кремом">
-        </picture>
-        <span class="stuffing-item__counter">1/12</span>
-      </div>
-    </li>
+      <li class="stuffing-item">
+        <div class="stuffing-item__text-wrapper">
+          <h4 class="stuffing-item__heading">Шоколадный ганаш</h4>
+          <p class="stuffing-item__description">
+            Ароматный шоколадный бисквит, густой шоколадный крем – самый шоколадный из всех возможных десертов!
+          </p>
+          <p class="stuffing-item__price">1000 руб/кг</p>
+          <label class="visually-hidden" for="input">Выбрать «Шоколадный ганаш»</label>
+          <input class="stuffing-item__radio visually-hidden" id="input" type="radio" name="staffing" value="">
+          <button class="form__item-button form__item-button--stuffing button" type="button">Выбрать</button>
+        </div>
+        <div class="stuffing-item__image-wrapper">
+          <picture class="stuffing-item__image">
+            <source media="(min-width: 1366px)" srcset="img/staffing-shoco-desktop@1x.jpg">
+            <source media="(min-width: 768px)" srcset="img/staffing-shoco-tablet@1x.jpg">
+            <img src="img/staffing-shoco-mobile@1x.jpg" alt="Изображение шоколадного бисквита с шоколадным кремом">
+          </picture>
+          <span class="stuffing-item__counter">1/12</span>
+        </div>
+      </li>
     </div>
     <!-- Templates -->
 
@@ -516,5 +513,7 @@
     <script src="js/stuffing-data.js"></script>
     <script src="js/stuffing-slides-load.js"></script>
     <script src="js/stuffing-slider.js"></script>
+    <script src="js/size-section.js"></script>
+    <script src="js/size-slider.js"></script>
   </body>
 </html>

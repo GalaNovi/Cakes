@@ -8,18 +8,19 @@
   var headingsElements = Array.from(sliderElement.querySelectorAll('.stuffing-item__heading'));
   var previousButtonElement = document.querySelector('.stuffing__list-navigation--previous');
   var nextButtonElement = document.querySelector('.stuffing__list-navigation--next');
-  var totalChoiseElement = document.querySelector('.total-choise__item-text');
+  var totalChoiseElement = document.querySelector('#stuffing');
   var sliderIndicatorElement = document.querySelector('.stuffing-item__indicator');
   var currentSlideIndex = 0;
   var isLastSlide = false;
   var isFirstSlide = true;
-  var next = true;
+  var NEXT = true;
   var indicatorElements = [];
   var INDICATOR_ELEMENTS_NUMBER = 5;
   var FIRST_INDOCATOR_ELEMENT = 0;
   var LAST_INDOCATOR_ELEMENT = INDICATOR_ELEMENTS_NUMBER - 1;
+  var SWIPE_LENGTH = 50;
 
-  // Ищет активный слайд
+  // Возвращает true, если слайд активный
   var findCurrentSlide = function (element) {
     if (element.classList.contains('stuffing-item--current')) {
       return true;
@@ -46,23 +47,20 @@
   };
 
   // Смена слайда, анимация
-  var changeSlide = function (index, next) {
-    if (next) {
-      slidesElements[index].querySelector('.stuffing-item__text-wrapper').style.cssText = 'transform: translateX(-100%); opacity: 0; transition: transform 0.3s, opacity 0.2s;';
-      slidesElements[index].querySelector('.stuffing-item__image-wrapper').style.cssText = 'transform: translateX(-100%); opacity: 0; transition: transform 0.3s, opacity 0.2s;';
+  var changeSlide = function (index, NEXT) {
+    if (NEXT) {
+      slidesElements[index].style.cssText = 'transform: translateX(-100%); opacity: 0; transition: transform 0.3s, opacity 0.2s;';
     } else {
-      slidesElements[index].querySelector('.stuffing-item__text-wrapper').style.cssText = 'transform: translateX(100%); opacity: 0; transition: transform 0.3s, opacity 0.2s;';
-      slidesElements[index].querySelector('.stuffing-item__image-wrapper').style.cssText = 'transform: translateX(100%); opacity: 0; transition: transform 0.3s, opacity 0.2s;';
+      slidesElements[index].style.cssText = 'transform: translateX(100%); opacity: 0; transition: transform 0.3s, opacity 0.2s;';
     }
     setTimeout(function () {
       slidesElements[index].classList.toggle('stuffing-item--current');
-      if (next) {
+      if (NEXT) {
         slidesElements[index + 1].classList.toggle('stuffing-item--current');
       } else {
         slidesElements[index - 1].classList.toggle('stuffing-item--current');
       }
-      slidesElements[index].querySelector('.stuffing-item__text-wrapper').style.cssText = null;
-      slidesElements[index].querySelector('.stuffing-item__image-wrapper').style.cssText = null;
+      slidesElements[index].style.cssText = null;
       findCurrentSlideIndex();
       disableSliderButtons();
       updateSliderIndicator();
@@ -71,7 +69,7 @@
 
   // Показывает следующий слайд
   var showNextSlide = function (index) {
-    changeSlide(index, next);
+    changeSlide(index, NEXT);
   };
 
   // Показывает предыдущий слайд
@@ -99,7 +97,9 @@
 
     sliderElement.addEventListener('touchend', function (evt) {
       endSwipeX = evt.changedTouches[0].screenX;
-      swipeSlide(startSwipeX, endSwipeX);
+      if (startSwipeX - endSwipeX >= SWIPE_LENGTH || endSwipeX - startSwipeX >= SWIPE_LENGTH) {
+        swipeSlide(startSwipeX, endSwipeX);
+      }
     }, false);
   };
 
@@ -156,6 +156,7 @@
     indicatorElements = Array.from(document.querySelectorAll('.stuffing-item__indicator-element'));
   };
 
+  // Ставит индикатор в начальное положение
   var setStartSliderIndicator = function () {
     indicatorElements[0].classList.add('stuffing-item__indicator-element--current');
     if (slidesElements.length > INDICATOR_ELEMENTS_NUMBER) {
