@@ -5,7 +5,6 @@
   var sizeItems = Array.from(document.querySelectorAll('.size-item'));
   var sizeTotal = document.querySelector('#size');
   var sizeButton = document.querySelector('.form__item-button--size');
-  var width = screen.width;
 
   // При клике на элемент, его значение записывается в итоговое поле.
   var onSizeElementClick = function (evt) {
@@ -42,20 +41,23 @@
 
   // Обработчик изменения ширины экрана.
   window.addEventListener('resize', function () {
-    width = screen.width;
-    if (width >= 768) {
+    if (screen.width >= 768) {
+      window.sizeSlider.removeSwipeListener();
       addSizeElementsListeners();
       sizeButton.removeEventListener('click', onSizeButtonClick);
-    } else if (width < 768) {
+    } else if (screen.width < 768) {
+      window.sizeSlider.addSwipeListener();
       removeSizeElementsListeners();
       sizeButton.addEventListener('click', onSizeButtonClick);
     }
   });
 
-  if (width >= 768) {
+  if (screen.width >= 768) {
+    window.sizeSlider.removeSwipeListener();
     addSizeElementsListeners();
   }
-  if (width < 768) {
+  if (screen.width < 768) {
+    window.sizeSlider.addSwipeListener();
     sizeButton.addEventListener('click', onSizeButtonClick);
   }
 })();

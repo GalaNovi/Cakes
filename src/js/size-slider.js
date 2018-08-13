@@ -6,6 +6,8 @@
   var currentSlideIndex = 0;
   var isLastSlide = false;
   var isFirstSlide = true;
+  var startSwipeX = 0;
+  var endSwipeX = 0;
   var NEXT = true;
   var SWIPE_LENGTH = 50;
 
@@ -63,22 +65,30 @@
     }
   };
 
-  // Добавляет обработчик свайпа
-  var addSwipeListener = function () {
-    var startSwipeX = 0;
-    var endSwipeX = 0;
-
-    sliderElement.addEventListener('touchstart', function (evt) {
-      startSwipeX = evt.changedTouches[0].screenX;
-    }, false);
-
-    sliderElement.addEventListener('touchend', function (evt) {
-      endSwipeX = evt.changedTouches[0].screenX;
-      if (startSwipeX - endSwipeX >= SWIPE_LENGTH || endSwipeX - startSwipeX >= SWIPE_LENGTH) {
-        swipeSlide(startSwipeX, endSwipeX);
-      }
-    }, false);
+  // Запоминает координаты нажатия тапа
+  var onSliderTouchStart = function (evt) {
+    startSwipeX = evt.changedTouches[0].screenX;
   };
 
-  addSwipeListener();
+  // При отпускании тапа вычисляет длину свайпа, и если она соответствует - переключает слайд
+  var onSliderTouchEnd = function (evt) {
+    endSwipeX = evt.changedTouches[0].screenX;
+    if (startSwipeX - endSwipeX >= SWIPE_LENGTH || endSwipeX - startSwipeX >= SWIPE_LENGTH) {
+      swipeSlide(startSwipeX, endSwipeX);
+    }
+  };
+
+  window.sizeSlider = {
+    // Добавляет обработчик свайпа
+    addSwipeListener: function () {
+      sliderElement.addEventListener('touchstart', onSliderTouchStart, false);
+      sliderElement.addEventListener('touchend', onSliderTouchEnd, false);
+    },
+
+    // Удаляет обработчик свайпа
+    removeSwipeListener: function () {
+      sliderElement.removeEventListener('touchstart', onSliderTouchStart);
+      sliderElement.removeEventListener('touchend', onSliderTouchEnd);
+    }
+  };
 })();
