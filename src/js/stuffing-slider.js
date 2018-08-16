@@ -6,10 +6,10 @@
   var buttonsElements = Array.from(sliderElement.querySelectorAll('.form__item-button--stuffing'));
   var inputsElements = Array.from(sliderElement.querySelectorAll('.stuffing-item__radio'));
   var headingsElements = Array.from(sliderElement.querySelectorAll('.stuffing-item__heading'));
-  var previousButtonElement = document.querySelector('.stuffing__list-navigation--previous');
-  var nextButtonElement = document.querySelector('.stuffing__list-navigation--next');
+  var previousButtonElement = document.querySelector('.form__list-navigation--stuffing-previous');
+  var nextButtonElement = document.querySelector('.form__list-navigation--stuffing-next');
   var totalChoiseElement = document.querySelector('#stuffing');
-  var sliderIndicatorElement = document.querySelector('.stuffing-item__indicator');
+  var sliderIndicatorElement = document.querySelector('.form__slider-indicator');
   var currentSlideIndex = 0;
   var isLastSlide = false;
   var isFirstSlide = true;
@@ -37,12 +37,12 @@
 
   // Деактивирует соответствующие кнопки навигации, если слайд - крайний
   var disableSliderButtons = function () {
-    previousButtonElement.classList.remove('stuffing__list-navigation--disabled');
-    nextButtonElement.classList.remove('stuffing__list-navigation--disabled');
+    previousButtonElement.classList.remove('form__list-navigation--disabled');
+    nextButtonElement.classList.remove('form__list-navigation--disabled');
     if (isFirstSlide) {
-      previousButtonElement.classList.add('stuffing__list-navigation--disabled');
+      previousButtonElement.classList.add('form__list-navigation--disabled');
     } else if (isLastSlide) {
-      nextButtonElement.classList.add('stuffing__list-navigation--disabled');
+      nextButtonElement.classList.add('form__list-navigation--disabled');
     }
   };
 
@@ -131,7 +131,7 @@
   // Создает элемент индикатора
   var createIdicatorElement = function () {
     var newElement = document.createElement('div');
-    newElement.classList.add('stuffing-item__indicator-element');
+    newElement.classList.add('form__slider-indicator-element');
     return newElement;
   };
 
@@ -153,42 +153,42 @@
         insertElement();
       };
     }
-    indicatorElements = Array.from(document.querySelectorAll('.stuffing-item__indicator-element'));
+    indicatorElements = Array.from(document.querySelectorAll('.form__slider-indicator-element'));
   };
 
   // Ставит индикатор в начальное положение
   var setStartSliderIndicator = function () {
-    indicatorElements[0].classList.add('stuffing-item__indicator-element--current');
+    indicatorElements[0].classList.add('form__slider-indicator-element--current');
     if (slidesElements.length > INDICATOR_ELEMENTS_NUMBER) {
-      indicatorElements[LAST_INDOCATOR_ELEMENT].classList.add('stuffing-item__indicator-element--extreme');
+      indicatorElements[LAST_INDOCATOR_ELEMENT].classList.add('form__slider-indicator-element--extreme');
     }
   };
 
   // Обновляет индикатор слайдера
   var updateSliderIndicator = function () {
     indicatorElements.forEach(function (element) {
-      element.classList.remove('stuffing-item__indicator-element--current');
-      element.classList.remove('stuffing-item__indicator-element--extreme');
+      element.classList.remove('form__slider-indicator--current');
+      element.classList.remove('form__slider-indicator--extreme');
     });
     if (slidesElements.length <= INDICATOR_ELEMENTS_NUMBER) {
-      indicatorElements[currentSlideIndex].classList.add('stuffing-item__indicator-element--current');
+      indicatorElements[currentSlideIndex].classList.add('form__slider-indicator-element--current');
     } else if (slidesElements.length > INDICATOR_ELEMENTS_NUMBER) {
       if (currentSlideIndex < 3) {
-        indicatorElements[currentSlideIndex].classList.add('stuffing-item__indicator-element--current');
-        indicatorElements[LAST_INDOCATOR_ELEMENT].classList.add('stuffing-item__indicator-element--extreme');
+        indicatorElements[currentSlideIndex].classList.add('form__slider-indicator-element--current');
+        indicatorElements[LAST_INDOCATOR_ELEMENT].classList.add('form__slider-indicator-element--extreme');
       } else if (currentSlideIndex === slidesElements.length -1) {
-        indicatorElements[LAST_INDOCATOR_ELEMENT].classList.add('stuffing-item__indicator-element--current');
-        indicatorElements[FIRST_INDOCATOR_ELEMENT].classList.add('stuffing-item__indicator-element--extreme');
+        indicatorElements[LAST_INDOCATOR_ELEMENT].classList.add('form__slider-indicator-element--current');
+        indicatorElements[FIRST_INDOCATOR_ELEMENT].classList.add('form__slider-indicator-element--extreme');
       } else if (currentSlideIndex === slidesElements.length -2) {
-        indicatorElements[LAST_INDOCATOR_ELEMENT - 1].classList.add('stuffing-item__indicator-element--current');
-        indicatorElements[FIRST_INDOCATOR_ELEMENT].classList.add('stuffing-item__indicator-element--extreme');
+        indicatorElements[LAST_INDOCATOR_ELEMENT - 1].classList.add('form__slider-indicator-element--current');
+        indicatorElements[FIRST_INDOCATOR_ELEMENT].classList.add('form__slider-indicator-element--extreme');
       } else if (currentSlideIndex === slidesElements.length -3) {
-        indicatorElements[LAST_INDOCATOR_ELEMENT - 2].classList.add('stuffing-item__indicator-element--current');
-        indicatorElements[FIRST_INDOCATOR_ELEMENT].classList.add('stuffing-item__indicator-element--extreme');
+        indicatorElements[LAST_INDOCATOR_ELEMENT - 2].classList.add('form__slider-indicator-element--current');
+        indicatorElements[FIRST_INDOCATOR_ELEMENT].classList.add('form__slider-indicator-element--extreme');
       } else if (currentSlideIndex > 2 && currentSlideIndex < slidesElements.length -3) {
-        indicatorElements[LAST_INDOCATOR_ELEMENT - 2].classList.add('stuffing-item__indicator-element--current');
-        indicatorElements[LAST_INDOCATOR_ELEMENT].classList.add('stuffing-item__indicator-element--extreme');
-        indicatorElements[FIRST_INDOCATOR_ELEMENT].classList.add('stuffing-item__indicator-element--extreme');
+        indicatorElements[LAST_INDOCATOR_ELEMENT - 2].classList.add('form__slider-indicator-element--current');
+        indicatorElements[LAST_INDOCATOR_ELEMENT].classList.add('form__slider-indicator-element--extreme');
+        indicatorElements[FIRST_INDOCATOR_ELEMENT].classList.add('sform__slider-indicator-element--extreme');
       }
     }
   };

@@ -138,9 +138,9 @@
                 <h3 class="form__item-heading">Выберите начинку</h3>
                 <div class="form__stuffing-list-wrapper">
                   <ul class="form__stuffing-list stuffing-list"></ul>
-                  <div class="stuffing-item__indicator"></div>
-                  <div class="stuffing__list-navigation stuffing__list-navigation--previous"></div>
-                  <div class="stuffing__list-navigation stuffing__list-navigation--next"></div>
+                  <div class="form__slider-indicator form__slider-indicator--stuffing"></div>
+                  <div class="form__list-navigation form__list-navigation--previous form__list-navigation--stuffing-previous"></div>
+                  <div class="form__list-navigation form__list-navigation--next form__list-navigation--stuffing-next"></div>
                 </div>
               </li>
               <li class="form__item">
@@ -182,37 +182,15 @@
                 <button class="form__item-button form__item-button--size button" type="button">Выбрать</button>
               </li>
               <li class="form__item">
-                <h3 class="form__item-heading">Оформление</h3>
-                <ul class="form__design-list design-list">
-                  <li class="design-item">
-                    <h4 class="design-item__heading">Ягодное ассорти</h4>
-                    <div class="design-item__image-wrapper">
-                      <picture class="design-item__image">
-                        <source media="(min-width: 1366px)" srcset="img/berries-desktop@1x.jpg">
-                        <source media="(min-width: 768px)" srcset="img/berries-tablet@1x.jpg">
-                        <img src="img/berries-mobile@1x.jpg" alt="Изображение оформления «Ягодное ассорти»">
-                      </picture>
-                    </div>
-                    <p class="design-item__price">700 руб/кг</p>
-                    <label class="visually-hidden" for="berry-allsorts">Ягодное ассорти</label>
-                    <input class="design-item__radio visually-hidden" id="berry-allsorts" type="radio" name="design" value="berry-allsorts">
-                    <button class="form__item-button form__item-button--design button" type="button">Выбрать</button>
-                  </li>
-                  <li class="design-item design-item--current">
-                    <h4 class="design-item__heading">Маршмэллоу</h4>
-                    <div class="design-item__image-wrapper">
-                      <picture class="design-item__image">
-                        <source media="(min-width: 1366px)" srcset="img/marshmallow-desktop@1x.jpg">
-                        <source media="(min-width: 768px)" srcset="img/marshmallow-tablet@1x.jpg">
-                        <img src="img/marshmallow-mobile@1x.jpg" alt="Изображение оформления «Маршмэллоу»">
-                      </picture>
-                    </div>
-                      <p class="design-item__price">600 руб/кг</p>
-                    <label class="visually-hidden" for="marshmallow">Маршмэллоу</label>
-                    <input class="design-item__radio visually-hidden" id="marshmallow" type="radio" name="design" value="marshmallow">
-                    <button class="form__item-button form__item-button--design button" type="button">Выбрать</button>
-                  </li>
-                </ul>
+                <h3 class="form__item-heading form__item-heading--design">Оформление</h3>
+                <div class="form__design-list-wrapper">
+                  <ul class="form__design-list design-list"></ul>
+                  <span class="form__design-slider-counter">1/35</span>
+                  <div class="form__slider-indicator form__slider-indicator--design"></div>
+                  <div class="form__list-navigation form__list-navigation--previous form__list-navigation--design-previous"></div>
+                  <div class="form__list-navigation form__list-navigation--next form__list-navigation--design-next"></div>
+                </div>
+                <button class="form__item-button form__item-button--design button" type="button">Выбрать</button>
               </li>
             </ol>
             <section class="form__total-choise total-choise">
@@ -503,6 +481,20 @@
           <span class="stuffing-item__counter">1/12</span>
         </div>
       </li>
+
+      <li class="design-item">
+        <h4 class="design-item__heading">Ягодное ассорти</h4>
+        <div class="design-item__image-wrapper">
+          <picture class="design-item__image">
+            <source media="(min-width: 1366px)" srcset="img/berries-desktop@1x.jpg">
+            <source media="(min-width: 768px)" srcset="img/berries-tablet@1x.jpg">
+            <img src="img/berries-mobile@1x.jpg" alt="Изображение оформления «Ягодное ассорти»">
+          </picture>
+        </div>
+        <p class="design-item__price">700 руб/кг</p>
+        <label class="visually-hidden" for="berry-allsorts">Ягодное ассорти</label>
+        <input class="design-item__radio visually-hidden" id="berry-allsorts" type="radio" name="design" value="berry-allsorts">
+      </li>
     </div>
     <!-- Templates -->
 
@@ -515,5 +507,10 @@
     <script src="js/stuffing-slider.js"></script>
     <script src="js/size-slider.js"></script>
     <script src="js/size-section.js"></script>
+    <script src="js/design-data.js"></script>
+    <script src="js/design-slides-load.js"></script>
+    <script src="js/design-slider.js"></script>
+    <script src="js/design-slider-indicator.js"></script>
+    <script src="js/design-section.js"></script>
   </body>
 </html>

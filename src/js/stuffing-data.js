@@ -2,7 +2,7 @@
 
 (function () {
   window.stuffingData = {
-    imagesMobile: [
+    images: [
       'img/staffing-shoco-mobile@1x.jpg',
       'img/staffing-rainbow-mobile@1x.jpg',
       'img/staffing-banana-mobile@1x.jpg',
@@ -10,24 +10,6 @@
       'img/staffing-caramel-mobile@1x.jpg',
       'img/staffing-shoco-berries-mobile@1x.jpg',
       'img/staffing-honey-mobile@1x.jpg'
-    ],
-    imagesTablet: [
-      'img/staffing-shoco-tablet@1x.jpg',
-      'img/staffing-rainbow-tablet@1x.jpg',
-      'img/staffing-banana-tablet@1x.jpg',
-      'img/staffing-red-tablet@1x.jpg',
-      'img/staffing-caramel-tablet@1x.jpg',
-      'img/staffing-shoco-berries-tablet@1x.jpg',
-      'img/staffing-honey-tablet@1x.jpg'
-    ],
-    imagesDesktop: [
-      'img/staffing-shoco-desktop@1x.jpg',
-      'img/staffing-rainbow-desktop@1x.jpg',
-      'img/staffing-banana-desktop@1x.jpg',
-      'img/staffing-red-desktop@1x.jpg',
-      'img/staffing-caramel-desktop@1x.jpg',
-      'img/staffing-shoco-berries-desktop@1x.jpg',
-      'img/staffing-honey-desktop@1x.jpg'
     ],
     headings: [
       'Шоколадный ганаш',

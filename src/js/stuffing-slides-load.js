@@ -10,10 +10,10 @@
     tempSlide.querySelector('.stuffing-item__heading').textContent = data.headings[index];
     tempSlide.querySelector('.stuffing-item__description').textContent = data.texts[index];
     tempSlide.querySelector('.stuffing-item__price').textContent = data.prices[index];
-    tempSlide.querySelector('img').setAttribute('src', data.imagesMobile[index]);
+    tempSlide.querySelector('img').setAttribute('src', data.images[index]);
     tempSlide.querySelector('input').value = data.inputsValues[index];
-    tempSlide.querySelectorAll('source')[0].setAttribute('srcset', data.imagesDesktop[index]);
-    tempSlide.querySelectorAll('source')[1].setAttribute('srcset', data.imagesTablet[index]);
+    tempSlide.querySelectorAll('source')[0].setAttribute('srcset', data.images[index].replace(/mobile/gi, 'desktop'));
+    tempSlide.querySelectorAll('source')[1].setAttribute('srcset', data.images[index].replace(/mobile/gi, 'tablet'));
     return tempSlide;
   }
 
