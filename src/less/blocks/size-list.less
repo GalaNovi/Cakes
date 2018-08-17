@@ -1,10 +1,14 @@
 .size-list {
+  display: flex;
   .list-reset;
   padding-top: 50px;
 }
 
 .size-item {
   display: none;
+  margin: 0 auto;
+  opacity: 0;
+  transition: opacity 0.2s;
 
   &:first-child .size-item__label {
     width: 110px;
@@ -36,6 +40,7 @@
 
   &--current {
     display: block;
+    opacity: 1;
   }
 }
 
@@ -77,6 +82,7 @@
   .size-item {
     display: block;
     margin-right: 10px;
+    opacity: 1;
 
     &:first-child .size-item__label {
       width: 105px;

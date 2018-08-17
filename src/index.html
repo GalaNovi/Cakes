@@ -142,6 +142,7 @@
                   <div class="form__list-navigation form__list-navigation--previous form__list-navigation--stuffing-previous"></div>
                   <div class="form__list-navigation form__list-navigation--next form__list-navigation--stuffing-next"></div>
                 </div>
+                <button class="form__item-button form__item-button--stuffing button" type="button">Выбрать</button>
               </li>
               <li class="form__item">
                 <h3 class="form__item-heading">Размер</h3>
@@ -174,7 +175,7 @@
                     <input class="size-item__radio visually-hidden" id="8kg" type="radio" name="size" value="8kg">
                     <label class="size-item__label" for="8kg">8 кг</label>
                     <p class="size-item__description">
-                      Три яруса 30,25 и 18 см<br>
+                      Три яруса 30, 25 и 18 см<br>
                       (25 – 30 персон)
                     </p>
                   </li>
@@ -199,15 +200,15 @@
                 <ul class="total-choise__list">
                   <li class="total-choise__item">
                     <p class="total-choise__item-heading">Начинка</p>
-                    <p id="stuffing" class="total-choise__item-text">Шоколадный ганаш</p>
+                    <p id="stuffing" class="total-choise__item-text"></p>
                   </li>
                   <li class="total-choise__item">
                     <p class="total-choise__item-heading">Размер</p>
-                    <p id="size" class="total-choise__item-text">1 кг</p>
+                    <p id="size" class="total-choise__item-text"></p>
                   </li>
                   <li class="total-choise__item">
                     <p class="total-choise__item-heading">Оформление</p>
-                    <p id="design" class="total-choise__item-text">Маршмэллоу</p>
+                    <p id="design" class="total-choise__item-text"></p>
                   </li>
                 </ul>
                 <button class="form__button button" type="submit">Заказать торт</button>
@@ -470,7 +471,6 @@
           <p class="stuffing-item__price">1000 руб/кг</p>
           <label class="visually-hidden" for="input">Выбрать «Шоколадный ганаш»</label>
           <input class="stuffing-item__radio visually-hidden" id="input" type="radio" name="staffing" value="">
-          <button class="form__item-button form__item-button--stuffing button" type="button">Выбрать</button>
         </div>
         <div class="stuffing-item__image-wrapper">
           <picture class="stuffing-item__image">
@@ -505,6 +505,8 @@
     <script src="js/stuffing-data.js"></script>
     <script src="js/stuffing-slides-load.js"></script>
     <script src="js/stuffing-slider.js"></script>
+    <script src="js/stuffing-slider-indicator.js"></script>
+    <script src="js/stuffing-section.js"></script>
     <script src="js/size-slider.js"></script>
     <script src="js/size-section.js"></script>
     <script src="js/design-data.js"></script>
@@ -512,5 +514,6 @@
     <script src="js/design-slider.js"></script>
     <script src="js/design-slider-indicator.js"></script>
     <script src="js/design-section.js"></script>
+    <script src="js/total-choice.js"></script>
   </body>
 </html>

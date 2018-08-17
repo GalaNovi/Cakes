@@ -3,6 +3,7 @@
 (function () {
   var sliderElement = document.querySelector('.design-list'),
       slidesElements = Array.from(sliderElement.querySelectorAll('.design-item')),
+      sliderCounterElement = document.querySelector('.form__design-slider-counter'), // NEW
       currentSlideClass = 'design-item--current',
       showedSlidesNumber = 1,
       currentSlideIndex,
@@ -10,6 +11,10 @@
       isLastSlide,
       SWIPE_LENGTH = 50,
       TIME_SLIDE_BROWSING = 300; // В милисекундах
+
+  var sliderCounterUpdate = function () { // Обновляет счетчик слайдов
+    sliderCounterElement.textContent = (currentSlideIndex + 1) + '/' + slidesElements.length;
+  };
 
   var findCurrentSlide = function (element) { // Возвращает true, если слайд активный
     if (element.classList.contains(currentSlideClass)) {
@@ -69,6 +74,7 @@
     setTimeout(function () {
       updateCurrentSlideIndex();
       window.designSliderIndicator.update(slidesElements, currentSlideIndex);
+      sliderCounterUpdate();
     }, TIME_SLIDE_BROWSING);
   };
 
@@ -100,6 +106,7 @@
       updateCurrentSlideIndex();
       window.designSliderIndicator.set(slidesElements);
       window.designSliderIndicator.update(slidesElements, currentSlideIndex);
+      sliderCounterUpdate();
     },
 
     slidesElements: slidesElements,

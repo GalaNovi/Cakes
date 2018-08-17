@@ -3,7 +3,7 @@
 (function () {
   var sliderElement = document.querySelector('.design-list');
   var template = document.querySelector('#template');
-  var DEFAULT_SLIDE_NUMBER = 2;
+  var DEFAULT_SLIDE_NUMBER = 1;
 
   // Создает новый слайд
   var createSlide = function (data, index) {
