@@ -1,7 +1,7 @@
 'use strict';
 
 (function () {
-  var links = Array.from(document.querySelectorAll('a'));
+  var links = Array.from(document.querySelectorAll('.internal-link'));
 
   // Вешает обработчик клика по ссылке (плавный скролл)
   var addClickListener = function(link) {

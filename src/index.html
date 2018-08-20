@@ -17,12 +17,12 @@
         <button class="page-header__menu-button page-header__menu-button--nojs" type="button"><span class="visually-hidden">Открыть или закрыть меню</span></button>
         <nav class="main-nav main-nav--hidden">
           <ul class="main-nav__list">
-            <li class="main-nav__item"><a class="main-nav__link" href="#cakes">Наши торты</a></li>
-            <li class="main-nav__item"><a class="main-nav__link" href="#individual-order">Индивидуальный заказ</a></li>
-            <li class="main-nav__item"><a class="main-nav__link" href="#reviews">Отзывы</a></li>
-            <li class="main-nav__item"><a class="main-nav__link" href="#about-us">О нас</a></li>
-            <li class="main-nav__item"><a class="main-nav__link" href="#order">Как заказать</a></li>
-            <li class="main-nav__item"><a class="main-nav__link" href="#contacts">Контакты</a></li>
+            <li class="main-nav__item"><a class="main-nav__link internal-link" href="#cakes">Наши торты</a></li>
+            <li class="main-nav__item"><a class="main-nav__link internal-link" href="#individual-order">Индивидуальный заказ</a></li>
+            <li class="main-nav__item"><a class="main-nav__link internal-link" href="#reviews">Отзывы</a></li>
+            <li class="main-nav__item"><a class="main-nav__link internal-link" href="#about-us">О нас</a></li>
+            <li class="main-nav__item"><a class="main-nav__link internal-link" href="#order">Как заказать</a></li>
+            <li class="main-nav__item"><a class="main-nav__link internal-link" href="#contacts">Контакты</a></li>
           </ul>
         </nav>
         <p class="page-header__phone-number">+7 906 899 92 96</p>
@@ -50,7 +50,7 @@
             </li>
           </ul>
           <div class="key-features__button-wrapper">
-            <a class="key-features__button button" href="#individual-order">Выбрать торт</a>
+            <a class="key-features__button button internal-link" href="#individual-order">Выбрать торт</a>
           </div>
         </div>
       </section>
@@ -138,11 +138,12 @@
                 <h3 class="form__item-heading">Выберите начинку</h3>
                 <div class="form__stuffing-list-wrapper">
                   <ul class="form__stuffing-list stuffing-list"></ul>
+                  <span class="form__stuffing-slider-counter">1/12</span>
                   <div class="form__slider-indicator form__slider-indicator--stuffing"></div>
                   <div class="form__list-navigation form__list-navigation--previous form__list-navigation--stuffing-previous"></div>
                   <div class="form__list-navigation form__list-navigation--next form__list-navigation--stuffing-next"></div>
+                  <button class="form__item-button form__item-button--stuffing button" type="button">Выбрать</button>
                 </div>
-                <button class="form__item-button form__item-button--stuffing button" type="button">Выбрать</button>
               </li>
               <li class="form__item">
                 <h3 class="form__item-heading">Размер</h3>
@@ -422,15 +423,15 @@
     </main>
     <footer class="page-footer">
       <div class="container">
-        <div class="page-footer__logo"><a class="page-footer__logo-link" href="#up">Cakes</a></div>
+        <div class="page-footer__logo"><a class="page-footer__logo-link internal-link" href="#up">Cakes</a></div>
         <nav class="footer-nav">
           <ul class="footer-nav__list">
-            <li class="footer-nav__item"><a class="footer-nav__link" href="#cakes">Наши торты</a></li>
-            <li class="footer-nav__item"><a class="footer-nav__link" href="#individual-order">Индивидуальный заказ</a></li>
-            <li class="footer-nav__item"><a class="footer-nav__link" href="#reviews">Отзывы</a></li>
-            <li class="footer-nav__item"><a class="footer-nav__link" href="#about-us">О нас</a></li>
-            <li class="footer-nav__item"><a class="footer-nav__link" href="#order">Как заказать</a></li>
-            <li class="footer-nav__item"><a class="footer-nav__link" href="#contacts">Контакты</a></li>
+            <li class="footer-nav__item"><a class="footer-nav__link internal-link" href="#cakes">Наши торты</a></li>
+            <li class="footer-nav__item"><a class="footer-nav__link internal-link" href="#individual-order">Индивидуальный заказ</a></li>
+            <li class="footer-nav__item"><a class="footer-nav__link internal-link" href="#reviews">Отзывы</a></li>
+            <li class="footer-nav__item"><a class="footer-nav__link internal-link" href="#about-us">О нас</a></li>
+            <li class="footer-nav__item"><a class="footer-nav__link internal-link" href="#order">Как заказать</a></li>
+            <li class="footer-nav__item"><a class="footer-nav__link internal-link" href="#contacts">Контакты</a></li>
           </ul>
         </nav>
         <p class="page-footer__phone-number">+7 906 899 92 96</p>
@@ -478,7 +479,6 @@
             <source media="(min-width: 768px)" srcset="img/staffing-shoco-tablet@1x.jpg">
             <img src="img/staffing-shoco-mobile@1x.jpg" alt="Изображение шоколадного бисквита с шоколадным кремом">
           </picture>
-          <span class="stuffing-item__counter">1/12</span>
         </div>
       </li>
 

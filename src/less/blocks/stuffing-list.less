@@ -6,6 +6,7 @@
 }
 
 .stuffing-item {
+  position: relative;
   display: none;
   padding: 0;
   flex-direction: column;
@@ -46,6 +47,9 @@
 
 .stuffing-item__image {
   display: block;
+  width: 241px;
+  height: 113px;
+
   text-align: center;
 }
 
@@ -59,36 +63,32 @@
   text-align: center;
 }
 
-.stuffing-item__counter {
-  position: absolute;
-  right: 7px;
-  bottom: 5px;
-
-  .font(12px, 25px);
-  color: #ffffff;
-}
-
 // ================================ Tablet ===========================
 
 @media (min-width: @tablet) {
+  .stuffing-list {
+    width: 465px;
+  }
+
   .stuffing-item {
     flex-direction: row;
     align-items: flex-start;
-    margin-left: -110px;
-    width: 425px;
   }
 
   .stuffing-item__image-wrapper {
     flex-shrink: 0;
     margin: 0;
     margin-right: 25px;
-    margin-bottom: 0;
+  }
+
+  .stuffing-item__image {
     width: 210px;
+    height: 239px;
   }
 
   .stuffing-item__text-wrapper {
     margin-top: 20px;
-    width: 200px;
+    width: 230px;
   }
 
   .stuffing-item__heading {
@@ -99,34 +99,38 @@
   .stuffing-item__description {
     margin: 0;
     margin-bottom: 10px;
+    width: 205px;
   }
 
   .stuffing-item__price {
-    margin-bottom: 23px;
+    margin-bottom: 75px;
     .font(20px, 24px);
     text-align: left;
-  }
-
-  .stuffing-item__counter {
-    right: -275px;
-    bottom: 0;
-    .font(11px, 14px);
-    color: @color-text;
   }
 }
 
 // ================================ Desktop ===========================
 
 @media (min-width: @desktop) {
+  .stuffing-list {
+    margin-bottom: 37px;
+    width: 665px;
+  }
+
   .stuffing-item {
+    flex-shrink: 0;
     justify-content: space-between;
     margin: 0;
-    width: 665px;
+    width: 100%;
   }
 
   .stuffing-item__image-wrapper {
     margin-right: 0;
-    width: 343px;
+  }
+
+  .stuffing-item__image {
+    width: 344px;
+    height: 390px;
   }
 
   .stuffing-item__text-wrapper {
@@ -139,19 +143,14 @@
   }
 
   .stuffing-item__description {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     .font(18px, 24px);
     font-weight: normal;
+    width: auto;
   }
 
   .stuffing-item__price {
     margin-bottom: 50px;
     .font(22px, 26px);
-  }
-
-  .stuffing-item__counter {
-    right: -453px;
-    bottom: -5px;
-    .font(18px, 25px);
   }
 }

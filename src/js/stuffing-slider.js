@@ -3,6 +3,9 @@
 (function () {
   var sliderElement = document.querySelector('.stuffing-list'),
       slidesElements = Array.from(sliderElement.querySelectorAll('.stuffing-item')),
+      sliderPreviousButtonElement = document.querySelector('.form__list-navigation--stuffing-previous'),
+      sliderNextButtonElement = document.querySelector('.form__list-navigation--stuffing-next'),
+      sliderCounterElement = document.querySelector('.form__stuffing-slider-counter'),
       currentSlideClass = 'stuffing-item--current',
       showedSlidesNumber = 1,
       currentSlideIndex,
@@ -10,6 +13,10 @@
       isLastSlide,
       SWIPE_LENGTH = 50,
       TIME_SLIDE_BROWSING = 300; // В милисекундах
+
+  var sliderCounterUpdate = function () { // Обновляет счетчик слайдов
+      sliderCounterElement.textContent = (currentSlideIndex + 1) + '/' + slidesElements.length;
+  };
 
   var findCurrentSlide = function (element) { // Возвращает true, если слайд активный
     if (element.classList.contains(currentSlideClass)) {
@@ -25,7 +32,7 @@
   };
 
   var animateBrowsingNextSlide = function (currentSlide, nextSlide) { // Анимация перелистывания вперед
-    currentSlide.style.cssText = 'animation: hideSlideToLeft ' + (TIME_SLIDE_BROWSING / 1000) + 's;';
+    currentSlide.style.cssText = 'animation: hideStuffingSlideToLeft ' + (TIME_SLIDE_BROWSING / 1000) + 's;';
     setTimeout(function () {
       currentSlide.style.cssText = '';
       nextSlide.style.cssText = '';
@@ -33,7 +40,7 @@
   };
 
   var animateBrowsingPreviousSlide = function (currentSlide, previousSlide) { // Анимация перелистывания назад
-    previousSlide.style.cssText = 'animation: showPreviousSlide ' + TIME_SLIDE_BROWSING / 1000 + 's;';
+    previousSlide.style.cssText = 'animation: showPreviousStuffingSlide ' + TIME_SLIDE_BROWSING / 1000 + 's;';
     setTimeout(function () {
       currentSlide.style.cssText = null;
       previousSlide.style.cssText = null;
@@ -69,6 +76,8 @@
     setTimeout(function () {
       updateCurrentSlideIndex();
       window.stuffingSliderIndicator.update(slidesElements, currentSlideIndex);
+      navigationButtonsUpdate();
+      sliderCounterUpdate();
     }, TIME_SLIDE_BROWSING);
   };
 
@@ -94,10 +103,32 @@
     });
   };
 
+  var addNavigationButtonsListeners = function () { // Обработчики кнопок навигации слайдера
+    sliderPreviousButtonElement.addEventListener('click', function () {
+      changeSlide('right');
+    });
+    sliderNextButtonElement.addEventListener('click', function () {
+      changeSlide('left');
+    });
+  };
+
+  var navigationButtonsUpdate = function () {
+    sliderPreviousButtonElement.classList.remove('form__list-navigation--disabled');
+    sliderNextButtonElement.classList.remove('form__list-navigation--disabled');
+    if (isFirstSlide) {
+      sliderPreviousButtonElement.classList.add('form__list-navigation--disabled');
+    } else if (isLastSlide) {
+      sliderNextButtonElement.classList.add('form__list-navigation--disabled');
+    }
+  };
+
   window.stuffingSlider = {
     add: function() {
       addSwipeListener(sliderElement);
+      addNavigationButtonsListeners();
       updateCurrentSlideIndex();
+      navigationButtonsUpdate();
+      sliderCounterUpdate();
       window.stuffingSliderIndicator.set(slidesElements);
       window.stuffingSliderIndicator.update(slidesElements, currentSlideIndex);
     }

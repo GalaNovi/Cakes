@@ -3,9 +3,12 @@
 (function () {
   var sliderElement = document.querySelector('.design-list'),
       slidesElements = Array.from(sliderElement.querySelectorAll('.design-item')),
-      sliderCounterElement = document.querySelector('.form__design-slider-counter'), // NEW
+      sliderCounterElement = document.querySelector('.form__design-slider-counter'),
+      sliderPreviousButtonElement = document.querySelector('.form__list-navigation--design-previous'),
+      sliderNextButtonElement = document.querySelector('.form__list-navigation--design-next'),
       currentSlideClass = 'design-item--current',
-      showedSlidesNumber = 1,
+      showedSlidesNumberMobile = 1,
+      showedSlidesNumberTablet = 2,
       currentSlideIndex,
       isFirstSlide,
       isLastSlide,
@@ -13,7 +16,11 @@
       TIME_SLIDE_BROWSING = 300; // В милисекундах
 
   var sliderCounterUpdate = function () { // Обновляет счетчик слайдов
-    sliderCounterElement.textContent = (currentSlideIndex + 1) + '/' + slidesElements.length;
+    if (window.innerWidth < 768) {
+      sliderCounterElement.textContent = (currentSlideIndex + 1) + '/' + slidesElements.length;
+    } else {
+      sliderCounterElement.textContent = (currentSlideIndex + 2) + '/' + slidesElements.length;
+    }
   };
 
   var findCurrentSlide = function (element) { // Возвращает true, если слайд активный
@@ -26,7 +33,11 @@
   var updateCurrentSlideIndex = function () { // Определяет индекс активного слайда, проверяет не крайний ли он
     currentSlideIndex = slidesElements.findIndex(findCurrentSlide);
     isFirstSlide = currentSlideIndex === 0;
-    isLastSlide = currentSlideIndex === slidesElements.length - 1;
+    if (window.innerWidth < 768) {
+      isLastSlide = currentSlideIndex === slidesElements.length - 1;
+    } else {
+      isLastSlide = currentSlideIndex === slidesElements.length - 2;
+    }
   };
 
   var animateBrowsingNextSlide = function (currentSlide, nextSlide) { // Анимация перелистывания вперед
@@ -64,17 +75,27 @@
   var changeSlide = function (direction) { // Меняет слвйд в зависимости от направления свайпа
     if (direction === 'left' && !isLastSlide) {
       var currentSlide = slidesElements[currentSlideIndex];
-      var nextSlide = slidesElements[currentSlideIndex + showedSlidesNumber];
+      if (window.innerWidth < 768) {
+        var nextSlide = slidesElements[currentSlideIndex + showedSlidesNumberMobile];
+      } else {
+        var nextSlide = slidesElements[currentSlideIndex + showedSlidesNumberTablet];
+      }
       showNextSlide(currentSlide, nextSlide);
     } else if (direction === 'right' && !isFirstSlide) {
-      var currentSlide = slidesElements[currentSlideIndex];
-      var previousSlide = slidesElements[currentSlideIndex - showedSlidesNumber];
+      if (window.innerWidth < 768) {
+        var currentSlide = slidesElements[currentSlideIndex];
+        var previousSlide = slidesElements[currentSlideIndex - showedSlidesNumberMobile];
+      } else {
+        var currentSlide = slidesElements[currentSlideIndex + 1];
+        var previousSlide = slidesElements[currentSlideIndex - 1];
+      }
       showPreviousSlide(currentSlide, previousSlide);
     }
     setTimeout(function () {
       updateCurrentSlideIndex();
       window.designSliderIndicator.update(slidesElements, currentSlideIndex);
       sliderCounterUpdate();
+      navigationButtonsUpdate();
     }, TIME_SLIDE_BROWSING);
   };
 
@@ -100,16 +121,34 @@
     });
   };
 
+  var addNavigationButtonsListeners = function () { // Обработчики кнопок навигации слайдера
+    sliderPreviousButtonElement.addEventListener('click', function () {
+      changeSlide('right');
+    });
+    sliderNextButtonElement.addEventListener('click', function () {
+      changeSlide('left');
+    });
+  };
+
+  var navigationButtonsUpdate = function () {
+    sliderPreviousButtonElement.classList.remove('form__list-navigation--disabled');
+    sliderNextButtonElement.classList.remove('form__list-navigation--disabled');
+    if (isFirstSlide) {
+      sliderPreviousButtonElement.classList.add('form__list-navigation--disabled');
+    } else if (isLastSlide) {
+      sliderNextButtonElement.classList.add('form__list-navigation--disabled');
+    }
+  };
+
   window.designSlider = {
     add: function() {
       addSwipeListener(sliderElement);
+      addNavigationButtonsListeners();
       updateCurrentSlideIndex();
+      navigationButtonsUpdate();
       window.designSliderIndicator.set(slidesElements);
       window.designSliderIndicator.update(slidesElements, currentSlideIndex);
       sliderCounterUpdate();
-    },
-
-    slidesElements: slidesElements,
-    currentSlideIndex: currentSlideIndex
+    }
   };
 })();

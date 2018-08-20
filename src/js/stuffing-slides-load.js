@@ -17,15 +17,6 @@
     return tempSlide;
   }
 
-  // Пронумеровывает слайды
-  var setNumberSlides = function (slidesContainer) {
-    var slides = slidesContainer.querySelectorAll('.stuffing-item');
-    var slidesQuantity = slides.length;
-    for (var i = 0; i < slides.length; i++) {
-      slides[i].querySelector('.stuffing-item__counter').textContent = (i + 1) + '/' + slidesQuantity;
-    };
-  };
-
   // Создает фрагмент со слайдами
   var createSlidesFragment = function (data) {
     var slidesNumber = data.headings.length;
@@ -33,7 +24,6 @@
     for (var i = 0; i < slidesNumber; i++) {
       fragment.appendChild(createSlide(data, i));
     };
-    setNumberSlides(fragment);
     fragment.querySelector('.stuffing-item').classList.add('stuffing-item--current');
     return fragment;
   };

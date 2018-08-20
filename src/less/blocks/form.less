@@ -1,4 +1,5 @@
 .form__list {
+  position: relative;
   .list-reset;
   counter-reset: myCounter;
 }
@@ -58,6 +59,15 @@
   position: relative;
   margin: 0 auto;
   width: 240px;
+}
+
+.form__stuffing-slider-counter {
+  position: absolute;
+  right: 7px;
+  top: 105px;
+
+  .font(12px, 25px);
+  color: #ffffff;
 }
 
 .form__design-slider-counter {
@@ -121,6 +131,11 @@
     margin-bottom: 21px;
     box-shadow: 0 10px 13px 0 rgba(163, 6, 60, 0.05);
 
+    &:first-child {
+      padding-right: 120px;
+      padding-bottom: 56px;
+    }
+
     &:last-child {
       margin-bottom: 0;
       padding-right: 80px;
@@ -155,7 +170,9 @@
     .font(10px, 14px);
 
     &--stuffing {
-      margin: 0;
+      position: absolute;
+      bottom: 25px;
+      right: 90px;
     }
 
     &--size {
@@ -176,12 +193,18 @@
   }
 
   .form__stuffing-list-wrapper {
-    position: relative;
-    margin: 0 auto;
+    width: auto;
   }
 
   .form__design-list-wrapper {
     width: auto;
+  }
+
+  .form__stuffing-slider-counter {
+    right: -20px;
+    top: 245px;
+    .font(11px, 14px);
+    color: @color-text;
   }
 
   .form__design-slider-counter {
@@ -228,7 +251,7 @@
     }
 
     &--stuffing-previous {
-      left: -175px;
+      left: -65px;
     }
 
     &--design-previous {
@@ -248,7 +271,7 @@
     }
 
     &--stuffing-next {
-      right: -65px;
+      right: -25px;
     }
 
     &--design-next {
@@ -311,6 +334,11 @@
   .form__item-button {
     padding: 19px 60px 16px;
     .font(13px, 16px);
+
+    &--stuffing {
+      bottom: 93px;
+      right: 100px;
+    }
   }
 
   .form__button {
@@ -323,6 +351,12 @@
 
   .form__stuffing-list-wrapper {
     margin: 0;
+  }
+
+  .form__stuffing-slider-counter {
+    right: -130px;
+    top: 390px;
+    .font(18px, 25px);
   }
 
   .form__design-slider-counter {
