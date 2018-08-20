@@ -1,11 +1,10 @@
 'use strict';
 
 (function () {
-  var sliderElement = document.querySelector('.stuffing-list');
-  var template = document.querySelector('#template');
+  var sliderElement = document.querySelector('.stuffing-list'),
+      template = document.querySelector('#template');
 
-  // Создает новый слайд
-  var createSlide = function (data, index) {
+  var createSlide = function (data, index) {  // Создает новый слайд
     var tempSlide = template.querySelector('.stuffing-item').cloneNode(true);
     tempSlide.querySelector('.stuffing-item__heading').textContent = data.headings[index];
     tempSlide.querySelector('.stuffing-item__description').textContent = data.texts[index];
@@ -18,8 +17,7 @@
     return tempSlide;
   }
 
-  // Создает фрагмент со слайдами
-  var createSlidesFragment = function (data) {
+  var createSlidesFragment = function (data) {  // Создает фрагмент со слайдами
     var slidesNumber = data.headings.length;
     var fragment = document.createDocumentFragment();
     for (var i = 0; i < slidesNumber; i++) {

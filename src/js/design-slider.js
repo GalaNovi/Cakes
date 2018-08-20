@@ -41,7 +41,13 @@
   };
 
   var animateBrowsingNextSlide = function (currentSlide, nextSlide) { // Анимация перелистывания вперед
-    currentSlide.style.cssText = 'animation: hideSlideToLeft ' + (TIME_SLIDE_BROWSING / 1000) + 's;';
+    if (window.innerWidth < 768) {
+      currentSlide.style.cssText = 'animation: hideSlideToLeftMobile ' + (TIME_SLIDE_BROWSING / 1000) + 's;';
+    } else if (window.innerWidth < 1366) {
+      currentSlide.style.cssText = 'animation: hideSlideToLeftTablet ' + (TIME_SLIDE_BROWSING / 1000) + 's;';
+    } else {
+      currentSlide.style.cssText = 'animation: hideSlideToLeftDesktop ' + (TIME_SLIDE_BROWSING / 1000) + 's;';
+    }
     setTimeout(function () {
       currentSlide.style.cssText = '';
       nextSlide.style.cssText = '';
@@ -49,7 +55,13 @@
   };
 
   var animateBrowsingPreviousSlide = function (currentSlide, previousSlide) { // Анимация перелистывания назад
-    previousSlide.style.cssText = 'animation: showPreviousSlide ' + TIME_SLIDE_BROWSING / 1000 + 's;';
+    if (window.innerWidth < 768) {
+      previousSlide.style.cssText = 'animation: showPreviousSlideMobile ' + TIME_SLIDE_BROWSING / 1000 + 's;';
+    } else if (window.innerWidth < 1366) {
+      previousSlide.style.cssText = 'animation: showPreviousSlideTablet ' + TIME_SLIDE_BROWSING / 1000 + 's;';
+    } else {
+      previousSlide.style.cssText = 'animation: showPreviousSlideDesktop ' + TIME_SLIDE_BROWSING / 1000 + 's;';
+    }
     setTimeout(function () {
       currentSlide.style.cssText = null;
       previousSlide.style.cssText = null;

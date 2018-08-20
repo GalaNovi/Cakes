@@ -3,8 +3,7 @@
 (function () {
   var links = Array.from(document.querySelectorAll('.internal-link'));
 
-  // Вешает обработчик клика по ссылке (плавный скролл)
-  var addClickListener = function(link) {
+  var addClickListener = function(link) {  // Вешает обработчик клика по ссылке (плавный скролл)
     link.addEventListener('click', function (evt) {
       evt.preventDefault();
       var id = '#' + this.href.split('#')[1];
@@ -13,8 +12,7 @@
     });
   }
 
-  // Навешивает обработчик клика на все ссылки в массиве
-  var addListenersForLinks = function (array) {
+  var addListenersForLinks = function (array) {  // Навешивает обработчик клика на все ссылки в массиве
     for (var i = 0; i < array.length; i++) {
       addClickListener(array[i]);
     };

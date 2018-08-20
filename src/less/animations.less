@@ -1,4 +1,4 @@
-@keyframes showPreviousSlide {
+@keyframes showPreviousSlideMobile {
   0% {
     margin-left: -239px;
   }
@@ -8,7 +8,7 @@
   }
 }
 
-@keyframes hideSlideToLeft {
+@keyframes hideSlideToLeftMobile {
   0% {
     margin-left: 0;
   }
@@ -18,7 +18,7 @@
   }
 }
 
-@keyframes showPreviousStuffingSlide {
+@keyframes showPreviousStuffingSlideMobile {
   0% {
     margin-left: -239px;
   }
@@ -28,7 +28,7 @@
   }
 }
 
-@keyframes hideStuffingSlideToLeft {
+@keyframes hideStuffingSlideToLeftMobile {
   0% {
     margin-left: 0;
   }
@@ -38,86 +38,82 @@
   }
 }
 
-@media (min-width: @tablet) {
-  @keyframes showPreviousSlide {
-    0% {
-      margin-left: -220px;
-    }
-
-    100% {
-      margin-left: 0;
-    }
+@keyframes showPreviousSlideTablet {
+  0% {
+    margin-left: -220px;
   }
 
-  @keyframes hideSlideToLeft {
-    0% {
-      margin-left: 0;
-    }
-
-    100% {
-      margin-left: -220px;
-    }
-  }
-
-  @keyframes showPreviousStuffingSlide {
-    0% {
-      margin-left: -465px;
-    }
-
-    100% {
-      margin-left: 0;
-    }
-  }
-
-  @keyframes hideStuffingSlideToLeft {
-    0% {
-      margin-left: 0;
-    }
-
-    100% {
-      margin-left: -465px;
-    }
+  100% {
+    margin-left: 0;
   }
 }
 
-@media (min-width: @desktop) {
-  @keyframes showPreviousSlide {
-    0% {
-      margin-left: -360px;
-    }
-
-    100% {
-      margin-left: 0;
-    }
+@keyframes hideSlideToLeftTablet {
+  0% {
+    margin-left: 0;
   }
 
-  @keyframes hideSlideToLeft {
-    0% {
-      margin-left: 0;
-    }
+  100% {
+    margin-left: -220px;
+  }
+}
 
-    100% {
-      margin-left: -360px;
-    }
+@keyframes showPreviousStuffingSlideTablet {
+  0% {
+    margin-left: -465px;
   }
 
-  @keyframes showPreviousStuffingSlide {
-    0% {
-      margin-left: -665px;
-    }
+  100% {
+    margin-left: 0;
+  }
+}
 
-    100% {
-      margin-left: 0;
-    }
+@keyframes hideStuffingSlideToLeftTablet {
+  0% {
+    margin-left: 0;
   }
 
-  @keyframes hideStuffingSlideToLeft {
-    0% {
-      margin-left: 0;
-    }
+  100% {
+    margin-left: -465px;
+  }
+}
 
-    100% {
-      margin-left: -665px;
-    }
+@keyframes showPreviousSlideDesktop {
+  0% {
+    margin-left: -360px;
+  }
+
+  100% {
+    margin-left: 0;
+  }
+}
+
+@keyframes hideSlideToLeftDesktop {
+  0% {
+    margin-left: 0;
+  }
+
+  100% {
+    margin-left: -360px;
+  }
+}
+
+@keyframes showPreviousStuffingSlideDesktop {
+  0% {
+    margin-left: -665px;
+  }
+
+  100% {
+    margin-left: 0;
+  }
+}
+
+@keyframes hideStuffingSlideToLeftDesktop {
+  0% {
+    margin-left: 0;
+  }
+
+  100% {
+    margin-left: -665px;
   }
 }

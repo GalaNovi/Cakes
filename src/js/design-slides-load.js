@@ -1,10 +1,10 @@
 'use strict';
 
 (function () {
-  var sliderElement = document.querySelector('.design-list');
-  var template = document.querySelector('#template');
-  var windowWidth = window.innerWidth;
-  var DEFAULT_SLIDE_NUMBER = 1;
+  var sliderElement = document.querySelector('.design-list'),
+      template = document.querySelector('#template'),
+      windowWidth = window.innerWidth,
+      DEFAULT_SLIDE_NUMBER = 1;
 
   var createSlide = function (data, index) { // Создает новый слайд
     var tempSlide = template.querySelector('.design-item').cloneNode(true);

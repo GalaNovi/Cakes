@@ -1,28 +1,24 @@
 'use strict';
 
 (function () {
-  var indicatorElement = document.querySelector('.form__slider-indicator--design');
-  var indicatorElements = [];
-  var INDICATOR_ELEMENT_CLASS = 'form__slider-indicator-element';
-  var INDICATOR_CURRENT_ELEMENT_CLASS = 'form__slider-indicator-element--current';
-  var INDICATOR_EXTREME_ELEMENT_CLASS = 'form__slider-indicator-element--extreme';
-  var INDICATOR_ELEMENTS_NUMBER = 5;
+  var indicatorElement = document.querySelector('.form__slider-indicator--design'),
+      indicatorElements = [],
+      INDICATOR_ELEMENT_CLASS = 'form__slider-indicator-element',
+      INDICATOR_CURRENT_ELEMENT_CLASS = 'form__slider-indicator-element--current',
+      INDICATOR_EXTREME_ELEMENT_CLASS = 'form__slider-indicator-element--extreme',
+      INDICATOR_ELEMENTS_NUMBER = 5;
 
-
-  // Создает элемент индикатора
-  var createIndicatorElement = function () {
+  var createIndicatorElement = function () { // Создает элемент индикатора
     var newIndicatorElement = document.createElement('div');
     newIndicatorElement.classList.add(INDICATOR_ELEMENT_CLASS);
     return newIndicatorElement;
   };
 
-  // Добавляет элемент в индикатор
-  var insertElement = function () {
+  var insertElement = function () { // Добавляет элемент в индикатор
     indicatorElement.appendChild(createIndicatorElement());
   };
 
-  // Добавляет в индикатор нужное количество элементов
-  var insertElements = function (slides) {
+  var insertElements = function (slides) { // Добавляет в индикатор нужное количество элементов
     if (slides.length === 1) {
       insertElement();
     } else if (slides.length > INDICATOR_ELEMENTS_NUMBER) {
@@ -37,8 +33,7 @@
     indicatorElements = Array.from(indicatorElement.querySelectorAll('.' + INDICATOR_ELEMENT_CLASS));
   };
 
-  // Обновляет индикатор слайдера
-  var updateSliderIndicator = function (slides, currentSlideIndex) {
+  var updateSliderIndicator = function (slides, currentSlideIndex) { // Обновляет индикатор слайдера
     var firstElement = indicatorElements[0];
     var lastElement = indicatorElements[INDICATOR_ELEMENTS_NUMBER - 1]
     var secondFromEndElement = indicatorElements[INDICATOR_ELEMENTS_NUMBER - 2]

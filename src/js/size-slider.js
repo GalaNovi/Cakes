@@ -1,29 +1,26 @@
 'use strict';
 
 (function () {
-  var sliderElement = document.querySelector('.size-list');
-  var slidesElements = Array.from(document.querySelectorAll('.size-item'));
-  var currentSlideClass = 'size-item--current';
-  var currentSlideIndex = 0;
-  var isLastSlide;
-  var isFirstSlide;
-  var swipeDirection = null;
-  var startSwipeX = 0;
-  var endSwipeX = 0;
-  var NEXT = true;
-  var SWIPE_LENGTH = 50;
-  var TIME_SLIDE_BROWSING = 200; // В милисекундах
+  var sliderElement = document.querySelector('.size-list'),
+      slidesElements = Array.from(document.querySelectorAll('.size-item')),
+      currentSlideClass = 'size-item--current',
+      currentSlideIndex = 0,
+      isLastSlide,
+      isFirstSlide,
+      swipeDirection = null,
+      startSwipeX = 0,
+      endSwipeX = 0,
+      SWIPE_LENGTH = 50,
+      TIME_SLIDE_BROWSING = 200; // В милисекундах
 
-  // Возвращает true, если слайд активный
-  var findCurrentSlide = function (element) {
+  var findCurrentSlide = function (element) {  // Возвращает true, если слайд активный
     if (element.classList.contains('size-item--current')) {
       return true;
     }
     return false;
   };
 
-  // Определяет индекс активного слайда, проверяет не крайний ли он
-  var updateCurrentSlideIndex = function () {
+  var updateCurrentSlideIndex = function () {  // Определяет индекс активного слайда, проверяет не крайний ли он
     currentSlideIndex = slidesElements.findIndex(findCurrentSlide);
     isFirstSlide = currentSlideIndex === 0;
     isLastSlide = currentSlideIndex === slidesElements.length - 1;
@@ -62,12 +59,10 @@
     }, TIME_SLIDE_BROWSING);
   };
 
-  // Запоминает координаты нажатия тапа
-  var onSliderTouchStart = function (evt) {
+  var onSliderTouchStart = function (evt) {  // Запоминает координаты нажатия тапа
     startSwipeX = evt.changedTouches[0].screenX;
   };
 
-  // При отпускании тапа вычисляет длину свайпа, и если она соответствует - переключает слайд
   var onSliderTouchEnd = function (evt) {
     endSwipeX = evt.changedTouches[0].screenX;
     if (Math.abs(startSwipeX - endSwipeX) >= SWIPE_LENGTH) {
@@ -81,14 +76,12 @@
   };
 
   window.sizeSlider = {
-    // Добавляет обработчик свайпа
-    addSwipeListener: function () {
+    addSwipeListener: function () { // Добавляет обработчик свайпа
       sliderElement.addEventListener('touchstart', onSliderTouchStart, false);
       sliderElement.addEventListener('touchend', onSliderTouchEnd, false);
     },
 
-    // Удаляет обработчик свайпа
-    removeSwipeListener: function () {
+    removeSwipeListener: function () {  // Удаляет обработчик свайпа
       sliderElement.removeEventListener('touchstart', onSliderTouchStart);
       sliderElement.removeEventListener('touchend', onSliderTouchEnd);
     }

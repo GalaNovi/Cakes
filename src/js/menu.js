@@ -1,7 +1,7 @@
 'use strict';
 (function () {
-  var menuButton = document.querySelector('.page-header__menu-button');
-  var menu = document.querySelector('.main-nav');
+  var menuButton = document.querySelector('.page-header__menu-button'),
+      menu = document.querySelector('.main-nav');
 
   menuButton.classList.remove('page-header__menu-button--nojs');
 
