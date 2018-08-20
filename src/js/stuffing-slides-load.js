@@ -11,6 +11,7 @@
     tempSlide.querySelector('.stuffing-item__description').textContent = data.texts[index];
     tempSlide.querySelector('.stuffing-item__price').textContent = data.prices[index];
     tempSlide.querySelector('img').setAttribute('src', data.images[index]);
+    tempSlide.querySelector('img').setAttribute('alt', data.alt[index]);
     tempSlide.querySelector('input').value = data.inputsValues[index];
     tempSlide.querySelectorAll('source')[0].setAttribute('srcset', data.images[index].replace(/mobile/gi, 'desktop'));
     tempSlide.querySelectorAll('source')[1].setAttribute('srcset', data.images[index].replace(/mobile/gi, 'tablet'));
