@@ -56,6 +56,7 @@
     }
     setTimeout(function () {
       updateCurrentSlideIndex();
+      window.sizeSliderIndicator.update(currentSlideIndex);
     }, TIME_SLIDE_BROWSING);
   };
 
@@ -76,12 +77,13 @@
   };
 
   window.sizeSlider = {
-    addSwipeListener: function () { // Добавляет обработчик свайпа
+    addSlider: function () { // Добавляет обработчик свайпа
       sliderElement.addEventListener('touchstart', onSliderTouchStart, false);
       sliderElement.addEventListener('touchend', onSliderTouchEnd, false);
+      window.sizeSliderIndicator.update(currentSlideIndex);
     },
 
-    removeSwipeListener: function () {  // Удаляет обработчик свайпа
+    removeSlider: function () {  // Удаляет обработчик свайпа
       sliderElement.removeEventListener('touchstart', onSliderTouchStart);
       sliderElement.removeEventListener('touchend', onSliderTouchEnd);
     }

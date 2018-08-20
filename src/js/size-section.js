@@ -37,22 +37,22 @@
   window.addEventListener('resize', function () {
     // Обработчик изменения ширины экрана.
     if (screen.width >= 768) {
-      window.sizeSlider.removeSwipeListener();
+      window.sizeSlider.removeSlider();
       addSizeElementsListeners();
       sizeButton.removeEventListener('click', onSizeButtonClick);
     } else if (screen.width < 768) {
-      window.sizeSlider.addSwipeListener();
+      window.sizeSlider.addSlider();
       removeSizeElementsListeners();
       sizeButton.addEventListener('click', onSizeButtonClick);
     }
   });
 
   if (screen.width >= 768) {
-    window.sizeSlider.removeSwipeListener();
+    window.sizeSlider.removeSlider();
     addSizeElementsListeners();
   }
   if (screen.width < 768) {
-    window.sizeSlider.addSwipeListener();
+    window.sizeSlider.addSlider();
     sizeButton.addEventListener('click', onSizeButtonClick);
   }
 })();
