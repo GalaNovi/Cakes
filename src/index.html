@@ -17,12 +17,12 @@
         <button class="page-header__menu-button page-header__menu-button--nojs" type="button"><span class="visually-hidden">Открыть или закрыть меню</span></button>
         <nav class="main-nav main-nav--hidden">
           <ul class="main-nav__list">
-            <li class="main-nav__item"><a class="main-nav__link" href="#cakes">Наши торты</a></li>
-            <li class="main-nav__item"><a class="main-nav__link" href="#individual-order">Индивидуальный заказ</a></li>
-            <li class="main-nav__item"><a class="main-nav__link" href="#reviews">Отзывы</a></li>
-            <li class="main-nav__item"><a class="main-nav__link" href="#about-us">О нас</a></li>
-            <li class="main-nav__item"><a class="main-nav__link" href="#order">Как заказать</a></li>
-            <li class="main-nav__item"><a class="main-nav__link" href="#contacts">Контакты</a></li>
+            <li class="main-nav__item"><a class="main-nav__link internal-link" href="#cakes">Наши торты</a></li>
+            <li class="main-nav__item"><a class="main-nav__link internal-link" href="#individual-order">Индивидуальный заказ</a></li>
+            <li class="main-nav__item"><a class="main-nav__link internal-link" href="#reviews">Отзывы</a></li>
+            <li class="main-nav__item"><a class="main-nav__link internal-link" href="#about-us">О нас</a></li>
+            <li class="main-nav__item"><a class="main-nav__link internal-link" href="#order">Как заказать</a></li>
+            <li class="main-nav__item"><a class="main-nav__link internal-link" href="#contacts">Контакты</a></li>
           </ul>
         </nav>
         <p class="page-header__phone-number">+7 906 899 92 96</p>
@@ -50,13 +50,13 @@
             </li>
           </ul>
           <div class="key-features__button-wrapper">
-            <a class="key-features__button button" href="#individual-order">Выбрать торт</a>
+            <a class="key-features__button button internal-link" href="#individual-order">Выбрать торт</a>
           </div>
         </div>
       </section>
-      <section class="cakes" id="cakes">
+      <section class="cakes">
         <div class="container">
-          <h2 class="cakes__heading">Наши торты</h2>
+          <h2 class="cakes__heading" id="cakes">Наши торты</h2>
           <ul class="cakes__list">
             <li class="cakes__item cakes__item--classic">
               <a class="cakes__item-link" href="#">
@@ -127,110 +127,75 @@
           </ul>
         </div>
       </section>
-      <section class="individual-order" id="individual-order">
+      <section class="individual-order">
         <div class="container">
-          <h2 class="individual-order__heading">Индивидуальный заказ<br>
+          <h2 class="individual-order__heading" id="individual-order">Индивидуальный заказ<br>
             <span class="individual-order__heading-addon">Соберите торт в 3 шага</span>
           </h2>
           <form class="individual-order__form form" action="https://echo.htmlacademy.ru" method="post">
             <ol class="form__list">
               <li class="form__item">
                 <h3 class="form__item-heading">Выберите начинку</h3>
-                <ul class="form__stuffing-list stuffing-list">
-                  <li class="stuffing-item stuffing-item--current">
-                    <div class="stuffing-item__text-wrapper">
-                      <h4 class="stuffing-item__heading">Шоколадный ганаш</h4>
-                      <p class="stuffing-item__description">
-                        Ароматный шоколадный бисквит, густой шоколадный крем – самый шоколадный из всех возможных десертов!
-                      </p>
-                      <p class="stuffing-item__price">1000 руб/кг</p>
-                      <label class="visually-hidden" for="shocolate-cream">Выбрать шоколадный ганаш</label>
-                      <input class="stuffing-item__radio visually-hidden" id="shocolate-cream" type="radio" name="staffing" value="shocolate-cream">
-                      <button class="form__item-button form__item-button--stuffing button" type="button">Выбрать</button>
-                    </div>
-                    <div class="stuffing-item__image-wrapper">
-                      <picture class="stuffing-item__image">
-                        <source media="(min-width: 1366px)" srcset="img/staffing-shoco-desktop@1x.jpg">
-                        <source media="(min-width: 768px)" srcset="img/staffing-shoco-tablet@1x.jpg">
-                        <img src="img/staffing-shoco-mobile@1x.jpg" alt="Изображение шоколадного бисквита с шоколадным кремом">
-                      </picture>
-                    </div>
-                  </li>
-                </ul>
+                <div class="form__stuffing-list-wrapper">
+                  <ul class="form__stuffing-list stuffing-list"></ul>
+                  <span class="form__stuffing-slider-counter">1/12</span>
+                  <div class="form__slider-indicator form__slider-indicator--stuffing"></div>
+                  <div class="form__list-navigation form__list-navigation--previous form__list-navigation--stuffing-previous"></div>
+                  <div class="form__list-navigation form__list-navigation--next form__list-navigation--stuffing-next"></div>
+                  <button class="form__item-button form__item-button--stuffing button" type="button">Выбрать</button>
+                </div>
               </li>
               <li class="form__item">
                 <h3 class="form__item-heading">Размер</h3>
-                <ul class="form__size-list size-list">
-                  <li class="size-item size-item--current">
-                    <input class="size-item__radio visually-hidden" id="1kg" type="radio" name="size" value="1kg" checked>
-                    <label class="size-item__label" for="1kg"><span>1 кг</span></label>
-                    <p class="size-item__description">
+                <div class="form__size-list-wrapper">
+                  <ul class="form__size-list size-list">
+                    <li class="size-item size-item--current">
+                      <input class="size-item__radio visually-hidden" id="1kg" type="radio" name="size" value="1kg" checked>
+                      <label class="size-item__label" for="1kg">1 кг</label>
+                      <p class="size-item__description">
                       17-18 см<br>
                       (4 – 6 персон)
-                    </p>
-                    <button class="form__item-button form__item-button--size button" type="button">Выбрать</button>
-                  </li>
-                  <li class="size-item">
-                    <input class="size-item__radio visually-hidden" id="2kg" type="radio" name="size" value="2kg">
-                    <label class="size-item__label" for="2kg">2 кг</label>
-                    <p class="size-item__description">
-                      23-24 см<br>
-                      (10 – 12 персон)
-                    </p>
-                    <button class="form__item-button form__item-button--size button" type="button">Выбрать</button>
-                  </li>
-                  <li class="size-item">
-                    <input class="size-item__radio visually-hidden" id="5kg" type="radio" name="size" value="5kg">
-                    <label class="size-item__label" for="5kg">5 кг</label>
-                    <p class="size-item__description">
-                      Два яруса 25 и 20 см<br>
-                      (15 – 20 персон)
-                    </p>
-                    <button class="form__item-button form__item-button--size button" type="button">Выбрать</button>
-                  </li>
-                  <li class="size-item">
-                    <input class="size-item__radio visually-hidden" id="8kg" type="radio" name="size" value="8kg">
-                    <label class="size-item__label" for="8kg">8 кг</label>
-                    <p class="size-item__description">
-                      Три яруса 30,25 и 18 см<br>
-                      (25 – 30 персон)
-                    </p>
-                    <button class="form__item-button form__item-button--size button" type="button">Выбрать</button>
-                  </li>
-                </ul>
+                      </p>
+                    </li>
+                    <li class="size-item">
+                      <input class="size-item__radio visually-hidden" id="2kg" type="radio" name="size" value="2kg">
+                      <label class="size-item__label" for="2kg">2 кг</label>
+                      <p class="size-item__description">
+                        23-24 см<br>
+                        (10 – 12 персон)
+                      </p>
+                    </li>
+                    <li class="size-item">
+                      <input class="size-item__radio visually-hidden" id="5kg" type="radio" name="size" value="5kg">
+                      <label class="size-item__label" for="5kg">5 кг</label>
+                      <p class="size-item__description">
+                        Два яруса 25 и 20 см<br>
+                        (15 – 20 персон)
+                      </p>
+                    </li>
+                    <li class="size-item">
+                      <input class="size-item__radio visually-hidden" id="8kg" type="radio" name="size" value="8kg">
+                      <label class="size-item__label" for="8kg">8 кг</label>
+                      <p class="size-item__description">
+                        Три яруса 30, 25 и 18 см<br>
+                        (25 – 30 персон)
+                      </p>
+                    </li>
+                  </ul>
+                  <div class="form__slider-indicator form__slider-indicator--size"></div>
+                </div>
+                <button class="form__item-button form__item-button--size button" type="button">Выбрать</button>
               </li>
               <li class="form__item">
-                <h3 class="form__item-heading">Оформление</h3>
-                <ul class="form__design-list design-list">
-                  <li class="design-item">
-                    <h4 class="design-item__heading">Ягодное ассорти</h4>
-                    <div class="design-item__image-wrapper">
-                      <picture class="design-item__image">
-                        <source media="(min-width: 1366px)" srcset="img/berries-desktop@1x.jpg">
-                        <source media="(min-width: 768px)" srcset="img/berries-tablet@1x.jpg">
-                        <img src="img/berries-mobile@1x.jpg" alt="Изображение оформления «Ягодное ассорти»">
-                      </picture>
-                    </div>
-                    <p class="design-item__price">700 руб/кг</p>
-                    <label class="visually-hidden" for="berry-allsorts">Ягодное ассорти</label>
-                    <input class="design-item__radio visually-hidden" id="berry-allsorts" type="radio" name="design" value="berry-allsorts">
-                    <button class="form__item-button form__item-button--design button" type="button">Выбрать</button>
-                  </li>
-                  <li class="design-item design-item--current">
-                    <h4 class="design-item__heading">Маршмэллоу</h4>
-                    <div class="design-item__image-wrapper">
-                      <picture class="design-item__image">
-                        <source media="(min-width: 1366px)" srcset="img/marshmallow-desktop@1x.jpg">
-                        <source media="(min-width: 768px)" srcset="img/marshmallow-tablet@1x.jpg">
-                        <img src="img/marshmallow-mobile@1x.jpg" alt="Изображение оформления «Маршмэллоу»">
-                      </picture>
-                    </div>
-                      <p class="design-item__price">600 руб/кг</p>
-                    <label class="visually-hidden" for="marshmallow">Маршмэллоу</label>
-                    <input class="design-item__radio visually-hidden" id="marshmallow" type="radio" name="design" value="marshmallow">
-                    <button class="form__item-button form__item-button--design button" type="button">Выбрать</button>
-                  </li>
-                </ul>
+                <h3 class="form__item-heading form__item-heading--design">Оформление</h3>
+                <div class="form__design-list-wrapper">
+                  <ul class="form__design-list design-list"></ul>
+                  <span class="form__design-slider-counter">1/35</span>
+                  <div class="form__slider-indicator form__slider-indicator--design"></div>
+                  <div class="form__list-navigation form__list-navigation--previous form__list-navigation--design-previous"></div>
+                  <div class="form__list-navigation form__list-navigation--next form__list-navigation--design-next"></div>
+                </div>
+                <button class="form__item-button form__item-button--design button" type="button">Выбрать</button>
               </li>
             </ol>
             <section class="form__total-choise total-choise">
@@ -239,15 +204,15 @@
                 <ul class="total-choise__list">
                   <li class="total-choise__item">
                     <p class="total-choise__item-heading">Начинка</p>
-                    <p class="total-choise__item-text">Шоколадный ганаш</p>
+                    <p id="stuffing" class="total-choise__item-text"></p>
                   </li>
                   <li class="total-choise__item">
                     <p class="total-choise__item-heading">Размер</p>
-                    <p class="total-choise__item-text">1 кг</p>
+                    <p id="size" class="total-choise__item-text"></p>
                   </li>
                   <li class="total-choise__item">
                     <p class="total-choise__item-heading">Оформление</p>
-                    <p class="total-choise__item-text">Маршмэллоу</p>
+                    <p id="design" class="total-choise__item-text"></p>
                   </li>
                 </ul>
                 <button class="form__button button" type="submit">Заказать торт</button>
@@ -256,9 +221,9 @@
           </form>
         </div>
       </section>
-      <section class="reviews" id="reviews">
+      <section class="reviews">
         <div class="container">
-          <h2 class="reviews__heading">Отзывы</h2>
+          <h2 class="reviews__heading" id="reviews">Отзывы</h2>
           <ul class="reviews__list">
             <li class="reviews__item">
               <div class="reviews__text-wrapper">
@@ -461,15 +426,15 @@
     </main>
     <footer class="page-footer">
       <div class="container">
-        <div class="page-footer__logo"><a class="page-footer__logo-link" href="#up">Cakes</a></div>
+        <div class="page-footer__logo"><a class="page-footer__logo-link internal-link" href="#up">Cakes</a></div>
         <nav class="footer-nav">
           <ul class="footer-nav__list">
-            <li class="footer-nav__item"><a class="footer-nav__link" href="#">Наши торты</a></li>
-            <li class="footer-nav__item"><a class="footer-nav__link" href="#">Индивидуальный заказ</a></li>
-            <li class="footer-nav__item"><a class="footer-nav__link" href="#">Отзывы</a></li>
-            <li class="footer-nav__item"><a class="footer-nav__link" href="#">О нас</a></li>
-            <li class="footer-nav__item"><a class="footer-nav__link" href="#">Как заказать</a></li>
-            <li class="footer-nav__item"><a class="footer-nav__link" href="#">Контакты</a></li>
+            <li class="footer-nav__item"><a class="footer-nav__link internal-link" href="#cakes">Наши торты</a></li>
+            <li class="footer-nav__item"><a class="footer-nav__link internal-link" href="#individual-order">Индивидуальный заказ</a></li>
+            <li class="footer-nav__item"><a class="footer-nav__link internal-link" href="#reviews">Отзывы</a></li>
+            <li class="footer-nav__item"><a class="footer-nav__link internal-link" href="#about-us">О нас</a></li>
+            <li class="footer-nav__item"><a class="footer-nav__link internal-link" href="#order">Как заказать</a></li>
+            <li class="footer-nav__item"><a class="footer-nav__link internal-link" href="#contacts">Контакты</a></li>
           </ul>
         </nav>
         <p class="page-footer__phone-number">+7 906 899 92 96</p>
@@ -497,7 +462,62 @@
         </div>
       </div>
     </footer>
+
+    <!-- Templates -->
+    <div id="template" style="display:none;
+    ">
+      <li class="stuffing-item">
+        <div class="stuffing-item__text-wrapper">
+          <h4 class="stuffing-item__heading">Шоколадный ганаш</h4>
+          <p class="stuffing-item__description">
+            Ароматный шоколадный бисквит, густой шоколадный крем – самый шоколадный из всех возможных десертов!
+          </p>
+          <p class="stuffing-item__price">1000 руб/кг</p>
+          <label class="visually-hidden" for="input">Выбрать «Шоколадный ганаш»</label>
+          <input class="stuffing-item__radio visually-hidden" id="input" type="radio" name="staffing" value="">
+        </div>
+        <div class="stuffing-item__image-wrapper">
+          <picture class="stuffing-item__image">
+            <source media="(min-width: 1366px)" srcset="img/staffing-shoco-desktop@1x.jpg">
+            <source media="(min-width: 768px)" srcset="img/staffing-shoco-tablet@1x.jpg">
+            <img src="img/staffing-shoco-mobile@1x.jpg" alt="Изображение шоколадного бисквита с шоколадным кремом">
+          </picture>
+        </div>
+      </li>
+
+      <li class="design-item">
+        <h4 class="design-item__heading">Ягодное ассорти</h4>
+        <div class="design-item__image-wrapper">
+          <picture class="design-item__image">
+            <source media="(min-width: 1366px)" srcset="img/berries-desktop@1x.jpg">
+            <source media="(min-width: 768px)" srcset="img/berries-tablet@1x.jpg">
+            <img src="img/berries-mobile@1x.jpg" alt="Изображение оформления «Ягодное ассорти»">
+          </picture>
+        </div>
+        <p class="design-item__price">700 руб/кг</p>
+        <label class="visually-hidden" for="berry-allsorts">Ягодное ассорти</label>
+        <input class="design-item__radio visually-hidden" id="berry-allsorts" type="radio" name="design" value="berry-allsorts">
+      </li>
+    </div>
+    <!-- Templates -->
+
+    <script src="js/polyfill.js"></script>
     <script src="js/menu.js"></script>
     <script src="js/picturefill.js"></script>
+    <script src="js/scroll.js"></script>
+    <script src="js/stuffing-data.js"></script>
+    <script src="js/stuffing-slides-load.js"></script>
+    <script src="js/stuffing-slider.js"></script>
+    <script src="js/stuffing-slider-indicator.js"></script>
+    <script src="js/stuffing-section.js"></script>
+    <script src="js/size-slider.js"></script>
+    <script src="js/size-slider-indicator.js"></script>
+    <script src="js/size-section.js"></script>
+    <script src="js/design-data.js"></script>
+    <script src="js/design-slides-load.js"></script>
+    <script src="js/design-slider.js"></script>
+    <script src="js/design-slider-indicator.js"></script>
+    <script src="js/design-section.js"></script>
+    <script src="js/total-choice.js"></script>
   </body>
 </html>

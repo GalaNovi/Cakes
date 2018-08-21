@@ -1,12 +1,16 @@
 .design-list {
+  display: flex;
   .list-reset;
   padding-top: 25px;
+  overflow: hidden;
 }
 
 .design-item {
   display: none;
+  flex-shrink: 0;
   flex-direction: column;
   align-items: center;
+  padding: 0 35px;
 
   &--current {
     display: flex;
@@ -23,13 +27,29 @@
   margin-bottom: 35px;
   box-shadow: 0 2px 5px 0 rgba(163, 6, 60, 0.14);
   order: -1;
+
+  &::after {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    width: 70px;
+    height: 50px;
+
+    background: radial-gradient(farthest-corner at 100% 100%, #ffffff 25%, transparent 70%);
+    opacity: 0.9;
+    content: "";
+  }
 }
 
 .design-item__image {
   display: block;
+  width: 169px;
+  height: 196px;
 }
 
 .design-item__image img {
+  width: 100%;
   display: block;
 }
 
@@ -47,24 +67,34 @@
 
 @media (min-width: @tablet) {
   .design-list {
-    display: flex;
-    flex-grow: 1;
-    justify-content: center;
-    margin-top: -23px;
-    margin-left: 45px;
-    margin-right: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3px;
+    padding: 10px;
+    padding-top: 0;
+    padding-bottom: 15px;
+    width: 437px;
   }
 
   .design-item {
-    display: block;
     position: relative;
-    margin-right: 24px;
+    margin: 0;
+    margin-right: 25px;
+    padding: 0;
 
-    .transition;
+    transition: transform 0.3s, box-shadow 0.1s;
+
+    &:last-child {
+      margin-right: 0;
+    }
 
     &:hover {
       box-shadow: 0 7px 13px 0 rgba(0, 0, 0, 0.14);
       cursor: pointer;
+    }
+
+    &--current {
+      display: block;
     }
   }
 
@@ -83,6 +113,19 @@
   .design-item__image-wrapper {
     margin-bottom: 0;
     box-shadow: 0 7px 13px 0 rgba(0, 0, 0, 0.05);
+
+    &::after {
+      width: 100%;
+      height: 70px;
+
+      background-color: #ffffff;
+      opacity: 0.85;
+    }
+  }
+
+  .design-item__image {
+    width: 196px;
+    height: 264px;
   }
 
   .design-item__price {
@@ -105,12 +148,16 @@
 
 @media (min-width: @desktop) {
   .design-list {
-    padding-top: 15px;
-    margin-left: 55px;
+    margin-top: -7px;
+    width: 725px;
   }
 
   .design-item {
     margin-right: 40px;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
   .design-item__heading {
@@ -121,5 +168,16 @@
   .design-item__price {
     bottom: 27px;
     .font(22px, 30px);
+  }
+
+  .design-item__image-wrapper {
+    &::after {
+      height: 110px;
+    }
+  }
+
+  .design-item__image {
+    width: 321px;
+    height: 431px;
   }
 }
