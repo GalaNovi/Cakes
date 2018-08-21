@@ -139,9 +139,9 @@
                 <div class="form__stuffing-list-wrapper">
                   <ul class="form__stuffing-list stuffing-list"></ul>
                   <span class="form__stuffing-slider-counter">1/12</span>
-                  <div class="form__slider-indicator form__slider-indicator--stuffing"></div>
-                  <div class="form__list-navigation form__list-navigation--previous form__list-navigation--stuffing-previous"></div>
-                  <div class="form__list-navigation form__list-navigation--next form__list-navigation--stuffing-next"></div>
+                  <div class="slider__indicator slider__indicator--stuffing"></div>
+                  <div class="slider__navigation slider__navigation--previous slider__navigation--stuffing-previous"></div>
+                  <div class="slider__navigation slider__navigation--next slider__navigation--stuffing-next"></div>
                   <button class="form__item-button form__item-button--stuffing button" type="button">Выбрать</button>
                 </div>
               </li>
@@ -182,7 +182,7 @@
                       </p>
                     </li>
                   </ul>
-                  <div class="form__slider-indicator form__slider-indicator--size"></div>
+                  <div class="slider__indicator slider__indicator--size"></div>
                 </div>
                 <button class="form__item-button form__item-button--size button" type="button">Выбрать</button>
               </li>
@@ -191,9 +191,9 @@
                 <div class="form__design-list-wrapper">
                   <ul class="form__design-list design-list"></ul>
                   <span class="form__design-slider-counter">1/35</span>
-                  <div class="form__slider-indicator form__slider-indicator--design"></div>
-                  <div class="form__list-navigation form__list-navigation--previous form__list-navigation--design-previous"></div>
-                  <div class="form__list-navigation form__list-navigation--next form__list-navigation--design-next"></div>
+                  <div class="slider__indicator slider__indicator--design"></div>
+                  <div class="slider__navigation slider__navigation--previous slider__navigation--design-previous"></div>
+                  <div class="slider__navigation slider__navigation--next slider__navigation--design-next"></div>
                 </div>
                 <button class="form__item-button form__item-button--design button" type="button">Выбрать</button>
               </li>
@@ -224,25 +224,13 @@
       <section class="reviews">
         <div class="container">
           <h2 class="reviews__heading" id="reviews">Отзывы</h2>
-          <ul class="reviews__list">
-            <li class="reviews__item">
-              <div class="reviews__text-wrapper">
-                <p class="reviews__item-name">Мария</p>
-                <p class="reviews__item-info">юрист, 33 года</p>
-                <p class="reviews__item-text">
-                  Заказывала торт брауни на юбилей мужа. Гости были в восторге!
-                  Отдельное спасибо за своевременную доставку!
-                  Теперь будем заказывать торты только у вас для наших семейных праздников:)
-                  <a class="reviews__item-show-full" href="#">Развернуть</a>
-                </p>
-              </div>
-              <picture class="reviews__item-photo">
-                <source media="(min-width: 1366px)" srcset="img/review-photo1-desktop@1x.png">
-                <source media="(min-width: 768px)" srcset="img/review-photo1-tablet@1x.png">
-                <img src="img/review-photo1-mobile@1x.png" alt="Фотография владельца отзыва">
-              </picture>
-            </li>
-          </ul>
+          <div class="reviews__list-wrapper">
+            <ul class="reviews__list"></ul>
+            <span class="reviews__slider-counter">1/26</span>
+            <div class="slider__indicator slider__indicator--reviews"></div>
+            <div class="slider__navigation slider__navigation--previous slider__navigation--reviews-previous"></div>
+            <div class="slider__navigation slider__navigation--next slider__navigation--reviews-next"></div>
+          </div>
         </div>
       </section>
       <section class="about-confectioner" id="about-us">
@@ -498,6 +486,28 @@
         <label class="visually-hidden" for="berry-allsorts">Ягодное ассорти</label>
         <input class="design-item__radio visually-hidden" id="berry-allsorts" type="radio" name="design" value="berry-allsorts">
       </li>
+
+      <li class="reviews__item">
+        <div class="reviews__text-wrapper">
+          <p class="reviews__item-name">Мария</p>
+          <p class="reviews__item-info">юрист, 33 года</p>
+          <p class="reviews__item-text-wrapper">
+            <span class="reviews__item-text">
+              Заказывала торт брауни на юбилей мужа. Гости были в восторге!
+              Отдельное спасибо за своевременную доставку! Теперь будем заказывать
+              торты только у вас для наших семейных праздников:)
+            </span>
+            <span class="reviews__item-text-hidden"></span>
+            <a class="reviews__item-full-text reviews__item-full-text--show" href="#">Развернуть</a>
+            <a class="reviews__item-full-text reviews__item-full-text--hide" href="#">Свернуть</a>
+          </p>
+        </div>
+        <picture class="reviews__item-photo">
+          <source media="(min-width: 1366px)" srcset="img/review-photo1-desktop@1x.png">
+          <source media="(min-width: 768px)" srcset="img/review-photo1-tablet@1x.png">
+          <img src="img/review-photo1-mobile@1x.png" alt="Фотография владельца отзыва">
+        </picture>
+      </li>
     </div>
     <!-- Templates -->
 
@@ -519,5 +529,10 @@
     <script src="js/design-slider-indicator.js"></script>
     <script src="js/design-section.js"></script>
     <script src="js/total-choice.js"></script>
+    <script src="js/reviews-data.js"></script>
+    <script src="js/reviews-slides-load.js"></script>
+    <script src="js/reviews-slider.js"></script>
+    <script src="js/reviews-slider-indicator.js"></script>
+    <script src="js/reviews-section.js"></script>
   </body>
 </html>

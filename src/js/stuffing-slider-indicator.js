@@ -1,11 +1,11 @@
 'use strict';
 
 (function () {
-  var indicatorElement = document.querySelector('.form__slider-indicator--stuffing'),
+  var indicatorElement = document.querySelector('.slider__indicator--stuffing'),
       indicatorElements = [],
-      INDICATOR_ELEMENT_CLASS = 'form__slider-indicator-element',
-      INDICATOR_CURRENT_ELEMENT_CLASS = 'form__slider-indicator-element--current',
-      INDICATOR_EXTREME_ELEMENT_CLASS = 'form__slider-indicator-element--extreme',
+      INDICATOR_ELEMENT_CLASS = 'slider__indicator-element',
+      INDICATOR_CURRENT_ELEMENT_CLASS = 'slider__indicator-element--current',
+      INDICATOR_EXTREME_ELEMENT_CLASS = 'slider__indicator-element--extreme',
       INDICATOR_ELEMENTS_NUMBER = 5;
 
 
