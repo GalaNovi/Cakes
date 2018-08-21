@@ -26,22 +26,36 @@
     isLastSlide = currentSlideIndex === slidesElements.length - 1;
   };
 
+  var animateBrowsingNextSlide = function (currentSlide, nextSlide) { // Анимация перелистывания вперед
+    currentSlide.style.cssText = 'animation: hideSlideToLeftMobile ' + (TIME_SLIDE_BROWSING / 1000) + 's;';
+    setTimeout(function () {
+      currentSlide.style.cssText = '';
+      nextSlide.style.cssText = '';
+    }, TIME_SLIDE_BROWSING);
+  };
+
+  var animateBrowsingPreviousSlide = function (currentSlide, previousSlide) { // Анимация перелистывания назад
+    previousSlide.style.cssText = 'animation: showPreviousSlideMobile ' + TIME_SLIDE_BROWSING / 1000 + 's;';
+    setTimeout(function () {
+      currentSlide.style.cssText = null;
+      previousSlide.style.cssText = null;
+    }, TIME_SLIDE_BROWSING);
+  };
+
   var showNextSlide = function (currentSlide, nextSlide) { // Показывает следующий слайд
-      currentSlide.style.opacity = '0';
+    nextSlide.classList.add(currentSlideClass);
+    animateBrowsingNextSlide(currentSlide, nextSlide);
     setTimeout(function () {
       currentSlide.classList.remove(currentSlideClass);
-      currentSlide.style.opacity = null;
-      nextSlide.classList.add(currentSlideClass);
     }, TIME_SLIDE_BROWSING);
   };
 
   var showPreviousSlide = function (currentSlide, previousSlide) { // Показывает предыдущий слайд
-    currentSlide.style.opacity = '0';
-    setTimeout(function () {
-      currentSlide.classList.remove(currentSlideClass);
-      currentSlide.style.opacity = null;
-      previousSlide.classList.add(currentSlideClass);
-    }, TIME_SLIDE_BROWSING);
+    previousSlide.classList.add(currentSlideClass);
+      animateBrowsingPreviousSlide(currentSlide, previousSlide);
+      setTimeout(function () {
+        currentSlide.classList.remove(currentSlideClass);
+      }, TIME_SLIDE_BROWSING);
   };
 
   var changeSlide = function (direction) { // Смена слайда
