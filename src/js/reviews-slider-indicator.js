@@ -1,24 +1,26 @@
 'use strict';
 
 (function () {
-  var indicatorElement = document.querySelector('.slider__indicator--design'),
+  var indicatorElement = document.querySelector('.slider__indicator--reviews'),
       indicatorElements = [],
       INDICATOR_ELEMENT_CLASS = 'slider__indicator-element',
+      INDICATOR_ELEMENT_CLASS_MOD = 'slider__indicator-element--reviews',
       INDICATOR_CURRENT_ELEMENT_CLASS = 'slider__indicator-element--current',
       INDICATOR_EXTREME_ELEMENT_CLASS = 'slider__indicator-element--extreme',
       INDICATOR_ELEMENTS_NUMBER = 5;
 
-  var createIndicatorElement = function () { // Создает элемент индикатора
+
+  var createIndicatorElement = function () {  // Создает элемент индикатора
     var newIndicatorElement = document.createElement('div');
-    newIndicatorElement.classList.add(INDICATOR_ELEMENT_CLASS);
+    newIndicatorElement.classList.add(INDICATOR_ELEMENT_CLASS, INDICATOR_ELEMENT_CLASS_MOD);
     return newIndicatorElement;
   };
 
-  var insertElement = function () { // Добавляет элемент в индикатор
+  var insertElement = function () {  // Добавляет элемент в индикатор
     indicatorElement.appendChild(createIndicatorElement());
   };
 
-  var insertElements = function (slides) { // Добавляет в индикатор нужное количество элементов
+  var insertElements = function (slides) {  // Добавляет в индикатор нужное количество элементов
     if (slides.length === 1) {
       insertElement();
     } else if (slides.length > INDICATOR_ELEMENTS_NUMBER) {
@@ -33,7 +35,7 @@
     indicatorElements = Array.from(indicatorElement.querySelectorAll('.' + INDICATOR_ELEMENT_CLASS));
   };
 
-  var updateSliderIndicator = function (slides, currentSlideIndex) { // Обновляет индикатор слайдера
+  var updateSliderIndicator = function (slides, currentSlideIndex) {  // Обновляет индикатор слайдера
     var firstElement = indicatorElements[0];
     var lastElement = indicatorElements[INDICATOR_ELEMENTS_NUMBER - 1]
     var secondFromEndElement = indicatorElements[INDICATOR_ELEMENTS_NUMBER - 2]
@@ -67,7 +69,7 @@
     }
   };
 
-  window.designSliderIndicator = {
+  window.reviewsSliderIndicator = {
     set: insertElements,
     update: updateSliderIndicator
   };

@@ -3,8 +3,8 @@
 (function () {
   var sliderElement = document.querySelector('.stuffing-list'),
       slidesElements = Array.from(sliderElement.querySelectorAll('.stuffing-item')),
-      sliderPreviousButtonElement = document.querySelector('.form__list-navigation--stuffing-previous'),
-      sliderNextButtonElement = document.querySelector('.form__list-navigation--stuffing-next'),
+      sliderPreviousButtonElement = document.querySelector('.slider__navigation--stuffing-previous'),
+      sliderNextButtonElement = document.querySelector('.slider__navigation--stuffing-next'),
       sliderCounterElement = document.querySelector('.form__stuffing-slider-counter'),
       currentSlideClass = 'stuffing-item--current',
       showedSlidesNumber = 1,
@@ -125,12 +125,12 @@
   };
 
   var navigationButtonsUpdate = function () {
-    sliderPreviousButtonElement.classList.remove('form__list-navigation--disabled');
-    sliderNextButtonElement.classList.remove('form__list-navigation--disabled');
+    sliderPreviousButtonElement.classList.remove('slider__navigation--disabled');
+    sliderNextButtonElement.classList.remove('slider__navigation--disabled');
     if (isFirstSlide) {
-      sliderPreviousButtonElement.classList.add('form__list-navigation--disabled');
+      sliderPreviousButtonElement.classList.add('slider__navigation--disabled');
     } else if (isLastSlide) {
-      sliderNextButtonElement.classList.add('form__list-navigation--disabled');
+      sliderNextButtonElement.classList.add('slider__navigation--disabled');
     }
   };
 

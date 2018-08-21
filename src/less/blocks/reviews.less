@@ -12,20 +12,31 @@
   text-align: center;
 }
 
+.reviews__list-wrapper {
+  position: relative;
+  margin: 0 auto;
+  width: 280px;
+}
+
 .reviews__list {
+  display: flex;
   .list-reset;
+  overflow: hidden;
 }
 
 .reviews__item {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
-  margin: 0 auto;
-  width: 235px;
+  flex-shrink: 0;
+  width: 100%;
+
+  &--current {
+    display: flex;
+  }
 }
 
 .reviews__text-wrapper {
-  width: 280px;
   text-align: center;
 }
 
@@ -41,23 +52,43 @@
   .font(12px, 16px);
 }
 
-.reviews__item-text {
+.reviews__item-text-wrapper {
   .indent-reset;
+  margin: 0 auto;
+  width: 240px;
+  min-height: 73px;
 
   .font(12px, 14px);
   text-align: center;
+}
+
+.reviews__item-text-hidden {
+  display: none;
 }
 
 .reviews__item-photo {
   order: -1;
 }
 
-.reviews__item-show-full {
+.reviews__item-full-text {
   color: #f87b91;
   font-style: italic;
   text-decoration: underline;
 
   transition: color 0.1s;
+
+  &--hide {
+    display: none;
+  }
+}
+
+.reviews__slider-counter {
+  position: absolute;
+  right: 0;
+  bottom: -8px;
+
+  .font(12px, 26px);
+  color: @brand-color;
 }
 
 // ==================================== Tablet ===============================
@@ -73,15 +104,13 @@
     .font(28px, 34px);
   }
 
-  .reviews__item {
-    flex-direction: row;
-    align-items: center;
-    margin: 0 auto;
-    width: 405px;
+  .reviews__list-wrapper {
+    width: 410px;
   }
 
-  .reviews__text-wrapper {
-    width: 255px;
+  .reviews__item {
+    flex-direction: row;
+    align-items: flex-start;
   }
 
   .reviews__item-name {
@@ -96,12 +125,14 @@
     text-align: left;
   }
 
-  .reviews__item-text {
-    .font(14px, 16px);
+  .reviews__item-text-wrapper {
+    width: 255px;
+
+    .font(14px, 17px);
     text-align: left;
   }
 
-  .reviews__item-show-full {
+  .reviews__item-full-text {
     &:hover,
     &:focus {
       color: @brand-color;
@@ -109,8 +140,13 @@
   }
 
   .reviews__item-photo {
+    align-self: flex-start;
     margin-top: 30px;
     margin-right: 25px;
+  }
+
+  .reviews__slider-counter {
+    bottom: -35px;
   }
 }
 
@@ -122,12 +158,12 @@
     background: url("../img/ribbons-bg-desktop@1x.png") no-repeat center 0;
   }
 
-  .reviews__heading {
-    .font(40px, 66px);
+  .reviews__list-wrapper {
+    width: 630px;
   }
 
-  .reviews__item {
-    width: 630px;
+  .reviews__heading {
+    .font(40px, 66px);
   }
 
   .reviews__item-photo {
@@ -135,7 +171,7 @@
   }
 
   .reviews__text-wrapper {
-    padding-top: 5px;
+    padding-top: 25px;
   }
 
   .reviews__item-name {
@@ -149,9 +185,16 @@
     font-weight: normal;
   }
 
-  .reviews__item-text {
+  .reviews__item-text-wrapper {
     width: 360px;
     .font(18px, 24px);
     font-weight: normal;
+  }
+
+  .reviews__slider-counter {
+    right: -65px;
+    bottom: -15px;
+
+    .font(18px, 26px);
   }
 }

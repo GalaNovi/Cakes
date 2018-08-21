@@ -1,11 +1,11 @@
 'use strict';
 
 (function () {
-  var indicatorElement = document.querySelector('.form__slider-indicator--size'),
+  var indicatorElement = document.querySelector('.slider__indicator--size'),
       slidesElements = Array.from(document.querySelectorAll('.size-item')),
       indicatorElements = [],
-      INDICATOR_ELEMENT_CLASS = 'form__slider-indicator-element',
-      INDICATOR_CURRENT_ELEMENT_CLASS = 'form__slider-indicator-element--current';
+      INDICATOR_ELEMENT_CLASS = 'slider__indicator-element',
+      INDICATOR_CURRENT_ELEMENT_CLASS = 'slider__indicator-element--current';
 
 
   var createIndicatorElement = function () {  // Создает элемент индикатора
