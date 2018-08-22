@@ -2,7 +2,6 @@
 
 var gulp = require('gulp');
 var less = require('gulp-less');
-var stylelintGulp = require("gulp-stylelint");
 var plumber = require("gulp-plumber");
 var notify = require("gulp-notify");
 var del = require('del');
@@ -15,12 +14,46 @@ var include = require("posthtml-include");
 var svgstore = require("gulp-svgstore");
 var rename = require("gulp-rename");
 var imagemin = require("gulp-imagemin");
+var imageminJpegRecompress = require('imagemin-jpeg-recompress');
+var pngquant = require('imagemin-pngquant');
+var cache = require('gulp-cache');
+var webp = require("gulp-webp");
 var gulpAutoprefixer = require('gulp-autoprefixer');
 // var debug = require('gulp-debug');
 // var soursemaps = require('gulp-sourcemaps');
 // var gulpIf = require('gulp-if');
 
 // var isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
+
+gulp.task('images', function() {
+  return gulp.src('src/img/*.{jpg,png}')
+    .pipe(cache(imagemin([
+      imagemin.gifsicle({interlaced: true}),
+      imagemin.jpegtran({progressive: true}),
+      imageminJpegRecompress({
+        loops: 5,
+        min: 50,
+        max: 60,
+        quality:'medium'
+      }),
+      imagemin.optipng({optimizationLevel: 3}),
+      pngquant({quality: '50-60', speed: 5})
+    ],{
+      verbose: true
+    })))
+    .pipe(gulp.dest('dev/img'));
+});
+
+gulp.task('clearCache', function (done) {
+  return cache.clearAll(done);
+});
+
+gulp.task('webp', function() {
+  return gulp.src('src/img/content-imgs/**/*.{jpg,png}', {since: gulp.lastRun('webp')})
+    .pipe(newer('dev/img'))
+    .pipe(webp({quality: 70}))
+    .pipe(gulp.dest("dev/img"));
+});
 
 gulp.task('style', function () {
   return gulp.src('src/less/style.less')
@@ -80,4 +113,4 @@ gulp.task('watch', function () {
   gulp.watch('src/*.html', gulp.series('copyHTML'));
 });
 
-gulp.task('dev', gulp.series(gulp.parallel('style', 'copy', gulp.series('sprite', 'copyHTML')), gulp.parallel('watch', 'serve')));
+gulp.task('dev', gulp.series(gulp.parallel('style', 'copy', 'webp', gulp.series('sprite', 'copyHTML')), gulp.parallel('clearCache', 'watch', 'serve')));
