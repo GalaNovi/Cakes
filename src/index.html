@@ -158,8 +158,8 @@
                   <ul class="form__stuffing-list stuffing-list"></ul>
                   <span class="form__stuffing-slider-counter">1/12</span>
                   <div class="slider__indicator slider__indicator--stuffing"></div>
-                  <div class="slider__navigation slider__navigation--previous slider__navigation--stuffing-previous"></div>
-                  <div class="slider__navigation slider__navigation--next slider__navigation--stuffing-next"></div>
+                  <button class="slider__navigation slider__navigation--previous slider__navigation--stuffing-previous"><span class="visually-hidden">Назад</span></button>
+                  <button class="slider__navigation slider__navigation--next slider__navigation--stuffing-next"><span class="visually-hidden">Вперёд</span></button>
                   <button class="form__item-button form__item-button--stuffing button" type="button">Выбрать</button>
                 </div>
               </li>
@@ -210,8 +210,8 @@
                   <ul class="form__design-list design-list"></ul>
                   <span class="form__design-slider-counter">1/35</span>
                   <div class="slider__indicator slider__indicator--design"></div>
-                  <div class="slider__navigation slider__navigation--previous slider__navigation--design-previous"></div>
-                  <div class="slider__navigation slider__navigation--next slider__navigation--design-next"></div>
+                  <button class="slider__navigation slider__navigation--previous slider__navigation--design-previous"><span class="visually-hidden">Назад</span></button>
+                  <button class="slider__navigation slider__navigation--next slider__navigation--design-next"><span class="visually-hidden">Вперед</span></button>
                 </div>
                 <button class="form__item-button form__item-button--design button" type="button">Выбрать</button>
               </li>
@@ -246,8 +246,8 @@
             <ul class="reviews__list"></ul>
             <span class="reviews__slider-counter">1/26</span>
             <div class="slider__indicator slider__indicator--reviews"></div>
-            <div class="slider__navigation slider__navigation--previous slider__navigation--reviews-previous"></div>
-            <div class="slider__navigation slider__navigation--next slider__navigation--reviews-next"></div>
+            <button class="slider__navigation slider__navigation--previous slider__navigation--reviews-previous"><span class="visually-hidden">Назад</span></button>
+            <button class="slider__navigation slider__navigation--next slider__navigation--reviews-next"><span class="visually-hidden">Вперед</span></button>
           </div>
         </div>
       </section>
@@ -438,7 +438,9 @@
     </main>
     <footer class="page-footer">
       <div class="container">
-        <div class="page-footer__logo"><a class="page-footer__logo-link internal-link" href="#up">Cakes</a></div>
+        <div class="page-footer__logo">
+          <a class="page-footer__logo-link internal-link" href="#up" aria-label="Наверх">Cakes</a>
+        </div>
         <nav class="footer-nav">
           <ul class="footer-nav__list">
             <li class="footer-nav__item"><a class="footer-nav__link internal-link" href="#cakes">Наши торты</a></li>
@@ -486,7 +488,7 @@
           </p>
           <p class="stuffing-item__price">1000 руб/кг</p>
           <label class="visually-hidden" for="input">Выбрать «Шоколадный ганаш»</label>
-          <input class="stuffing-item__radio visually-hidden" id="input" type="radio" name="staffing" value="">
+          <input class="stuffing-item__radio visually-hidden" id="input" type="radio" name="staffing" value="" tabindex="-1">
         </div>
         <div class="stuffing-item__image-wrapper">
           <picture class="stuffing-item__image">

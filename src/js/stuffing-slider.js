@@ -116,10 +116,12 @@
   };
 
   var addNavigationButtonsListeners = function () { // Обработчики кнопок навигации слайдера
-    sliderPreviousButtonElement.addEventListener('click', function () {
+    sliderPreviousButtonElement.addEventListener('click', function (evt) {
+      evt.preventDefault();
       changeSlide('right');
     });
-    sliderNextButtonElement.addEventListener('click', function () {
+    sliderNextButtonElement.addEventListener('click', function (evt) {
+      evt.preventDefault();
       changeSlide('left');
     });
   };
