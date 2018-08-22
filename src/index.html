@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <div style="display:none;
-">
+    <div style="display:none;">
       <include src="dev/img/sprite.svg"></include>
     </div>
     <header class="page-header" id="up">
@@ -397,16 +396,16 @@
               Заполните форму ниже и наш кондитер свяжется с Вами
             </p>
             <p class="contacts__form-item">
-              <input class="contacts__form-field" type="text" name="name" id="name-field">
-              <label class="contacts__form-label" for="name-field">Ваше имя</label>
+              <input class="contacts__form-field" type="text" name="name" id="name-field" placeholder="Ваше имя">
+              <label class="contacts__form-label " for="name-field">Ваше имя</label>
             </p>
             <p class="contacts__form-item">
-              <input class="contacts__form-field" type="email" name="email" id="email-field" required>
-              <label class="contacts__form-label" for="email-field">Email адрес</label>
+              <input class="contacts__form-field" type="email" name="email" id="email-field" placeholder="Email адрес" required>
+              <label class="contacts__form-label " for="email-field">Email адрес</label>
             </p>
             <p class="contacts__form-item contacts__form-item--question">
-              <textarea class="contacts__form-field contacts__form-field--question" name="question" id="question-field" required></textarea>
-              <label class="contacts__form-label" for="question-field">Ваш вопрос</label>
+              <textarea class="contacts__form-field contacts__form-field--question" name="question" id="question-field" placeholder="Ваш вопрос" required></textarea>
+              <label class="contacts__form-label " for="question-field">Ваш вопрос</label>
             </p>
             <button class="contacts__form-button button" type="submit">Отправить</button>
           </form>

@@ -26,7 +26,7 @@ var gulpAutoprefixer = require('gulp-autoprefixer');
 // var isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
 
 gulp.task('images', function() {
-  return gulp.src('src/img/*.{jpg,png}')
+  return gulp.src('src/img/**/*.{jpg,png}')
     .pipe(cache(imagemin([
       imagemin.gifsicle({interlaced: true}),
       imagemin.jpegtran({progressive: true}),
@@ -68,7 +68,7 @@ gulp.task('style', function () {
 });
 
 gulp.task('copy', function () {
-  return gulp.src('src/{fonts,img,js}/**/*.*', {since: gulp.lastRun('copy')})
+  return gulp.src('src/{fonts,js}/**/*.*', {since: gulp.lastRun('copy')})
   .pipe(newer('dev'))
   .pipe(gulp.dest('dev'))
 });
@@ -113,4 +113,4 @@ gulp.task('watch', function () {
   gulp.watch('src/*.html', gulp.series('copyHTML'));
 });
 
-gulp.task('dev', gulp.series(gulp.parallel('style', 'copy', 'webp', gulp.series('sprite', 'copyHTML')), gulp.parallel('clearCache', 'watch', 'serve')));
+gulp.task('dev', gulp.series(gulp.parallel('style', 'copy', 'images', 'webp', gulp.series('sprite', 'copyHTML')), gulp.parallel('clearCache', 'watch', 'serve')));
