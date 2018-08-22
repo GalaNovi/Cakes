@@ -46,8 +46,11 @@
     addShowFullReviewLinkListener(tempSlide);
     addHideFullReviewLinkListener(tempSlide);
     tempSlide.querySelector('img').setAttribute('src', data.photos[index]);
-    tempSlide.querySelectorAll('source')[0].setAttribute('srcset', data.photos[index].replace(/mobile/gi, 'desktop'));
-    tempSlide.querySelectorAll('source')[1].setAttribute('srcset', data.photos[index].replace(/mobile/gi, 'tablet'));
+    tempSlide.querySelectorAll('source')[0].setAttribute('srcset', data.photos[index].replace(/mobile/gi, 'desktop').replace(/png/gi, 'webp'));
+    tempSlide.querySelectorAll('source')[1].setAttribute('srcset', data.photos[index].replace(/mobile/gi, 'tablet').replace(/png/gi, 'webp'));
+    tempSlide.querySelectorAll('source')[2].setAttribute('srcset', data.photos[index].replace(/png/gi, 'webp'));
+    tempSlide.querySelectorAll('source')[3].setAttribute('srcset', data.photos[index].replace(/mobile/gi, 'desktop'));
+    tempSlide.querySelectorAll('source')[4].setAttribute('srcset', data.photos[index].replace(/mobile/gi, 'tablet'));
     return tempSlide;
   }
 
