@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <div style="display:none;
-">
+    <div style="display:none;">
       <include src="dev/img/sprite.svg"></include>
     </div>
     <header class="page-header" id="up">
@@ -158,8 +157,8 @@
                   <ul class="form__stuffing-list stuffing-list"></ul>
                   <span class="form__stuffing-slider-counter">1/12</span>
                   <div class="slider__indicator slider__indicator--stuffing"></div>
-                  <div class="slider__navigation slider__navigation--previous slider__navigation--stuffing-previous"></div>
-                  <div class="slider__navigation slider__navigation--next slider__navigation--stuffing-next"></div>
+                  <button class="slider__navigation slider__navigation--previous slider__navigation--stuffing-previous"><span class="visually-hidden">Назад</span></button>
+                  <button class="slider__navigation slider__navigation--next slider__navigation--stuffing-next"><span class="visually-hidden">Вперёд</span></button>
                   <button class="form__item-button form__item-button--stuffing button" type="button">Выбрать</button>
                 </div>
               </li>
@@ -210,8 +209,8 @@
                   <ul class="form__design-list design-list"></ul>
                   <span class="form__design-slider-counter">1/35</span>
                   <div class="slider__indicator slider__indicator--design"></div>
-                  <div class="slider__navigation slider__navigation--previous slider__navigation--design-previous"></div>
-                  <div class="slider__navigation slider__navigation--next slider__navigation--design-next"></div>
+                  <button class="slider__navigation slider__navigation--previous slider__navigation--design-previous"><span class="visually-hidden">Назад</span></button>
+                  <button class="slider__navigation slider__navigation--next slider__navigation--design-next"><span class="visually-hidden">Вперед</span></button>
                 </div>
                 <button class="form__item-button form__item-button--design button" type="button">Выбрать</button>
               </li>
@@ -246,8 +245,8 @@
             <ul class="reviews__list"></ul>
             <span class="reviews__slider-counter">1/26</span>
             <div class="slider__indicator slider__indicator--reviews"></div>
-            <div class="slider__navigation slider__navigation--previous slider__navigation--reviews-previous"></div>
-            <div class="slider__navigation slider__navigation--next slider__navigation--reviews-next"></div>
+            <button class="slider__navigation slider__navigation--previous slider__navigation--reviews-previous"><span class="visually-hidden">Назад</span></button>
+            <button class="slider__navigation slider__navigation--next slider__navigation--reviews-next"><span class="visually-hidden">Вперед</span></button>
           </div>
         </div>
       </section>
@@ -397,16 +396,16 @@
               Заполните форму ниже и наш кондитер свяжется с Вами
             </p>
             <p class="contacts__form-item">
-              <input class="contacts__form-field" type="text" name="name" id="name-field">
-              <label class="contacts__form-label" for="name-field">Ваше имя</label>
+              <input class="contacts__form-field" type="text" name="name" id="name-field" placeholder="Ваше имя">
+              <label class="contacts__form-label " for="name-field">Ваше имя</label>
             </p>
             <p class="contacts__form-item">
-              <input class="contacts__form-field" type="email" name="email" id="email-field" required>
-              <label class="contacts__form-label" for="email-field">Email адрес</label>
+              <input class="contacts__form-field" type="email" name="email" id="email-field" placeholder="Email адрес" required>
+              <label class="contacts__form-label " for="email-field">Email адрес</label>
             </p>
             <p class="contacts__form-item contacts__form-item--question">
-              <textarea class="contacts__form-field contacts__form-field--question" name="question" id="question-field" required></textarea>
-              <label class="contacts__form-label" for="question-field">Ваш вопрос</label>
+              <textarea class="contacts__form-field contacts__form-field--question" name="question" id="question-field" placeholder="Ваш вопрос" required></textarea>
+              <label class="contacts__form-label " for="question-field">Ваш вопрос</label>
             </p>
             <button class="contacts__form-button button" type="submit">Отправить</button>
           </form>
@@ -438,7 +437,9 @@
     </main>
     <footer class="page-footer">
       <div class="container">
-        <div class="page-footer__logo"><a class="page-footer__logo-link internal-link" href="#up">Cakes</a></div>
+        <div class="page-footer__logo">
+          <a class="page-footer__logo-link internal-link" href="#up" aria-label="Наверх">Cakes</a>
+        </div>
         <nav class="footer-nav">
           <ul class="footer-nav__list">
             <li class="footer-nav__item"><a class="footer-nav__link internal-link" href="#cakes">Наши торты</a></li>
@@ -486,7 +487,7 @@
           </p>
           <p class="stuffing-item__price">1000 руб/кг</p>
           <label class="visually-hidden" for="input">Выбрать «Шоколадный ганаш»</label>
-          <input class="stuffing-item__radio visually-hidden" id="input" type="radio" name="staffing" value="">
+          <input class="stuffing-item__radio visually-hidden" id="input" type="radio" name="staffing" value="" tabindex="-1">
         </div>
         <div class="stuffing-item__image-wrapper">
           <picture class="stuffing-item__image">
@@ -544,28 +545,9 @@
     </div>
     <!-- Templates -->
 
-    <script src="js/polyfill.js"></script>
     <script src="js/menu.js"></script>
+    <script src="js/polyfill.js"></script>
     <script src="js/picturefill.js"></script>
-    <script src="js/scroll.js"></script>
-    <script src="js/stuffing-data.js"></script>
-    <script src="js/stuffing-slides-load.js"></script>
-    <script src="js/stuffing-slider.js"></script>
-    <script src="js/stuffing-slider-indicator.js"></script>
-    <script src="js/stuffing-section.js"></script>
-    <script src="js/size-slider.js"></script>
-    <script src="js/size-slider-indicator.js"></script>
-    <script src="js/size-section.js"></script>
-    <script src="js/design-data.js"></script>
-    <script src="js/design-slides-load.js"></script>
-    <script src="js/design-slider.js"></script>
-    <script src="js/design-slider-indicator.js"></script>
-    <script src="js/design-section.js"></script>
-    <script src="js/total-choice.js"></script>
-    <script src="js/reviews-data.js"></script>
-    <script src="js/reviews-slides-load.js"></script>
-    <script src="js/reviews-slider.js"></script>
-    <script src="js/reviews-slider-indicator.js"></script>
-    <script src="js/reviews-section.js"></script>
+    <script src="js/all.min.js"></script>
   </body>
 </html>

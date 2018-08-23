@@ -1,0 +1,22 @@
+[
+  "src/js/modules/scroll.js",
+  "src/js/modules/stuffing-data.js",
+  "src/js/modules/stuffing-slides-load.js",
+  "src/js/modules/stuffing-slider.js",
+  "src/js/modules/stuffing-slider-indicator.js",
+  "src/js/modules/stuffing-section.js",
+  "src/js/modules/size-slider.js",
+  "src/js/modules/size-slider-indicator.js",
+  "src/js/modules/size-section.js",
+  "src/js/modules/design-data.js",
+  "src/js/modules/design-slides-load.js",
+  "src/js/modules/design-slider.js",
+  "src/js/modules/design-slider-indicator.js",
+  "src/js/modules/design-section.js",
+  "src/js/modules/total-choice.js",
+  "src/js/modules/reviews-data.js",
+  "src/js/modules/reviews-slides-load.js",
+  "src/js/modules/reviews-slider.js",
+  "src/js/modules/reviews-slider-indicator.js",
+  "src/js/modules/reviews-section.js"
+]

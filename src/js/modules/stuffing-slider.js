@@ -1,12 +1,12 @@
 'use strict';
 
 (function () {
-  var sliderElement = document.querySelector('.reviews__list'),
-      slidesElements = Array.from(sliderElement.querySelectorAll('.reviews__item')),
-      sliderPreviousButtonElement = document.querySelector('.slider__navigation--reviews-previous'),
-      sliderNextButtonElement = document.querySelector('.slider__navigation--reviews-next'),
-      sliderCounterElement = document.querySelector('.reviews__slider-counter'),
-      currentSlideClass = 'reviews__item--current',
+  var sliderElement = document.querySelector('.stuffing-list'),
+      slidesElements = Array.from(sliderElement.querySelectorAll('.stuffing-item')),
+      sliderPreviousButtonElement = document.querySelector('.slider__navigation--stuffing-previous'),
+      sliderNextButtonElement = document.querySelector('.slider__navigation--stuffing-next'),
+      sliderCounterElement = document.querySelector('.form__stuffing-slider-counter'),
+      currentSlideClass = 'stuffing-item--current',
       showedSlidesNumber = 1,
       currentSlideIndex,
       isFirstSlide,
@@ -33,11 +33,11 @@
 
   var animateBrowsingNextSlide = function (currentSlide, nextSlide) { // Анимация перелистывания вперед
     if (window.innerWidth < 768) {
-      currentSlide.style.cssText = 'animation: hideReviewsSlideToLeftMobile ' + (TIME_SLIDE_BROWSING / 1000) + 's;';
+      currentSlide.style.cssText = 'animation: hideStuffingSlideToLeftMobile ' + (TIME_SLIDE_BROWSING / 1000) + 's;';
     } else if (window.innerWidth < 1366) {
-      currentSlide.style.cssText = 'animation: hideReviewsSlideToLeftTablet ' + (TIME_SLIDE_BROWSING / 1000) + 's;';
+      currentSlide.style.cssText = 'animation: hideStuffingSlideToLeftTablet ' + (TIME_SLIDE_BROWSING / 1000) + 's;';
     } else {
-      currentSlide.style.cssText = 'animation: hideReviewsSlideToLeftDesktop ' + (TIME_SLIDE_BROWSING / 1000) + 's;';
+      currentSlide.style.cssText = 'animation: hideStuffingSlideToLeftDesktop ' + (TIME_SLIDE_BROWSING / 1000) + 's;';
     }
     setTimeout(function () {
       currentSlide.style.cssText = '';
@@ -47,11 +47,11 @@
 
   var animateBrowsingPreviousSlide = function (currentSlide, previousSlide) { // Анимация перелистывания назад
     if (window.innerWidth < 768) {
-      previousSlide.style.cssText = 'animation: showPreviousReviewsSlideMobile ' + TIME_SLIDE_BROWSING / 1000 + 's;';
+      previousSlide.style.cssText = 'animation: showPreviousStuffingSlideMobile ' + TIME_SLIDE_BROWSING / 1000 + 's;';
     } else if (window.innerWidth < 1366) {
-      previousSlide.style.cssText = 'animation: showPreviousReviewsSlideTablet ' + TIME_SLIDE_BROWSING / 1000 + 's;';
+      previousSlide.style.cssText = 'animation: showPreviousStuffingSlideTablet ' + TIME_SLIDE_BROWSING / 1000 + 's;';
     } else {
-      previousSlide.style.cssText = 'animation: showPreviousReviewsSlideDesktop ' + TIME_SLIDE_BROWSING / 1000 + 's;';
+      previousSlide.style.cssText = 'animation: showPreviousStuffingSlideDesktop ' + TIME_SLIDE_BROWSING / 1000 + 's;';
     }
     setTimeout(function () {
       currentSlide.style.cssText = null;
@@ -87,7 +87,7 @@
     }
     setTimeout(function () {
       updateCurrentSlideIndex();
-      window.reviewsSliderIndicator.update(slidesElements, currentSlideIndex);
+      window.stuffingSliderIndicator.update(slidesElements, currentSlideIndex);
       navigationButtonsUpdate();
       sliderCounterUpdate();
     }, TIME_SLIDE_BROWSING);
@@ -116,10 +116,12 @@
   };
 
   var addNavigationButtonsListeners = function () { // Обработчики кнопок навигации слайдера
-    sliderPreviousButtonElement.addEventListener('click', function () {
+    sliderPreviousButtonElement.addEventListener('click', function (evt) {
+      evt.preventDefault();
       changeSlide('right');
     });
-    sliderNextButtonElement.addEventListener('click', function () {
+    sliderNextButtonElement.addEventListener('click', function (evt) {
+      evt.preventDefault();
       changeSlide('left');
     });
   };
@@ -134,15 +136,15 @@
     }
   };
 
-  window.reviewsSlider = {
+  window.stuffingSlider = {
     add: function() {
       addSwipeListener(sliderElement);
       addNavigationButtonsListeners();
       updateCurrentSlideIndex();
       navigationButtonsUpdate();
       sliderCounterUpdate();
-      window.reviewsSliderIndicator.set(slidesElements);
-      window.reviewsSliderIndicator.update(slidesElements, currentSlideIndex);
+      window.stuffingSliderIndicator.set(slidesElements);
+      window.stuffingSliderIndicator.update(slidesElements, currentSlideIndex);
     }
   };
 })();

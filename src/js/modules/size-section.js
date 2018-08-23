@@ -1,25 +1,38 @@
 'use strict';
 
 (function () {
-  var sizeElements = Array.from(document.querySelectorAll('.size-item__label')),
-      sizeItems = Array.from(document.querySelectorAll('.size-item')),
+  var sizeListElement = document.querySelector('.size-list'),
+      sizeElements = Array.from(sizeListElement.querySelectorAll('.size-item__label')),
+      sizeItems = Array.from(sizeListElement.querySelectorAll('.size-item')),
       sizeTotal = document.querySelector('#size'),
       sizeButton = document.querySelector('.form__item-button--size');
 
-  var onSizeElementClick = function (evt) {  // При клике на элемент, его значение записывается в итоговое поле.
+  var updateSizeValue = function (evt) {
     sizeTotal.textContent = evt.target.textContent;
+  };
+
+  var onSizeElementClick = function (evt) {  // При клике на элемент, его значение записывается в итоговое поле.
+    updateSizeValue(evt);
+  };
+
+  var onSizeElementPressEsc = function (evt) {  // При клике на элемент, его значение записывается в итоговое поле.
+    if (evt.keyCode === 32) {
+      sizeTotal.textContent = evt.currentTarget.querySelector('.size-item__label').textContent;
+    }
   };
 
   var addSizeElementsListeners = function () {  // Вешает обработчики на все элементы
     for (var i = 0; i < sizeElements.length; i++) {
       sizeElements[i].addEventListener('click', onSizeElementClick);
+      sizeItems[i].addEventListener('keydown', onSizeElementPressEsc);
     };
   };
 
   var removeSizeElementsListeners = function () {  // Удаляет обработчики с элементов
-    sizeElements.forEach(function (element) {
-      element.removeEventListener('click', onSizeElementClick);
-    });
+    for (var i = 0; i < sizeElements.length; i++) {
+      sizeElements[i].removeEventListener('click', onSizeElementClick);
+      sizeItems[i].removeEventListener('keydown', onSizeElementPressEsc);
+    };
   };
 
   var findCurrentElement = function (element) {  // Возвращает true, если элемент активный

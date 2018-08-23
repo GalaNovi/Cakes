@@ -1,14 +1,13 @@
 'use strict';
 
 (function () {
-  var sliderElement = document.querySelector('.design-list'),
-      slidesElements = Array.from(sliderElement.querySelectorAll('.design-item')),
-      sliderCounterElement = document.querySelector('.form__design-slider-counter'),
-      sliderPreviousButtonElement = document.querySelector('.slider__navigation--design-previous'),
-      sliderNextButtonElement = document.querySelector('.slider__navigation--design-next'),
-      currentSlideClass = 'design-item--current',
-      showedSlidesNumberMobile = 1,
-      showedSlidesNumberTablet = 2,
+  var sliderElement = document.querySelector('.reviews__list'),
+      slidesElements = Array.from(sliderElement.querySelectorAll('.reviews__item')),
+      sliderPreviousButtonElement = document.querySelector('.slider__navigation--reviews-previous'),
+      sliderNextButtonElement = document.querySelector('.slider__navigation--reviews-next'),
+      sliderCounterElement = document.querySelector('.reviews__slider-counter'),
+      currentSlideClass = 'reviews__item--current',
+      showedSlidesNumber = 1,
       currentSlideIndex,
       isFirstSlide,
       isLastSlide,
@@ -16,11 +15,7 @@
       TIME_SLIDE_BROWSING = 300; // В милисекундах
 
   var sliderCounterUpdate = function () { // Обновляет счетчик слайдов
-    if (window.innerWidth < 768) {
       sliderCounterElement.textContent = (currentSlideIndex + 1) + '/' + slidesElements.length;
-    } else {
-      sliderCounterElement.textContent = (currentSlideIndex + 2) + '/' + slidesElements.length;
-    }
   };
 
   var findCurrentSlide = function (element) { // Возвращает true, если слайд активный
@@ -33,20 +28,16 @@
   var updateCurrentSlideIndex = function () { // Определяет индекс активного слайда, проверяет не крайний ли он
     currentSlideIndex = slidesElements.findIndex(findCurrentSlide);
     isFirstSlide = currentSlideIndex === 0;
-    if (window.innerWidth < 768) {
-      isLastSlide = currentSlideIndex === slidesElements.length - 1;
-    } else {
-      isLastSlide = currentSlideIndex === slidesElements.length - 2;
-    }
+    isLastSlide = currentSlideIndex === slidesElements.length - 1;
   };
 
   var animateBrowsingNextSlide = function (currentSlide, nextSlide) { // Анимация перелистывания вперед
     if (window.innerWidth < 768) {
-      currentSlide.style.cssText = 'animation: hideSlideToLeftMobile ' + (TIME_SLIDE_BROWSING / 1000) + 's;';
+      currentSlide.style.cssText = 'animation: hideReviewsSlideToLeftMobile ' + (TIME_SLIDE_BROWSING / 1000) + 's;';
     } else if (window.innerWidth < 1366) {
-      currentSlide.style.cssText = 'animation: hideSlideToLeftTablet ' + (TIME_SLIDE_BROWSING / 1000) + 's;';
+      currentSlide.style.cssText = 'animation: hideReviewsSlideToLeftTablet ' + (TIME_SLIDE_BROWSING / 1000) + 's;';
     } else {
-      currentSlide.style.cssText = 'animation: hideSlideToLeftDesktop ' + (TIME_SLIDE_BROWSING / 1000) + 's;';
+      currentSlide.style.cssText = 'animation: hideReviewsSlideToLeftDesktop ' + (TIME_SLIDE_BROWSING / 1000) + 's;';
     }
     setTimeout(function () {
       currentSlide.style.cssText = '';
@@ -56,11 +47,11 @@
 
   var animateBrowsingPreviousSlide = function (currentSlide, previousSlide) { // Анимация перелистывания назад
     if (window.innerWidth < 768) {
-      previousSlide.style.cssText = 'animation: showPreviousSlideMobile ' + TIME_SLIDE_BROWSING / 1000 + 's;';
+      previousSlide.style.cssText = 'animation: showPreviousReviewsSlideMobile ' + TIME_SLIDE_BROWSING / 1000 + 's;';
     } else if (window.innerWidth < 1366) {
-      previousSlide.style.cssText = 'animation: showPreviousSlideTablet ' + TIME_SLIDE_BROWSING / 1000 + 's;';
+      previousSlide.style.cssText = 'animation: showPreviousReviewsSlideTablet ' + TIME_SLIDE_BROWSING / 1000 + 's;';
     } else {
-      previousSlide.style.cssText = 'animation: showPreviousSlideDesktop ' + TIME_SLIDE_BROWSING / 1000 + 's;';
+      previousSlide.style.cssText = 'animation: showPreviousReviewsSlideDesktop ' + TIME_SLIDE_BROWSING / 1000 + 's;';
     }
     setTimeout(function () {
       currentSlide.style.cssText = null;
@@ -87,27 +78,18 @@
   var changeSlide = function (direction) { // Меняет слвйд в зависимости от направления свайпа
     if (direction === 'left' && !isLastSlide) {
       var currentSlide = slidesElements[currentSlideIndex];
-      if (window.innerWidth < 768) {
-        var nextSlide = slidesElements[currentSlideIndex + showedSlidesNumberMobile];
-      } else {
-        var nextSlide = slidesElements[currentSlideIndex + showedSlidesNumberTablet];
-      }
+      var nextSlide = slidesElements[currentSlideIndex + showedSlidesNumber];
       showNextSlide(currentSlide, nextSlide);
     } else if (direction === 'right' && !isFirstSlide) {
-      if (window.innerWidth < 768) {
-        var currentSlide = slidesElements[currentSlideIndex];
-        var previousSlide = slidesElements[currentSlideIndex - showedSlidesNumberMobile];
-      } else {
-        var currentSlide = slidesElements[currentSlideIndex + 1];
-        var previousSlide = slidesElements[currentSlideIndex - 1];
-      }
+      var currentSlide = slidesElements[currentSlideIndex];
+      var previousSlide = slidesElements[currentSlideIndex - showedSlidesNumber];
       showPreviousSlide(currentSlide, previousSlide);
     }
     setTimeout(function () {
       updateCurrentSlideIndex();
-      window.designSliderIndicator.update(slidesElements, currentSlideIndex);
-      sliderCounterUpdate();
+      window.reviewsSliderIndicator.update(slidesElements, currentSlideIndex);
       navigationButtonsUpdate();
+      sliderCounterUpdate();
     }, TIME_SLIDE_BROWSING);
   };
 
@@ -134,10 +116,12 @@
   };
 
   var addNavigationButtonsListeners = function () { // Обработчики кнопок навигации слайдера
-    sliderPreviousButtonElement.addEventListener('click', function () {
+    sliderPreviousButtonElement.addEventListener('click', function (evt) {
+      evt.preventDefault();
       changeSlide('right');
     });
-    sliderNextButtonElement.addEventListener('click', function () {
+    sliderNextButtonElement.addEventListener('click', function (evt) {
+      evt.preventDefault();
       changeSlide('left');
     });
   };
@@ -152,15 +136,15 @@
     }
   };
 
-  window.designSlider = {
+  window.reviewsSlider = {
     add: function() {
       addSwipeListener(sliderElement);
       addNavigationButtonsListeners();
       updateCurrentSlideIndex();
       navigationButtonsUpdate();
-      window.designSliderIndicator.set(slidesElements);
-      window.designSliderIndicator.update(slidesElements, currentSlideIndex);
       sliderCounterUpdate();
+      window.reviewsSliderIndicator.set(slidesElements);
+      window.reviewsSliderIndicator.update(slidesElements, currentSlideIndex);
     }
   };
 })();
