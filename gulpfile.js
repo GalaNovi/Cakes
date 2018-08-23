@@ -3,11 +3,8 @@
 var gulp = require('gulp');
 var less = require('gulp-less');
 var plumber = require("gulp-plumber");
-var notify = require("gulp-notify");
 var del = require('del');
 var newer = require('gulp-newer');
-var postcss = require("gulp-postcss");
-var autoprefixer = require("autoprefixer");
 var browserSync = require('browser-sync').create();
 var posthtml = require("gulp-posthtml");
 var include = require("posthtml-include");
@@ -19,11 +16,17 @@ var pngquant = require('imagemin-pngquant');
 var cache = require('gulp-cache');
 var webp = require("gulp-webp");
 var gulpAutoprefixer = require('gulp-autoprefixer');
-// var debug = require('gulp-debug');
-// var soursemaps = require('gulp-sourcemaps');
-// var gulpIf = require('gulp-if');
+var jsfiles = require('./jsfiles.json');
+var concat = require('gulp-concat');
+var sourcemaps = require('gulp-sourcemaps');
 
-// var isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
+gulp.task('js', function () {
+  return gulp.src(jsfiles, {base: 'src/js/modules'})
+      .pipe(sourcemaps.init({loadMaps: true}))
+      .pipe(concat('all.min.js'))
+      .pipe(sourcemaps.write('.'))
+      .pipe(gulp.dest('dev/js'));
+});
 
 gulp.task('images', function() {
   return gulp.src('src/img/**/*.{jpg,png}')
@@ -39,7 +42,7 @@ gulp.task('images', function() {
       imagemin.optipng({optimizationLevel: 3}),
       pngquant({quality: '50-60', speed: 5})
     ],{
-      verbose: true
+      // verbose: true
     })))
     .pipe(gulp.dest('dev/img'));
 });
@@ -49,7 +52,7 @@ gulp.task('clearCache', function (done) {
 });
 
 gulp.task('webp', function() {
-  return gulp.src('src/img/content-imgs/**/*.{jpg,png}', {since: gulp.lastRun('webp')})
+  return gulp.src('src/img/**/*.{jpg,png}', {since: gulp.lastRun('webp')})
     .pipe(newer('dev/img'))
     .pipe(webp({quality: 70}))
     .pipe(gulp.dest("dev/img"));
@@ -68,7 +71,7 @@ gulp.task('style', function () {
 });
 
 gulp.task('copy', function () {
-  return gulp.src('src/{fonts,js}/**/*.*', {since: gulp.lastRun('copy')})
+  return gulp.src('src/{fonts,js}/*.*', {since: gulp.lastRun('copy')})
   .pipe(newer('dev'))
   .pipe(gulp.dest('dev'))
 });
@@ -113,4 +116,4 @@ gulp.task('watch', function () {
   gulp.watch('src/*.html', gulp.series('copyHTML'));
 });
 
-gulp.task('dev', gulp.series(gulp.parallel('style', 'copy', 'images', 'webp', gulp.series('sprite', 'copyHTML')), gulp.parallel('clearCache', 'watch', 'serve')));
+gulp.task('dev', gulp.series(gulp.parallel('style', 'copy', 'images', 'webp', 'js', gulp.series('sprite', 'copyHTML')), gulp.parallel('clearCache', 'watch', 'serve')));
