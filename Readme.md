@@ -32,7 +32,7 @@ $ npm run build
 <include src="dev/img/sprite.svg"></include>
 ```
 
-Соответственно для сборки билда:
+Соответственно, для сборки билда:
 ```sh
 <include src="build/img/sprite.svg"></include>
 ```
