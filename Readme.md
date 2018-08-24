@@ -1,4 +1,6 @@
 # Адаптивный личный проект «Cakes»
+https://galanovi.github.io/
+
 ##### Поддержка браузеров:
   - Chrome
   - Opera
