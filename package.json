@@ -39,6 +39,7 @@
     "gulp-webp": "^3.0.0",
     "imagemin-jpeg-recompress": "^5.1.0",
     "imagemin-pngquant": "^6.0.0",
+    "lodash": "^4.17.10",
     "posthtml-include": "^1.2.0",
     "pump": "^3.0.0",
     "stylelint": "^9.3.0",
