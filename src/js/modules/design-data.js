@@ -3,21 +3,21 @@
 (function () {
   window.designData = {
     images: [
-      'img/berries-mobile@1x.jpg',
-      'img/marshmallow-mobile@1x.jpg',
-      'img/berries2-mobile@1x.jpg',
-      'img/berries3-mobile@1x.jpg',
-      'img/birch-mobile@1x.jpg',
-      'img/flowers2-mobile@1x.jpg',
-      'img/flowers3-mobile@1x.jpg',
-      'img/flowers-mobile@1x.jpg',
-      'img/kids-mobile@1x.jpg',
-      'img/offer-mobile@1x.jpg',
-      'img/pink-mobile@1x.jpg',
-      'img/romantic-mobile@1x.jpg',
-      'img/shoco-berry-mobile@1x.jpg',
-      'img/transformer-mobile@1x.jpg',
-      'img/wedding2-mobile@1x.jpg'
+      'img/content/berries-mobile@1x.jpg',
+      'img/content/marshmallow-mobile@1x.jpg',
+      'img/content/berries2-mobile@1x.jpg',
+      'img/content/berries3-mobile@1x.jpg',
+      'img/content/birch-mobile@1x.jpg',
+      'img/content/flowers2-mobile@1x.jpg',
+      'img/content/flowers3-mobile@1x.jpg',
+      'img/content/flowers-mobile@1x.jpg',
+      'img/content/kids-mobile@1x.jpg',
+      'img/content/offer-mobile@1x.jpg',
+      'img/content/pink-mobile@1x.jpg',
+      'img/content/romantic-mobile@1x.jpg',
+      'img/content/shoco-berry-mobile@1x.jpg',
+      'img/content/transformer-mobile@1x.jpg',
+      'img/content/wedding2-mobile@1x.jpg'
     ],
     alt: [
       'Изображение оформления «Ягодное ассорти»',

@@ -21,10 +21,10 @@
       'Обожаю ваши тортики! Очень удобно делать заказ через сайт. Спасибо что вы есть)'
     ],
     photos: [
-      'img/review-photo1-mobile@1x.png',
-      'img/review-photo2-mobile@1x.png',
-      'img/review-photo3-mobile@1x.png',
-      'img/review-photo4-mobile@1x.png'
+      'img/content/review-photo1-mobile@1x.png',
+      'img/content/review-photo2-mobile@1x.png',
+      'img/content/review-photo3-mobile@1x.png',
+      'img/content/review-photo4-mobile@1x.png'
     ]
   };
 })();

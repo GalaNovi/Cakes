@@ -3,13 +3,13 @@
 (function () {
   window.stuffingData = {
     images: [
-      'img/staffing-shoco-mobile@1x.jpg',
-      'img/staffing-rainbow-mobile@1x.jpg',
-      'img/staffing-banana-mobile@1x.jpg',
-      'img/staffing-red-mobile@1x.jpg',
-      'img/staffing-caramel-mobile@1x.jpg',
-      'img/staffing-shoco-berries-mobile@1x.jpg',
-      'img/staffing-honey-mobile@1x.jpg'
+      'img/content/staffing-shoco-mobile@1x.jpg',
+      'img/content/staffing-rainbow-mobile@1x.jpg',
+      'img/content/staffing-banana-mobile@1x.jpg',
+      'img/content/staffing-red-mobile@1x.jpg',
+      'img/content/staffing-caramel-mobile@1x.jpg',
+      'img/content/staffing-shoco-berries-mobile@1x.jpg',
+      'img/content/staffing-honey-mobile@1x.jpg'
     ],
     alt: [
       'Изображение шоколадного бисквита с шоколадным кремом',
