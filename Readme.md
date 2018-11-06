@@ -1,4 +1,4 @@
-# Адаптивный проект «Cakes»
+# ![alt text](src/img/favicon.png) Адаптивный проект [«Cakes»](http://galanovi-cakes.h1n.ru/)
 
 ##### Поддержка браузеров:
   - Chrome
