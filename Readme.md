@@ -1,5 +1,4 @@
-# Адаптивный личный проект «Cakes»
-https://galanovi.github.io/
+# Адаптивный проект «Cakes»
 
 ##### Поддержка браузеров:
   - Chrome
@@ -25,6 +24,7 @@ $ npm install
 ```sh
 $ npm run build
 ```
+<<<<<<< HEAD
 
 ### Разработка
 
@@ -32,3 +32,5 @@ $ npm run build
 ```sh
 $ npm start
 ```
+=======
+>>>>>>> 1d19683bf44c8c7d69370b7d0cc92c770ea94f37
