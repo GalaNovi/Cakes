@@ -1,4 +1,4 @@
-# Адаптивный проект «Cakes»
+# Адаптивный проект [«Cakes»](https://galanovi.github.io/cakes/index.html)
 
 ##### Поддержка браузеров:
   - Chrome
